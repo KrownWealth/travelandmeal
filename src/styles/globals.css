@@ -2,26 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+main{
+  display: block;
+}
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+ --deep-red:#d62828;
+ --deep-blue:#003049;
+ --deep-orange:#f77f00;
+ --light-orange:#fcbf49;
+ --light-orange-2: #e9e2b7;
+}
+body{
+  background-color: #000;
+}
+/**======================
+Buttons
+======================**/
+header{
+  width: 100%;
+  max-width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+  animation: 300ms ease-in-out 0s 1 normal none running fNaJou;
+  background-color: rgb(255, 255, 255);
+  padding: 0px 8px;
+  
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.navigation{
+  display: flex;
+  flex-direction: row;
+  /* background-color: #e9e2b7; */
+  justify-content: space-between;
+  /* padding: 0px 10px 0 10px;  */
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* .logo{
+  width: 100%;
+} */
+.logo img {
+  padding-top: 1rem;
+ width: 80%;
+ height: 100px;
 }
+.topNav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.topNav button {
+  padding: 5px;
+  border: 1px transparent;
+  border-radius: 50px;
+  width: 80px;
+}
+button.ctaBgRed {
+  background-color: #d62828;
+  color: #fff;
+}
+button.ctaBgWhite{
+  background-color: #fff;
+  color: #000;
+}
+
+

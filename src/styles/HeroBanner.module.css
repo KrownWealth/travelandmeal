@@ -1,0 +1,102 @@
+.heroSection{
+height: 120vh;
+background-color: blueviolet;
+position: relative;
+z-index: 1;
+}
+.heroImg{
+background-image: url("/Assets/Images/mobile\ herobg.png");
+background-size: cover;
+  text-align: center;
+  height: 550px;
+  width: 100%;
+  padding: 0px 20px;
+}
+
+.heroSection {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+}
+
+
+.heroTopNav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem
+}
+.heroTopLogo{
+  padding-left: 550px;
+}
+
+.heroTopLogo img{
+  width: 100%;
+  height: auto;
+}
+
+.heroTopBtn {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+
+}
+
+.heroTopBtn button{
+  padding: 10px;
+  border: 1px transparent;
+  border-radius: 50px;
+  width: 80px;
+}
+button.ctaBgRed {
+  background-color: #d62828;
+  color: #fff;
+}
+button.ctaBg2{
+  background-color: #fff;
+  color: #000;
+}
+
+.heroLogo img{
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.heroLogo img{
+  width: 80%;
+}
+
+.heroText {
+  text-align: center;
+}
+
+.heroText h1{
+  font-family: Raleway;
+  font-size: 38px;
+  font-weight: 800;
+  top: 150px;
+  position: relative;
+  z-index: 2;
+}
+.heroText input{
+  position: relative;
+  z-index: 2;
+  top: 160px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 20px;
+}
+.heroText button{
+  position: relative;
+  z-index: 2;
+  top: 170px;
+}
+
+@media (min-width: 768px) {
+  .heroImg {
+    background-image: url("/Assets/Images/TAM\ herobg\ \(3\).png");
+   height: 650px;
+
+  }
+}
