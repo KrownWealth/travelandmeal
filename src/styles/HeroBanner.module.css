@@ -68,6 +68,8 @@ button.ctaBg2{
 }
 
 .heroText {
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
@@ -79,19 +81,12 @@ button.ctaBg2{
   position: relative;
   z-index: 2;
 }
-.heroText input{
-  position: relative;
-  z-index: 2;
-  top: 160px;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  padding: 20px;
-}
-.heroText button{
+
+/* .heroText button{
   position: relative;
   z-index: 2;
   top: 170px;
-}
+} */
 
 @media (min-width: 768px) {
   .heroImg {
