@@ -1,6 +1,7 @@
 import Image from "next/image"
 import styles from "@/styles/HeroBanner.module.css";
-import SearchBar from "./SearchBar"
+import SearchBar from "./SearchBar";
+import AlreadyUserBtn from "./AlreadyUserBtn";
 
 const HeroBanner = () => {
   return(
@@ -16,19 +17,16 @@ const HeroBanner = () => {
         </div>
       </div>
       <div className={`${styles.heroLogo} lg:hidden block `}>
-        <Image src="/Assets/Images/TravelandMeal herologo.svg" alt="" width={100} height={100} />
+        <Image src="/Assets/Images/TravelandMeal mobilehero.svg" alt="" width={100} height={100} />
       </div>
       <div className={styles.heroText}>
-        <h1>Explore RoadSide Fast-food and more</h1>
-        {/* Searchbar component goes here  */}
+        <h1 className="text-white py-6">Explore RoadSide Fast-food and more.</h1>
       <SearchBar />
-        {/* Searchbar component stops here  */}
-        <button>Sign in</button>
-      </div>
+        <AlreadyUserBtn />
 
       </div>
       
-     
+      </div>
     </section>
   )
 }

@@ -1,29 +1,23 @@
 .heroSection{
-height: 120vh;
+  justify-content: center;
+  align-items: center;
 background-color: blueviolet;
 position: relative;
 z-index: 1;
 }
 .heroImg{
-background-image: url("/Assets/Images/mobile\ herobg.png");
+background-image: url("/Assets/Images/mobile\ herobg2.svg");
 background-size: cover;
   text-align: center;
-  height: 550px;
+  height: 600px;
   width: 100%;
   padding: 0px 20px;
-}
-
-.heroSection {
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f2f2f2;
 }
 
 
 .heroTopNav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding-top: 1rem
 }
 .heroTopLogo{
@@ -62,10 +56,12 @@ button.ctaBg2{
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-}
-.heroLogo img{
   width: 80%;
+  position: absolute;
+  top: 10rem;
+  left: 2rem;
 }
+
 
 .heroText {
   justify-content: center;
@@ -75,9 +71,9 @@ button.ctaBg2{
 
 .heroText h1{
   font-family: Raleway;
-  font-size: 38px;
+  font-size: 24px;
   font-weight: 800;
-  top: 150px;
+  top: 180px;
   position: relative;
   z-index: 2;
 }
@@ -93,5 +89,16 @@ button.ctaBg2{
     background-image: url("/Assets/Images/TAM\ herobg\ \(3\).png");
    height: 650px;
 
+  }
+  .heroTopNav {
+    
+    justify-content: space-between;
+  
+  }
+  .heroText h1{
+  
+    font-size: 38px;
+    top: 150px;
+   
   }
 }
