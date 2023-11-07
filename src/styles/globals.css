@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import-normalize;
 
 *{
   box-sizing: border-box;
@@ -26,6 +26,66 @@ main{
 body{
   background-color: #000;
 }
+a{
+  /* font-size: 24px; */
+  font-size: 22px;
+  font-family: 'Raleway', 'Montserrat' sans-serif;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.04ch;
+  text-transform: none;
+  color: rgb(73, 73, 73);
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    font-variant-ligatures: no-common-ligatures;
+}
+h1{
+  font-size: 38px;
+  font-family: 'Raleway', 'Montserrat' sans-serif;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.04ch;
+  text-transform: none;
+  color: rgb(73, 73, 73);
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    font-variant-ligatures: no-common-ligatures;
+}
+
+/* For How it works headings and some other headding*/
+h2{
+  /* font-size: 24px; */
+  font-size: 32px;
+  font-family: 'Raleway', 'Montserrat' sans-serif;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.04ch;
+  text-transform: none;
+    color: rgb(25, 25, 25);
+    margin: 0px;
+    padding-bottom: 10px;
+    display: block;
+    font-variant-ligatures: no-common-ligatures;
+}
+h3{
+  /* font-size: 24px; */
+  font-size: 18px;
+  font-family: 'Raleway', 'Montserrat' sans-serif;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.04ch;
+  text-transform: none;
+    color: rgb(25, 25, 25);
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    font-variant-ligatures: no-common-ligatures;
+}
+
 /**======================
 Buttons
 ======================**/
@@ -39,7 +99,7 @@ header{
   animation: 300ms ease-in-out 0s 1 normal none running fNaJou;
   background-color: rgb(255, 255, 255);
   padding: 0px 8px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #f0f0f0;
   
 }
 
@@ -76,6 +136,13 @@ button.ctaBgRed {
 button.ctaBgWhite{
   background-color: #fff;
   color: #000;
+}
+
+@media (min-width: 768px) {
+
+  h1{
+    font-size: 48px;
+  }
 }
 
 
