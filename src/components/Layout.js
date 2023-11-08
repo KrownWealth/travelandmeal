@@ -1,13 +1,14 @@
-// Layout.js
+
 import Head from 'next/head';
 import Image from "next/image";
 import { useEffect, useState } from 'react';
+import Link from "next/link";
 
 const Layout = ({ children }) => {
   const [showHeader, setShowHeader] = useState(false);
 
+  //Show header on scroll
   useEffect(() => {
-    // Function to handle scroll event
     const handleScroll = () => {
       if (window.scrollY > 100) {
         setShowHeader(true);
@@ -15,14 +16,11 @@ const Layout = ({ children }) => {
         setShowHeader(false);
       }
     };
-    // Add scroll event listener when component mounts
     window.addEventListener('scroll', handleScroll);
-
-    // Clean up the event listener when component unmounts
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []); // Run this effect only on component mount
+  }, []);
 
   return (
     <div>
@@ -40,8 +38,8 @@ const Layout = ({ children }) => {
            className="hidden lg:block"/>
           </div>
           <div className="topNav">
-        <button className="ctaBgRed">Sign in</button>
-        <button className="ctaBgWhite">Sign up</button>
+        <button className="ctaBgRed"><Link href="" >Sign in </Link></button>
+        <button className="ctaBgWhite"><Link href="" >Sign up</Link></button>
         </div>
         </div>
       </header>
