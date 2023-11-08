@@ -22,20 +22,21 @@ main{
  --deep-orange:#f77f00;
  --light-orange:#fcbf49;
  --light-orange-2: #e9e2b7;
+ --light-orange-2: rgb(250, 246, 209);
 }
 body{
   background-color: #000;
 }
 a{
   /* font-size: 24px; */
-  font-size: 22px;
+  font-size: 18px;
   font-family: 'Raleway', 'Montserrat' sans-serif;
   font-weight: 700;
-  line-height: 40px;
+  /* line-height: 40px; */
   letter-spacing: -0.04ch;
   text-transform: none;
-  color: rgb(73, 73, 73);
-    text-align: center;
+  /* color: rgb(73, 73, 73); */
+    /* text-align: center; */
     margin: 0px;
     padding: 0px;
     display: block;
@@ -48,8 +49,8 @@ h1{
   line-height: 40px;
   letter-spacing: -0.04ch;
   text-transform: none;
-  color: rgb(73, 73, 73);
-    text-align: center;
+  color: #000;
+    /* text-align: center; */
     margin: 0px;
     padding: 0px;
     display: block;
@@ -123,20 +124,39 @@ header{
   padding: 2rem;
 }
 
-.topNav button {
+button {
   padding: 5px;
   border: 1px transparent;
   border-radius: 50px;
   width: 80px;
-}
-button.ctaBgRed {
   background-color: #d62828;
   color: #fff;
 }
+button:hover{
+  background: #c30404;
+}
+button.longBtn{
+  width: 150px;
+}
+
+/* 
+button.ctaBgRed,
+button.longBtn {
+  background-color: #d62828;
+  color: #fff;
+} */
+/* button.ctaBgRed:hover,
+button.longBtn:hover{
+  background: #c30404;
+} */
 button.ctaBgWhite{
   background-color: #fff;
   color: #000;
 }
+/* button.ctaBgWhite:hover{
+  background-color:#d62828;
+  color:#fff;
+} */
 
 @media (min-width: 768px) {
 

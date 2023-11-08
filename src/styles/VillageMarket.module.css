@@ -22,11 +22,17 @@ z-index: 1;
     position: relative;
     z-index: 5;
     color: white;
+  text-align: center; 
+}
+.textContainer{
+  -webkit-box-align: center;
+  justify-content: center;
+    align-items: center;
     margin-top: auto;
     margin-bottom: auto;
+    max-width: 550px;
     
 }
-
 
 
 
