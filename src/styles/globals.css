@@ -131,13 +131,46 @@ button {
   width: 80px;
   background-color: #d62828;
   color: #fff;
+  font-size: 18px;
+  font-family: 'Raleway', 'Montserrat' sans-serif;
+  font-weight: 700;
 }
 button:hover{
   background: #c30404;
 }
-button.longBtn{
+button.longBtn,
+button.arrowBtn{
   width: 150px;
 }
+button.arrowBtn{
+  display: flex;
+  padding: 0;
+  padding-top: 15px;
+  background-color:#fff;
+  color: #d62828;
+  position: relative;
+  font-size: 18px;
+  font-family: 'Raleway', 'Montserrat' sans-serif;
+  font-weight: 700;
+  align-items: left;
+  text-align: left;
+  justify-content: left;
+  
+}
+.button.arrowBtn span {
+  left: 10px; 
+ 
+}
+
+
+/* 
+button.arrowBtn::after {
+  content: '\2192';
+  position: absolute;
+  right: 5px;
+  font-size: 20px;
+  
+} 
 
 /* 
 button.ctaBgRed,
@@ -162,6 +195,12 @@ button.ctaBgWhite{
 
   h1{
     font-size: 48px;
+  }
+  button.arrowBtn{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
   }
 }
 
