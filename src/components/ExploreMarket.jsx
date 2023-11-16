@@ -1,56 +1,58 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+// components/ExploreMarket.js
+
 import styles from "@/styles/VillageMarket.module.css";
+import Image from "next/image";
 import Link from "next/link";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
+import { useState } from "react"
+
 
 const ExploreMarket = () => {
-  const mobileImages = [
-    '/Images/villagemarket mobile.png', // Mobile image paths
-    '/Images/village market-2 mobile.png',
-    '/Images/banana bg-1 mobile.png',
-  ];
 
-  const desktopImages = [
-    '/Images/village market desktop.png', // Desktop image paths
-    '/Images/village market-2.jpg',
-    '/Images/banana bg-1.jpg',
-  ];
+  const [intervalz, setIntervalz] = useState(3000);
+
 
   return (
     <section className={styles.villageSection}>
-      <Swiper
-        spaceBetween={30}
-        slidesPerView={1} 
-        navigation
-        loop={true}
-        autoplay={{ delay: 3000 }}
+      <Carousel
+      showArrows={false}
+      showStatus={false}
+      showIndicators={true}
+      autoPlay
+      interval={intervalz}
+      infiniteLoop={true}
+      stopOnHover={true}
+      showThumbs={false}
       >
-        {(window.innerWidth <= 768 ? mobileImages : desktopImages).map((image, index) => (
-          <SwiperSlide key={index}>
-            <div className={styles.villageImg} style={{ backgroundImage: `url(${image})` }}>
-              <div className={styles.exploreContainer}>
-                <div className={styles.textContainer}>
-                  <h1 className="text-white ">
-                    Get grocery and convenience store essentials
-                  </h1>
-                  <h2 className="text-white text-[22px]">
-                    Grocery delivery, exactly how you want it.
-                  </h2>
-                  <h3 className="text-white">
-                    Shop from home and fill your cart with fresh produce, frozen
-                    entrees, deli delights, and more.
-                  </h3>
-                  <button className="w-[220px]">
-                    <Link href="">Explore Village Market</Link>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+        {slide("/Assets/Images/village market desktop.png")}
+        {slide("/Assets/Images/village market-2.png")}
+        {slide("/Assets/Images/Banana bg-1.png")}
+      </Carousel>
     </section>
   );
 };
+
+const slide = (imageUrl) => (
+  <div className={styles.villageImg}>
+    <Image src={imageUrl} alt="Carousel Image" width={100} height={100} style={{ width: '100%', height: 'auto' }} />
+    <div className={styles.exploreContainer}>
+      {textContainer()}
+    </div>
+  </div>
+);
+
+const textContainer = () => (
+  <div className={styles.textContainer}>
+    <h1 className="text-white">Get grocery and convenience store essentials</h1>
+    <h2 className="text-white text-[22px]">Grocery delivery, exactly how you want it.</h2>
+    <h3 className="text-white">
+      Shop from home and fill your cart with fresh produce, frozen entrees, deli delights, and more.
+    </h3>
+    <button className="w-[220px]">
+      <Link href="/explore-village-market">Explore Village Market</Link>
+    </button>
+  </div>
+);
 
 export default ExploreMarket;

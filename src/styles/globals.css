@@ -142,6 +142,8 @@ button.longBtn,
 button.arrowBtn{
   width: 150px;
 }
+
+
 button.arrowBtn{
   display: flex;
   padding: 0;
@@ -161,6 +163,31 @@ button.arrowBtn{
   left: 10px; 
  
 }
+
+/*Slider*/
+.slick-slide > div{
+  margin: 0 10px;
+}
+
+
+
+.slick-prev:hover,
+.slick-next:hover{
+      color: white;
+      outline: none;
+      background: var(--deep-red);
+  }
+
+  .slick-next,
+  .slick-prev
+  {
+    color: white;
+    border: none;
+    outline: none;
+    background: var(--deep-red);
+  }
+  
+
 
 
 /* 
