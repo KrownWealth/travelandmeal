@@ -10,11 +10,31 @@ const Cuisines = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 3000,
+    autoplaySpeed: 3000,
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+            slidesToScroll: 2,
+            initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+            slidesToScroll: 1,
+            
+        }
+      }
+    ]
   };
-
   return (
     <section className=" px-8 lg:px-16 py-20  bg-white  w-[100%]" >
       <div className="grid grid-rows-3 text-center items-center justify-center space-y-6 px-8">
@@ -22,12 +42,12 @@ const Cuisines = () => {
       <h3>Hungry? Have a look to the best food cuisine restaurants in your city. 
         Order food online at Multi Cuisine Restaurants around you.</h3>
      </div>
-      <div className="mt-10 px-8 lg:px-16 py-20 bg-white w-[100%]">
+      <div className="px-8 lg:px-16 pb-20 bg-white w-[100%]">
       <Slider {...settings}>
       {foodItems.map((item) =>(
-        <div  key={item.id} className="h-[220px]  bg-blue-400 rounded overflow-hidden shadow-lg">
-        <div className="h-50 bg-green-300 flex justify-center items-center ">
-          <Image  className="w-44 h-44"  src={item.img} alt="Sunset in the mountains" width={100} height={100} />
+        <div  key={item.id} className="h-[220px]  bg-white rounded overflow-hidden shadow-lg">
+        <div className="h-50 bg-white flex justify-center items-center ">
+          <Image  className="w-40 h-40"  src={item.img} alt="Sunset in the mountains" width={100} height={100} />
         </div>
         <div className="flex justify-center items-center"><h2>{item.title}</h2></div>
         </div>

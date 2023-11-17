@@ -173,7 +173,7 @@ button.arrowBtn{
 
 .slick-prev:hover,
 .slick-next:hover{
-      color: white;
+      color:  var(--deep-red);
       outline: none;
       background: var(--deep-red);
   }
@@ -181,10 +181,10 @@ button.arrowBtn{
   .slick-next,
   .slick-prev
   {
-    color: white;
+    color:  var(--deep-red) !important;
     border: none;
     outline: none;
-    background: var(--deep-red);
+    background: var(--deep-red) !important;
   }
   
 
