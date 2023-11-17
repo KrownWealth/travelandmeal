@@ -106,7 +106,7 @@ const Restaurants = [
 ]
 
 const TopRestaurants = () => {
-  const [visibleItems, setVisibleItems ] = useState(4);
+  const [visibleItems, setVisibleItems ] = useState(3);
 
   const handleVisibility = () => {
     setVisibleItems((prevVisible) => prevVisible + 2)
@@ -126,7 +126,7 @@ return (
     
      
       </div>
-      <div className="grid grid-rows-3 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
         {Restaurants.slice(0, visibleItems).map((restaurant) => (
           <div key={restaurant.id} className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
             <Image  className="w-full"  src={restaurant.imgSrc} alt="Sunset in the mountains" width={100} height={100} />

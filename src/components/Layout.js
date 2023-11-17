@@ -47,8 +47,11 @@ const Layout = ({ children }) => {
 
       {/* Footer component */}
       <footer>
-       
-        <p>This is the footer</p>
+       <div className="md:grid-rows-2 lg:grid-rows-3 gap-8 px-8 lg-px-16 bg-[#003049] text-white">
+<div>Logo and content</div>
+<div>Useful links</div>
+<div>Social linkes</div>
+       </div>
       </footer>
     </div>
   );
