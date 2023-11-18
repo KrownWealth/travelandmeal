@@ -25,12 +25,19 @@ const ExploreMarket = () => {
       stopOnHover={true}
       showThumbs={false}
       >
-        {slide("/Assets/Images/villagemarket mobile.png")}
-        {slide("/Assets/Images/village market-2 mobile.png")}
-        {slide("/Assets/Images/Banana bg-1 mobile.png")}
+         {isMobile() ? slide("/Assets/Images/villagemarket mobile.png") : slide("/Assets/Images/village market desktop.png")}
+        {isMobile() ? slide("/Assets/Images/village market-2 mobile.png") : slide("/Assets/Images/village market-2.png")}
+        {isMobile() ? slide("/Assets/Images/Banana bg-1 mobile.png") : slide("/Assets/Images/Banana bg-1.png")}
       </Carousel>
     </section>
   );
+};
+
+const isMobile = () => {
+  const userAgent = navigator.userAgent;
+  return
+ 
+/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
 };
 
 const slide = (imageUrl) => (

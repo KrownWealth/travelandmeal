@@ -199,11 +199,22 @@ button.ctaBgWhite{
     font-size: 48px;
   }
   button.arrowBtn{
+    align-items: left;
+    text-align: center;
+    justify-content: left;
+   width: 180px;
+  }
+}
+
+
+
+@media (min-width: 1024px){ 
+  button.arrowBtn{
     align-items: center;
     text-align: center;
     justify-content: center;
     margin: auto;
   }
-}
+  }
 
 

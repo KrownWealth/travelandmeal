@@ -80,11 +80,6 @@ button.ctaBg2{
   z-index: 2;
 }
 
-/* .heroText button{
-  position: relative;
-  z-index: 2;
-  top: 170px;
-} */
 
 @media (min-width: 768px) {
   .heroImg {
@@ -92,16 +87,23 @@ button.ctaBg2{
    height: 650px;
 
   }
+  .heroTopLogo{
+    padding-left: 150px;
+  }
   .heroTopNav {
     justify-content: space-between;
   }
   .heroText{
-    top: 5rem;
+    top: 8rem;
   }
   .heroText h1{
   
     font-size: 38px;
    
+  }
+  .heroTopBtn {
+    justify-content: flex-end
+  
   }
 }
 

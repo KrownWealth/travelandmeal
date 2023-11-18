@@ -9,7 +9,7 @@ const HeroBanner = () => {
     <section className={styles.heroSection}>
       <div className={styles.heroImg}>
       <div className={styles.heroTopNav}>
-      <div className={`${styles.heroTopLogo} lg:block hidden`}>
+      <div className={`${styles.heroTopLogo} lg:block md:block  hidden`}>
         <Image src="/Assets/Images/TravelandMeal herologo.svg" alt="" width={100} height={100}
          className="w-full" />
       </div>
@@ -19,7 +19,7 @@ const HeroBanner = () => {
         <div className="pt-2 text-white text-2xl" id=""><FaShoppingCart /></div>
         </div>
       </div>
-      <div className="lg:hidden block">
+      <div className="lg:hidden md:hidden block">
         <Image src="/Assets/Images/TravelandMeal mobilehero.svg" alt="" width={100} height={100} 
        className="w-full md:w-[50%] md:top-[5rem] relative top-[7rem] m-auto" />
       </div>

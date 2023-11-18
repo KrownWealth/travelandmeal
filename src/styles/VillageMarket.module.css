@@ -17,11 +17,6 @@
   text-align: center;
 }
 
-/* .villageImg img {
-  max-width: 100%;
-  height: auto;
-} */
-
 .exploreContainer {
   background-color: rgba(30, 30, 30, 0.6);
   width: 100%;
@@ -52,9 +47,15 @@
 }
 
 @media (min-width: 768px) {
-  /* .villageSection {
-    height: 650px;
-  } */
-
+  .textContainer {
+    padding: 3rem 2rem 0 2rem;
+  }
 
 }
+
+@media (min-width: 1024px){ 
+  .textContainer {
+    padding: 7rem 2rem 0 2rem;
+  }
+  }
+

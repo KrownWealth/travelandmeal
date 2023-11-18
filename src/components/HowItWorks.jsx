@@ -10,6 +10,7 @@ const HowItWorks = () => {
        <div className="grid grid-cols-3 gap-y-16 lg:hidden gap-x-4 text-left">
        <div className="col-span-1">
           <Image src="/Assets/Images/search trans.svg" alt="search" width={100} height={100} />
+        <div className="bg-[#e9e2b7] relative rounded-full"></div>
         </div>
         <div className="col-span-2">
         <h2>Search</h2>
