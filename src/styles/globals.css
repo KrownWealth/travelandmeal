@@ -41,6 +41,7 @@ a{
     padding: 0px;
     display: block;
     font-variant-ligatures: no-common-ligatures;
+    cursor: pointer;
 }
 h1{
   font-size: 38px;
@@ -114,7 +115,6 @@ header{
 
 .logo img {
   padding-top: 1rem;
- width: 80%;
  height: 100px;
 }
 .topNav {
@@ -161,15 +161,19 @@ button.arrowBtn{
 }
 .button.arrowBtn span {
   left: 10px; 
- 
+}
+button.ctaBgWhite{
+  background-color: #fff;
+  color: #000;
+}
+.border-bottom:hover{
+ border-bottom: 2px solid white;
 }
 
 /*Slider*/
 .slick-slide > div{
   margin: 0 10px;
 }
-
-
 
 .slick-prev:hover,
 .slick-next:hover{
@@ -188,35 +192,6 @@ button.arrowBtn{
   }
   
 
-
-
-/* 
-button.arrowBtn::after {
-  content: '\2192';
-  position: absolute;
-  right: 5px;
-  font-size: 20px;
-  
-} 
-
-/* 
-button.ctaBgRed,
-button.longBtn {
-  background-color: #d62828;
-  color: #fff;
-} */
-/* button.ctaBgRed:hover,
-button.longBtn:hover{
-  background: #c30404;
-} */
-button.ctaBgWhite{
-  background-color: #fff;
-  color: #000;
-}
-/* button.ctaBgWhite:hover{
-  background-color:#d62828;
-  color:#fff;
-} */
 
 @media (min-width: 768px) {
 

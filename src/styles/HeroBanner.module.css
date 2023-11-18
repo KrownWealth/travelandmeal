@@ -67,13 +67,15 @@ button.ctaBg2{
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
+    top: 7rem;
 }
+
 
 .heroText h1{
   font-family: Raleway;
-  font-size: 24px;
-  font-weight: 800;
-  top: 180px;
+  font-size: 20px;
+  font-weight: 600;
   position: relative;
   z-index: 2;
 }
@@ -91,14 +93,20 @@ button.ctaBg2{
 
   }
   .heroTopNav {
-    
     justify-content: space-between;
-  
+  }
+  .heroText{
+    top: 5rem;
   }
   .heroText h1{
   
     font-size: 38px;
-    top: 150px;
    
   }
+}
+
+@media (min-width: 1024px){ 
+.heroText {
+    top: 7rem;
+}
 }

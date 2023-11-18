@@ -41,6 +41,8 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  padding-top:10rem;
+  padding: 5rem 2rem 0 2rem;
 }
 
 .textContainer h1,
@@ -54,7 +56,5 @@
     height: 650px;
   } */
 
-  .textContainer {
-    padding-top: 10rem;
-  }
+
 }

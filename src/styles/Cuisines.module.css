@@ -4,7 +4,7 @@
 
 button.slick-arrow,
 button.slick-prev,
-button.slick-next{
+b.slick-next{
   background: var(--deep-red);
 }
 

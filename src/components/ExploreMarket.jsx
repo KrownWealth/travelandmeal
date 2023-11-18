@@ -25,9 +25,9 @@ const ExploreMarket = () => {
       stopOnHover={true}
       showThumbs={false}
       >
-        {slide("/Assets/Images/village market desktop.png")}
-        {slide("/Assets/Images/village market-2.png")}
-        {slide("/Assets/Images/Banana bg-1.png")}
+        {slide("/Assets/Images/villagemarket mobile.png")}
+        {slide("/Assets/Images/village market-2 mobile.png")}
+        {slide("/Assets/Images/Banana bg-1 mobile.png")}
       </Carousel>
     </section>
   );
