@@ -27,6 +27,13 @@ main{
 body{
   background-color: #000;
 }
+main{
+  background-color: #fff;
+}
+footer{
+  background-color: var(--deep-blue);
+  color: #fff;
+}
 a{
   /* font-size: 24px; */
   font-size: 18px;
@@ -169,7 +176,9 @@ button.ctaBgWhite{
 .border-bottom:hover{
  border-bottom: 2px solid white;
 }
-
+.border-custom-color{
+  border-color: var(--deep-blue);
+}
 /*Slider*/
 .slick-slide > div{
   margin: 0 10px;
