@@ -2,14 +2,14 @@
 # TraveandMeal
 
 ## Problem Scope
-Traveling often leads to inconveniences for fast-food customers, especially during road journeys. Long queues, delayed customer service, and a lack of streamlined food ordering systems can reduce the overall travel experience. TravelandMeal aims to address these challenges by providing a seamless solution that combines road travel with efficient and convenient food ordering for road travelers.
+Dining while travelling often leads to inconveniences for passengers mostly which are fast-food customers, especially during road journeys. Long queues, delayed customer service, and a lack of streamlined food ordering systems can reduce the overall travel experience. TravelandMeal aims to address these challenges by providing a seamless solution that combines road travel with efficient and convenient food ordering for road travellers.
 
 ## Objectives
-* **Enhance Culinary Experience:** Improve the overall dining experience for travelers by allowing them to order food effortlessly during their journeys.
+* **Enhance Culinary Experience:** Improve the overall dining experience for travellers by allowing them to order food effortlessly during their journeys.
 
 * **Minimize Wait Times:** Eliminate the need for long queues and extended waiting times at fast-food points by enabling customers to pre-order meals.
 
-* **Streamline Roadside Dining:** Facilitate a smooth process for both customers and fast-food establishments, creating a harmonious environment for road travelers.
+* **Streamline Roadside Dining:** Facilitate a smooth process for both customers and fast-food establishments, creating a harmonious environment for road travellers.
 
 ## Features
 
