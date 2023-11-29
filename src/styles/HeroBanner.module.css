@@ -1,7 +1,7 @@
 .heroSection{
   justify-content: center;
   align-items: center;
-background-color: blueviolet;
+background-color: #f77f00;
 position: relative;
 z-index: 1;
 }

@@ -8,7 +8,7 @@ import getIsMobile from "./IsMobile";
 
 const ExploreMarket = ({ isMobile }) => {
   const [intervalz, setIntervalz] = useState(3000);
-
+  
   return (
     <section className={styles.villageSection}>
       <Carousel
@@ -34,9 +34,8 @@ const ExploreMarket = ({ isMobile }) => {
         <Image
           src={`/Assets/Images/${isMobile ? mobileImage : desktopImage}.png`}
           alt="Carousel Image"
-          width={100}
-          height={100}
-          style={{ width: '100%', height: 'auto' }}
+          width={1000}
+          height={1000}
         />
         <div className={styles.exploreContainer}>{textContainer()}</div>
       </div>

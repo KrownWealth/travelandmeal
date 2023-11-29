@@ -29,6 +29,7 @@ body{
 }
 main{
   background-color: #fff;
+  
 }
 footer{
   background-color: var(--deep-blue);
@@ -67,8 +68,7 @@ h1{
 
 /* For How it works headings and some other headding*/
 h2{
-  /* font-size: 24px; */
-  font-size: 32px;
+  font-size: 24px;
   font-family: 'Raleway', 'Montserrat' sans-serif;
   font-weight: 700;
   line-height: 40px;
@@ -201,11 +201,29 @@ button.ctaBgWhite{
   }
   
 
+.exclusive{
+
+  position: relative;
+  height: 400px;
+  background: url(/Assets/Images/burgerbg.jpg) center/cover;
+  filter: brightness(80%) contrast(150%); /* Adjust filter properties as needed */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
 
 @media (min-width: 768px) {
 
   h1{
     font-size: 48px;
+  }
+  h2{
+    font-size: 32px;
   }
   button.arrowBtn{
     align-items: left;
