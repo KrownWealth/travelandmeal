@@ -37,10 +37,9 @@ const TopRestaurants = () => {
             <Image
               src={restaurant.imgSrc}
               alt="Sunset in the mountains"
-              objectFit="cover"
-              width={200}
+             width={200}
               height={200}
-              className="items-center justify-center mx-auto"
+              className="cover items-center justify-center mx-auto"
             />
             <div className="px-6 py-4">
               <div className="flex justify-between items-center pb-4">

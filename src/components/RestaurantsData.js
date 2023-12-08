@@ -1,6 +1,6 @@
 "use client"
 
- const Restaurants  = 
+export const Restaurants  = 
   [
   {
     id:0,

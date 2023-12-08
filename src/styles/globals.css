@@ -120,10 +120,6 @@ header{
   /* padding: 0px 10px 0 10px;  */
 }
 
-.logo img {
-  padding-top: 1rem;
- height: 100px;
-}
 .topNav {
   display: flex;
   justify-content: flex-end;
@@ -214,6 +210,39 @@ button.ctaBgWhite{
   align-items: center;
 
 
+}
+
+/*How it works*/
+.imageContainer {
+  position: relative;
+}
+
+.redCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.animatedImage {
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 

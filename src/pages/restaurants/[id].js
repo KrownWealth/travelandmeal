@@ -3,19 +3,31 @@ import Image from "next/image";
 import { IoLocationOutline } from "react-icons/io5";
 import { BsFillArrowDownCircleFill } from "react-icons/bs";
 import SoupMenu from "@/components/SoupMenu";
-import ComboMenu from "@/components/ComboMenu";
-import RiceMenu from "@/components/RiceMenu";
 import Restaurants from "@/components/RestaurantsData";
-import ProteinMenu from "@/components/ProteinMenu";
-import SnackMenu from "@/components/SnackMenu";
-import WaterMenu from "@/components/WaterMenu";
+import React, { useState } from "react"
+import CartModal from "@/components/CartModal";
+import { useCart } from "@/contexts/CartContext";
 
+const EachRestaurants = ({handleAddItem}) => {
 
-
-const EachRestaurants = () => {
   const router = useRouter();
   const { id } = router.query;
   const restaurantId = parseInt(id, 10);
+
+  const [showCartModal, setShowCartModal] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+  const { addToCart } = useCart();
+
+  const handleOpenCart = (item) => {
+    setSelectedItem(item);
+    setShowCartModal(true);
+    addToCart(item); 
+  };
+
+  const handleCloseCart = () => {
+    setShowCartModal(false);
+    setSelectedItem(null);
+  };
 
   // Find the restaurant with the matching ID in the data source
   const restaurant = Restaurants.find((r) => r.id === restaurantId);
@@ -23,8 +35,6 @@ const EachRestaurants = () => {
   if (!restaurant) {
     return <div>Restaurant not found</div>;
   }
-
-
   return (
     <section className="pt-24 pb-40 bg-white">
       <div className="lg:pl-16 flex flex-row bg-light-orange-2 justify-between">
@@ -63,26 +73,14 @@ const EachRestaurants = () => {
       </div>
       <hr />
       <div className="px-8 w-[100%] lg:w-[50%] mx-auto justify-center items-center bg-white  border-x-2">
-       <SoupMenu restaurant={restaurant}  />
-        <br />
-        <hr />
-       <ComboMenu restaurant={restaurant}  />
-        <br />
-        <hr />
-        <RiceMenu restaurant={restaurant}  />
-        <br />
-        <hr />
-        <ProteinMenu restaurant={restaurant}  />
-        <br />
-        <hr />
-        <SnackMenu restaurant={restaurant}  />
-        <br />
-        <hr />
-        <WaterMenu restaurant={restaurant}  />
+      <SoupMenu restaurant={restaurant}
+       handleOpenCart={handleOpenCart} 
+      handleAddItem={handleAddItem}/>
         <br />
         <hr />
       </div>
-     
+      <CartModal isOpen={showCartModal} onClose={handleCloseCart} />
+       
     </section>
   );
 };

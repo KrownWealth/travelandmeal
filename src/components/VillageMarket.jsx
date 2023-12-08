@@ -17,7 +17,7 @@ const VillageMarket = () => {
       <h2>Your favorite local restaurants</h2>
 <h3>Get a slice of pizza or the whole pie delivered, or pick up house lo mein from the Chinese takeout spot youve been meaning to try.
       </h3>
-      <button className="longBtn"><Link href="">Find Fast-Food</Link></button>
+      <button className="longBtn"><Link href="/restaurants/">Find Fast-Food</Link></button>
         </div>
       <div className="basis-full lg:basis-2/3  hidden lg:block mt-10">
       <Image src="/Assets/Images/Crave For-1.png" alt="Food cravings" width={1000} height={700} objectFit="cover"  className="" />
@@ -34,11 +34,12 @@ const VillageMarket = () => {
        <Image src="/Assets/Images/testing-bg.jpg" alt="banana on vendor table" width={1000} height={700} objectFit="cover"/>
        </div>
        <div className="basis-full lg:basis-1/3 pt-12 lg:pt-12 lg:text-left space-y-6">
-       <h1>Gift Items on the Go.</h1>
-       <h2>Your favorite road-side local fast-food</h2>
- <h3>Get a slice of pizza or the whole pie delivered, or pick up house lo mein from the Chinese takeout spot you&apos;ve been meaning to try.
-       </h3>
-       <button className="longBtn"><Link href="">Find Fast-Food</Link></button>
+       <h1>Traveler&apos;s Delight On the Go!</h1>
+       <h2>Your favorite road-side Restaurants</h2>
+ <h3>Order your favorite African foods, intercontinental dishes, snacks, fruit items, suya spot for your journey. 
+Pick up your items seamlessly when your bus makes a stop at our vetted restaurants place.
+</h3>
+       <button className="longBtn"><Link href="/cuisines/retaurants-lagos-benin-road-ore">Order Now</Link></button>
          </div>
       
        

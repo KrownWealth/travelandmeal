@@ -5,11 +5,14 @@ import Link from "next/link";
 import { FaShoppingCart } from "react-icons/fa";
 import Modal from "./Modal";
 import SuccessMessage from "./SuccessMessage";
+import { useCart } from "@/contexts/CartContext";
 
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const { cartItems } = useCart();
+
 
   const handleSignInClick = () => {
     setShowModal(true);
@@ -29,10 +32,10 @@ const Header = () => {
         <div className="logo">
           <Link href="/">
             <Image
-              src="/Assets/Images/TravelandMeal.svg"
+              src="/Assets/Images/TM.svg"
               alt="logo"
-              width={250}
-              height={250}
+              width={500}
+              height={500}
               className="block lg:hidden"
             />
           </Link>
@@ -40,9 +43,9 @@ const Header = () => {
             <Image
               src="/Assets/Images/TravelandMeal desktoplogo.svg"
               alt="logo"
-              width={400}
-              height={100}
-              className="hidden lg:block w-[80%]"
+              width={300}
+              height={300}
+              className="hidden lg:block pt-4 "
             />
           </Link>
         </div>
@@ -61,10 +64,12 @@ const Header = () => {
           </button>
           <div className="pt-2 text-[#d62828] text-2xl hidden lg:block" id="">
             <FaShoppingCart />
+            <span className="ml-2">{cartItems.length}</span>
           </div>
         </div>
       </div>
       {showModal && <Modal onClose={handleCloseModal} onSuccess={() => setShowSuccessModal(true)} />}
+      
       {showSuccessModal && <SuccessMessage onClose={() => setShowSuccessModal(false)} onSignInClick={handleSignInClick} />}
 
     </>
