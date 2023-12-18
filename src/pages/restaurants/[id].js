@@ -1,40 +1,79 @@
+"use client";
+
+import React, { useState, useEffect  } from "react";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import { IoLocationOutline } from "react-icons/io5";
 import { BsFillArrowDownCircleFill } from "react-icons/bs";
-import SoupMenu from "@/components/SoupMenu";
+import MenusCard from "@/components/MenusCard";
 import Restaurants from "@/components/RestaurantsData";
-import React, { useState } from "react"
-import CartModal from "@/components/CartModal";
+import { QuantityModal } from "@/components/carts/CartModal";
+import Image from "next/image";
 import { useCart } from "@/contexts/CartContext";
 
-const EachRestaurants = ({handleAddItem}) => {
+
+const EachRestaurants = ({ 
+  menuItem,
+  loading
+ }) => {
+
 
   const router = useRouter();
   const { id } = router.query;
   const restaurantId = parseInt(id, 10);
+  const [quantity, setQuantity] = useState(1);
+  const [quantityModalOpen, setQuantityModalOpen] = useState(false);
+  const [selectedMenuItem, setSelectedMenuItem] = useState(null);
+  const { addToCart, cartItems } = useCart();
 
-  const [showCartModal, setShowCartModal] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(null);
-  const { addToCart } = useCart();
-
-  const handleOpenCart = (item) => {
-    setSelectedItem(item);
-    setShowCartModal(true);
-    addToCart(item); 
-  };
-
-  const handleCloseCart = () => {
-    setShowCartModal(false);
-    setSelectedItem(null);
-  };
-
-  // Find the restaurant with the matching ID in the data source
+  useEffect(() => {
+    console.log("Cart items after update:", cartItems);
+  }, [cartItems]);
+  
+  
   const restaurant = Restaurants.find((r) => r.id === restaurantId);
 
   if (!restaurant) {
     return <div>Restaurant not found</div>;
   }
+  
+
+  const openQuantityModal = (menuItem, defaultQuantity ) => {
+    setSelectedMenuItem(menuItem);
+    setQuantity(defaultQuantity);
+    setQuantityModalOpen(true);
+  } 
+
+  const closeQuantityModal = () => {
+    setSelectedMenuItem(null);
+    setQuantity(1);
+    setQuantityModalOpen(false);
+  };
+ 
+  const handleAdd = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const handleSubtract = () => {
+    setQuantity(Math.max(quantity - 1, 1));
+  };
+
+  const handleTotal = () => {
+    return quantity * (parseFloat(selectedMenuItem?.price) || 1);
+  }
+ 
+const handleAddToCart = (event) => {
+  event.preventDefault();
+  const total = handleTotal();
+  const cartItem = {
+    ...selectedMenuItem,
+    quantity,
+    total,
+  };
+  addToCart(cartItem);
+  setQuantityModalOpen(false);
+};
+
+
   return (
     <section className="pt-24 pb-40 bg-white">
       <div className="lg:pl-16 flex flex-row bg-light-orange-2 justify-between">
@@ -73,14 +112,41 @@ const EachRestaurants = ({handleAddItem}) => {
       </div>
       <hr />
       <div className="px-8 w-[100%] lg:w-[50%] mx-auto justify-center items-center bg-white  border-x-2">
-      <SoupMenu restaurant={restaurant}
-       handleOpenCart={handleOpenCart} 
-      handleAddItem={handleAddItem}/>
+        {loading ? (
+          <div>
+            <h2>Laoding Products...</h2>
+          </div>
+        ) : (
+          
+          <MenusCard
+          restaurant={restaurant}
+          isOpen={openQuantityModal}
+          onClose={closeQuantityModal}
+          onAdd={handleAdd}
+  onSubtract={handleSubtract}
+  onAddToCart={handleAddToCart}
+  selectedMenuItem={selectedMenuItem}
+  handleTotal={handleTotal}
+         
+          />
+        )}
         <br />
         <hr />
       </div>
-      <CartModal isOpen={showCartModal} onClose={handleCloseCart} />
-       
+
+      {(quantityModalOpen &&
+  <QuantityModal
+    isOpen={quantityModalOpen}
+    onClose={closeQuantityModal}
+    quantity={quantity}
+    onAdd={handleAdd}
+    onSubtract={handleSubtract}
+    onAddToCart={handleAddToCart}
+    selectedMenuItem={selectedMenuItem}
+    handleTotal={handleTotal}
+    updatePrice={handleTotal} 
+  />
+)}
     </section>
   );
 };

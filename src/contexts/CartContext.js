@@ -1,46 +1,27 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState } from 'react';
 
-export const CartContext = createContext();
+const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [cart, setCart] = useState([]);
+  
 
-   useEffect(() => {
-    async function fetchProducts() {
-      try {
-        const response = await fetch('/api/products'); 
-        const productsData = await response.json();
-        setCartItems(productsData); 
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching products:', error);
-       setLoading(false);
-      }
-    }
-
-    fetchProducts();
-  }, []);
-
-  const addToCart = (product) => {
-    setCart((prevCart) => [...prevCart, product]);
+  const addToCart = (item) => {
+    // console.log("Adding to cart:", item);
+    setCartItems((prevItems) => [
+      ...prevItems,
+      item
+    ]);
   };
   
-  const removeFromCart = (productId) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
-  };
-  
+
   return (
-    <CartContext.Provider value={{ cartItems, loading, cart, addToCart}}>
+    <CartContext.Provider value={{ cartItems, addToCart }}>
       {children}
     </CartContext.Provider>
   );
- 
 };
 
 export const useCart = () => {
   return useContext(CartContext);
 };
-
-//

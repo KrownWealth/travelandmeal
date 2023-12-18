@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 // import MailIcon from '@/components/MailIcon';
 // import LockIcon from '@/components/LockIcon';
-import useAuth from "../hooks/useAuth"
+import useAuth from "../../hooks/useAuth"
 
 
 

@@ -1,10 +1,10 @@
 import Image from "next/image"
 import styles from "@/styles/HeroBanner.module.css";
-import SearchBar from "./SearchBar";
+import SearchBar from "./authentication/SearchBar";
 import AlreadyUserBtn from "./AlreadyUserBtn";
 import { FaShoppingCart } from "react-icons/fa";
 import Link from "next/link";
-import Modal from "./Modal";
+import Modal from "./authentication/AuthModal";
 
 const HeroBanner = ({showModal, setShowModal}) => {
   const handleSignInClick = () => {

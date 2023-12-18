@@ -3,15 +3,13 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaShoppingCart } from "react-icons/fa";
-import Modal from "./Modal";
-import SuccessMessage from "./SuccessMessage";
-import { useCart } from "@/contexts/CartContext";
+import Modal from "./authentication/AuthModal";
+import SuccessMessage from "./authentication/SuccessMessage";
 
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
-  const { cartItems } = useCart();
 
 
   const handleSignInClick = () => {
@@ -64,7 +62,7 @@ const Header = () => {
           </button>
           <div className="pt-2 text-[#d62828] text-2xl hidden lg:block" id="">
             <FaShoppingCart />
-            <span className="ml-2">{cartItems.length}</span>
+            <span className="ml-2">0</span>
           </div>
         </div>
       </div>

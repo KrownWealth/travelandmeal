@@ -1,6 +1,6 @@
 
 import { FcGoogle } from "react-icons/fc";
-import useAuth from "../hooks/useAuth"
+import useAuth from "../../hooks/useAuth"
 
 
 const SignUpForm = ({ onSuccess }) => {

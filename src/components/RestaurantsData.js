@@ -33,28 +33,28 @@ export const Restaurants  =
         name: 'Egusi Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Egusi Soup',
-        price:'#100',
+        price: Number(100.00).toFixed(2),
         description: 'African Delicacies of soup'
       },
       {
         name: 'Okro Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Okro Soup',
-        price:'#100',
+        price: Number(100.00).toFixed(2),
         description: 'African Delicacies of soup'
       },
       {
         name: 'Bitter-leaf Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Bitter-leaf Soup',
-        price:'#100',
+        price: Number(100.00).toFixed(2),
         description: 'African Delicacies of soup'
       },
       {
         name: 'Ogbonor Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Ogbonor Soup',
-        price:'#100',
+        price: Number(100.00).toFixed(2),
         description: 'African Delicacies of soup'
       },
     ],
@@ -63,28 +63,28 @@ export const Restaurants  =
         name: 'Egusi Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Egusi Soup',
-        price:'#100',
+        price: Number(100.00).toFixed(2),
         description: 'African Delicacies of soup'
       },
       {
         name: 'Okro Soup',
          imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Okro Soup',
-        price:'#100',
+        price: Number(100.00).toFixed(2),
         description: 'African Delicacies of soup'
       },
       {
         name: 'Bitter-leaf Soup',
          imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Bitter-leaf Soup',
-        price:'#100',
+        price: Number(100.00).toFixed(2),
         description: 'African Delicacies of soup'
       },
       {
         name: 'Ogbonor Soup',
          imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Ogbonor Soup',
-        price:'#100',
+        price: Number(100.00).toFixed(2),
         description: 'African Delicacies of soup'
       },
     ],
@@ -93,21 +93,21 @@ export const Restaurants  =
         name: 'White Rice',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Egusi Soup',
-        price:'#100',
+        price: Number(100.00).toFixed(2),
         description: 'African Delicacies of soup'
       },
       {
         name: 'Jollof Rice',
          imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Okro Soup',
-        price:'#100',
+        price: Number(100.00).toFixed(2),
         description: 'African Delicacies of soup'
       },
       {
         name: 'Fried Rice',
          imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Bitter-leaf Soup',
-        price:'#100',
+        price: Number(100.00).toFixed(2),
         description: 'African Delicacies of soup'
       },
     ],
@@ -116,28 +116,28 @@ export const Restaurants  =
         name: 'Cow Meat(Beef)',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Egusi Soup',
-        price:'#100',
+        price: Number(100.00).toFixed(2),
         description: 'African Delicacies of soup'
       },
       {
         name: 'Turkey',
          imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Okro Soup',
-        price:'#100',
+        price: Number(100.00).toFixed(2),
         description: 'African Delicacies of soup'
       },
       {
         name: 'Chicken',
          imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Bitter-leaf Soup',
-        price:'#100',
+        price: Number(100.00).toFixed(2),
         description: 'African Delicacies of soup'
       },
       {
         name: 'Ice-Fish',
          imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Ogbonor Soup',
-        price:'#100',
+        price: Number(100.00).toFixed(2),
         description: 'African Delicacies of soup'
       },
     ],
@@ -146,28 +146,28 @@ export const Restaurants  =
         name: 'Meatpie',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Egusi Soup',
-        price:'#100',
+        price: Number(100.00).toFixed(2),
         description: 'African Delicacies of soup'
       },
       {
         name: 'Chicken Pie',
          imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Okro Soup',
-        price:'#100',
+        price: Number(100.00).toFixed(2),
         description: 'African Delicacies of soup'
       },
       {
         name: 'Egg-roll',
          imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Bitter-leaf Soup',
-        price:'#100',
+        price: Number(100.00).toFixed(2),
         description: 'African Delicacies of soup'
       },
       {
         name: 'Doughnut',
          imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Ogbonor Soup',
-        price:'#100',
+        price: Number(100.00).toFixed(2),
         description: 'African Delicacies of soup'
       },
     ],
@@ -181,6 +181,7 @@ export const Restaurants  =
         name: 'Eva water small',
          imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Okro Soup',
+        price: Number(100.00).toFixed(2),
       },
     ]
   },
@@ -200,6 +201,7 @@ export const Restaurants  =
         name: 'Egusi Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Egusi Soup',
+
       },
       {
         name: 'Okro Soup',
