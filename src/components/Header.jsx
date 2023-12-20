@@ -5,12 +5,13 @@ import Link from "next/link";
 import { FaShoppingCart } from "react-icons/fa";
 import Modal from "./authentication/AuthModal";
 import SuccessMessage from "./authentication/SuccessMessage";
+import { useCart } from "@/contexts/CartContext"
 
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
-
+  const { cartItems } = useCart();
 
   const handleSignInClick = () => {
     setShowModal(true);
@@ -32,9 +33,9 @@ const Header = () => {
             <Image
               src="/Assets/Images/TM.svg"
               alt="logo"
-              width={500}
-              height={500}
-              className="block lg:hidden"
+              width={250}
+              height={250}
+              className="block lg:hidden pt-4"
             />
           </Link>
           <Link href="/">
@@ -43,7 +44,7 @@ const Header = () => {
               alt="logo"
               width={300}
               height={300}
-              className="hidden lg:block pt-4 "
+              className="hidden lg:block"
             />
           </Link>
         </div>
@@ -60,9 +61,12 @@ const Header = () => {
           <button onClick={handleSignUpClick} className="ctaBgWhite">
             Sign up
           </button>
-          <div className="pt-2 text-[#d62828] text-2xl hidden lg:block" id="">
-            <FaShoppingCart />
-            <span className="ml-2">0</span>
+          <div className="pt-2 text-[#d62828] text-2xl items-center">
+            <Link href="/cart" className="flex" >
+                <FaShoppingCart />
+                <span className="ml-2">{cartItems.length}</span>
+              
+            </Link>
           </div>
         </div>
       </div>

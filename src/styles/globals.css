@@ -113,6 +113,7 @@ header{
 }
 
 .navigation{
+  max-height: 100px;
   display: flex;
   flex-direction: row;
   /* background-color: #e9e2b7; */
@@ -121,6 +122,7 @@ header{
 }
 
 .topNav {
+ 
   display: flex;
   justify-content: flex-end;
   gap: 2rem;
@@ -174,6 +176,14 @@ button.ctaBgWhite{
 }
 .border-custom-color{
   border-color: var(--deep-blue);
+}
+
+/**Input field */
+input{
+  border-width: 1px;
+  border-color: #000;
+  margin-top: -12px;
+
 }
 /*Slider*/
 .slick-slide > div{

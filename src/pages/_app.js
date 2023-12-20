@@ -1,9 +1,9 @@
 import "@/styles/globals.css";
-
 import Layout from "../components/Layout";
 import { Raleway } from "next/font/google";
 import { CartProvider } from "@/contexts/CartContext";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -15,6 +15,7 @@ export default function App({ Component, pageProps }) {
     < CartProvider>
     <Layout>
       <Component {...pageProps} />
+      <ToastContainer />
     </Layout>
     </ CartProvider>
   );

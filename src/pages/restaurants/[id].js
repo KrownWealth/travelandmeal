@@ -9,6 +9,7 @@ import Restaurants from "@/components/RestaurantsData";
 import { QuantityModal } from "@/components/carts/CartModal";
 import Image from "next/image";
 import { useCart } from "@/contexts/CartContext";
+import { toast } from "react-toastify";
 
 
 const EachRestaurants = ({ 
@@ -23,12 +24,9 @@ const EachRestaurants = ({
   const [quantity, setQuantity] = useState(1);
   const [quantityModalOpen, setQuantityModalOpen] = useState(false);
   const [selectedMenuItem, setSelectedMenuItem] = useState(null);
-  const { addToCart, cartItems } = useCart();
+  const { cartItems, setCartItems } = useCart();
 
-  useEffect(() => {
-    console.log("Cart items after update:", cartItems);
-  }, [cartItems]);
-  
+
   
   const restaurant = Restaurants.find((r) => r.id === restaurantId);
 
@@ -61,18 +59,23 @@ const EachRestaurants = ({
     return quantity * (parseFloat(selectedMenuItem?.price) || 1);
   }
  
-const handleAddToCart = (event) => {
-  event.preventDefault();
-  const total = handleTotal();
-  const cartItem = {
-    ...selectedMenuItem,
-    quantity,
-    total,
+  const handleAddToCart = () => {
+    const total = handleTotal();
+    const newCartItem = {
+      ...selectedMenuItem,
+      quantity,
+      total,
+    };
+    setCartItems([...cartItems, newCartItem]); 
+    toast.success('Item added to cart!', {
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: 2000, 
+      hideProgressBar: true,
+      closeOnClick: true,
+     
+    });
+    setQuantityModalOpen(false);
   };
-  addToCart(cartItem);
-  setQuantityModalOpen(false);
-};
-
 
   return (
     <section className="pt-24 pb-40 bg-white">
@@ -123,7 +126,7 @@ const handleAddToCart = (event) => {
           isOpen={openQuantityModal}
           onClose={closeQuantityModal}
           onAdd={handleAdd}
-  onSubtract={handleSubtract}
+          onSubtract={handleSubtract}
   onAddToCart={handleAddToCart}
   selectedMenuItem={selectedMenuItem}
   handleTotal={handleTotal}

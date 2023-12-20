@@ -18,10 +18,7 @@ const MenusCard = ({ restaurant, quantity, setQuantity, isOpen }) => {
               <div key={menuType}>
                 <div className="flex mx-auto justify-center items-center">
                   {restaurant[menuType].map((menuItem) => (
-                    <div
-                      key={menuItem.name}
-                      className="rounded overflow-hidden shadow-lg m-4"
-                    >
+                    <div key={menuItem.name} className="rounded overflow-hidden shadow-lg m-4">
                       <Image
                         src={menuItem.imgSrc}
                         alt={menuItem.altText}

@@ -1,33 +1,27 @@
+import React from "react";
+import OrderDetails from "./OrderDetails"
+import Payment from "./Payment";
 import { useCart } from "@/contexts/CartContext";
-import Image from "next/image"
-import { useEffect } from "react";
+const calculateTotal = (items) => {
+  return items.reduce((total, item) => total + item.total, 0);
+};
+
+
 
 const CartPage = () => {
-  const { cartItems } = useCart();
-  
-  useEffect(() => {
-    console.log("Cart items updated:", cartItems);
-  }, [cartItems]);
+  const { cartItems } = useCart(); 
+  const totalCartPrice = calculateTotal(cartItems);
 
   return (
     <div className="pt-44 pb-24">
-      <h1>Cart Page</h1>
-      {cartItems.length === 0 ? (
-        <p>Your cart is empty.</p>
-      ) : (
-        <ul>
-          {cartItems.map((item) => (
-            <div key={item.id}>
-              <Image src={item.imgSrc} alt={item.name} width={50} height={50} />
-              <p>Name: {item.name}</p>
-              <p>Price: {item.price}</p>
-              <p>Quantity: {item.quantity}</p>
-              <p>Total: {item.total}</p>
-              {/* Add additional fields as needed, e.g., item.image, item.price */}
-            </div>
-          ))}
-        </ul>
-      )}
+      <h3 className="pl-4 lg:pl-16 font-bold">Continue Shopping</h3>
+    <div className="rounded w-[90%] mx-auto ">
+    <div className="flex flex-col lg:flex-row">
+     <div className="basis-full lg:basis-3/5 bg-white "><OrderDetails /></div>
+      <div className="basis-full lg:basis-2/5 bg-gray-100 pt-12  p-4">
+        <Payment total={totalCartPrice} /></div>
+     </div>
+    </div>
     </div>
   );
 };
