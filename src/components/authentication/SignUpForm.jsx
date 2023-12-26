@@ -1,16 +1,22 @@
-
+"use client"
 import { FcGoogle } from "react-icons/fc";
 import useAuth from "../../hooks/useAuth"
+import SuccessModal from "./SuccessModal";
 
-
-const SignUpForm = ({ onSuccess }) => {
+const SignUpForm = () => {
   const {
     userDetails,
     handleChange,
     handleSignUpSubmit,
-    errors } = useAuth();
+    errors,
+    showSuccessModal,
+    setShowSuccessModal,
+    showPassword,
+    togglePasswordVisibility,
+  } = useAuth();
 
   return (
+    <>
     <form onSubmit={handleSignUpSubmit}>
       <div className="pb-4 w-[100%]">
         <div className="flex flex-col space-y-2">
@@ -23,9 +29,6 @@ const SignUpForm = ({ onSuccess }) => {
             onChange={handleChange}
             className="h-8 rounded bg-gray-100"
             autoComplete="false"
-            // endContent={
-            //   <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-            // }
           />
           {errors.name && <p className="text-red-500">{errors.name}</p>}
         </div> 
@@ -60,9 +63,6 @@ const SignUpForm = ({ onSuccess }) => {
             onChange={handleChange}
             autoComplete="false"
             className="h-8 rounded bg-gray-100"
-            // endContent={
-            //   <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-            // }
           />
            {errors.phone && <p className="text-red-500">{errors.phone}</p>}
         </div>
@@ -72,16 +72,25 @@ const SignUpForm = ({ onSuccess }) => {
           <input
             id="password"
             name="password"
-            type="password"
-            value={ userDetails.password}
+            type={showPassword ? "text" : "password"}
+            value={userDetails.password}
             onChange={handleChange}
-            autoComplete="false"
+            autoComplete="off"
             className="h-8 rounded bg-gray-100"
-            // endContent={
-            //   <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-            // }
           />
-          {errors.password && <p className="text-red-500">{errors.password}</p>}
+           {errors.password && <p className="text-red-500">{errors.password}</p>}
+          <div className="flex">
+          <input
+              type="checkbox"
+              id="showPasswordCheckbox"
+              onChange={togglePasswordVisibility}
+              checked={showPassword}
+              className="mr-2 mt-1 cursor-pointer"
+            />
+            <label htmlFor="showPasswordCheckbox" className="text-blue-500 cursor-pointer">
+              {showPassword ? "Hide Password" : "Show Password"}
+            </label>
+          </div>
         </div>
       </div>
      
@@ -97,7 +106,7 @@ const SignUpForm = ({ onSuccess }) => {
           I Agree To The Terms And Conditions And Privacy Policy{" "}
         </label>
       </div>
-      <button onClick={onSuccess} type="submit" className="w-[100%] bg-[#d62828]">
+      <button type="submit" className="w-[100%] bg-[#d62828]">
         Sign Up
       </button>
       <div className="flex flex-row w-[100%] justify-center items-center mx-auto">
@@ -113,6 +122,12 @@ const SignUpForm = ({ onSuccess }) => {
         <span>Sign up using Google</span>
       </button>
     </form>
+    {showSuccessModal && (
+        <SuccessModal
+          onClose={() => setShowSuccessModal(false)}
+        />
+      )}
+    </>
   );
   };
 

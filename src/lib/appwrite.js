@@ -11,6 +11,6 @@ client
 .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID)
 
 export const account = new Account(client); 
-export const databases = new Databases(client);
 export { Client };
 export { ID } from 'appwrite';
+export const database = new Databases(client, process.env.NEXT_PUBLIC_APPWRITE_DATABASES_ID)

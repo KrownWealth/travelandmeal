@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import { useCart } from "@/contexts/CartContext";
 
-const calculateTotal = (items) => {
-  return items.reduce((total, item) => total + item.total, 0);
-};
 
 const Payment = ({total}) => {
   

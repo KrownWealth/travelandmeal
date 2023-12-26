@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaShoppingCart } from "react-icons/fa";
 import Modal from "./authentication/AuthModal";
-import SuccessMessage from "./authentication/SuccessMessage";
+import SuccessMessage from "./authentication/SuccessModal";
 import { useCart } from "@/contexts/CartContext"
+import { user } from "@/contexts/AuthContext";
+import { useRouter } from "next/navigation";
 
 
 const Header = () => {

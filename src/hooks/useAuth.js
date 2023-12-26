@@ -1,15 +1,22 @@
-// useAuth.js
+"use client"
 import { useState } from "react";
 import { account,ID } from "../../utils/appwrite";
+import { useRouter } from "next/router";
+
 
 export default function useAuth () {
-  const [userDetails, setUserDetails] = useState({
+  const [showPassword, setShowPassword] = useState(false);
+
+ 
+const [showSuccessModal, setShowSuccessModal] = useState(false);
+const [userDetails, setUserDetails] = useState({
     name: "",
     email: "",
     phone: "",
     password: "",
     checkbox: true,
   });
+
 
   const [errors, setErrors] = useState({
     name: "",
@@ -19,6 +26,9 @@ export default function useAuth () {
     checkbox: true,
   });
 
+const togglePasswordVisibility = () => {
+    setShowPassword((prev) => !prev);
+  };
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     const newFormData = { ...userDetails };
@@ -27,7 +37,7 @@ export default function useAuth () {
     if (name === "name") {
       newFormData[name] = value;
       newErrors[name] = value.length < 3 ? "Name is too short" : "";
-    } else if (name === "phone") {
+    } else  if (name === "phone") {
       const phoneRegex = /^\+234[789]\d{9}$/;
       const cleanedValue = value.replace(/\D/g, "");
       newFormData[name] =
@@ -54,49 +64,17 @@ export default function useAuth () {
     setErrors(newErrors);
   };
 
-  const handleSignUpSubmit = async (e) => {
+  const handleSignUpSubmit = (e) => {
     e.preventDefault();
-
-    if (errors.email || !userDetails.email) {
-      console.log("Invalid email. Please correct the email format.");
-      return;
-    }
-
-    try {
-      const { email, password, phone, name } = userDetails;
-      const newUser = await account.create(
-        ID.unique(),
-        email,
-        password,
-        phone,
-        name
-      );
-      if (newUser) {
-      await account.updatePhone(newUser.userId, phone, password);
-      await account.updatePassword(newUser.userId, password, "newPassword");
-        console.log("User signed up successfully:", newUser);
-      } else {
-        console.log("Error signing up user:", newUser);
-        onSuccess();
-      }
-    } catch (error) {
-      console.error("Error signing up user:", error);
-    }
-  };
-
+  const { email, password, phone, name } = userDetails;
+    
+ };
+  
+  
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
-
-    try {
-      await account.createSession(email, password);
-      // Redirect to home page upon successful login
-      window.location.href = "/";
-    } catch (error) {
-      console.error("Error logging in:", error);
-    }
+   
   };
-
-  
 
   return {
     userDetails,
@@ -104,5 +82,9 @@ export default function useAuth () {
     handleSignUpSubmit,
     handleLoginSubmit,
     errors,
+    showSuccessModal,
+    setShowSuccessModal,
+    showPassword,
+    togglePasswordVisibility,
   };
 };

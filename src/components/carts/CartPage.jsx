@@ -2,6 +2,8 @@ import React from "react";
 import OrderDetails from "./OrderDetails"
 import Payment from "./Payment";
 import { useCart } from "@/contexts/CartContext";
+
+
 const calculateTotal = (items) => {
   return items.reduce((total, item) => total + item.total, 0);
 };

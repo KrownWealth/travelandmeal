@@ -1,4 +1,4 @@
-import SuccessMessage from "@/components/authentication/SuccessMessage"
+import SuccessMessage from "@/components/authentication/SuccessModal"
 
 const userAuth = () => {
   return(

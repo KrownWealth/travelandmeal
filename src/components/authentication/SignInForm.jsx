@@ -11,11 +11,13 @@ const SignInForm = () => {
     userDetails,
     handleChange,
     handleLoginSubmit,
-    errors
+    errors,
+    showPassword,
+    togglePasswordVisibility,
   } = useAuth();
  
   return (
-    <form className="w-[100%]" onSubmit={handleLoginSubmit}>
+    <form className="w-[100%]">
       <button type="submit" className=" w-[100%] bg-[#003049]">
         <div className="absolute pl-[1rem] lg:pl-[10rem] pt-[0.4rem]">
           <FcGoogle />
@@ -49,23 +51,32 @@ const SignInForm = () => {
         <div className="flex flex-col space-y-2">
           <label>Password</label>
           <input
-            id="password"
-            name="password"
-            type="password"
-            value={userDetails.password}
-            onChange={handleChange}
-            autoComplete="false"
-            className="h-8 rounded bg-gray-100"
-            // endContent={
-            //   <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-            // }
-          />
+          id="password"
+          name="password"
+          type={showPassword ? "text" : "password"}
+          value={userDetails.password}
+          onChange={handleChange}
+          autoComplete="off"
+          className="h-8 rounded bg-gray-100"
+        />
            {errors.password && <p className="text-red-500">{errors.password}</p>}
+           <div className="flex">
+          <input
+              type="checkbox"
+              id="showPasswordCheckbox"
+              onChange={togglePasswordVisibility}
+              checked={showPassword}
+              className="mr-2 mt-1 cursor-pointer"
+            />
+            <label htmlFor="showPasswordCheckbox" className="text-blue-500 cursor-pointer">
+              {showPassword ? "Hide Password" : "Show Password"}
+            </label>
+          </div>
         </div>
       </div>
 
-      <button type="submit" className="w-[100%] bg-[#d62828]">
-       <Link href="/"> Sign In</Link>
+      <button onClick={handleLoginSubmit} className="w-[100%] bg-[#d62828]">
+      Sign In
       </button>
     </form>
   );

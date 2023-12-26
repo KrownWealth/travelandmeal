@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect  } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { IoLocationOutline } from "react-icons/io5";
 import { BsFillArrowDownCircleFill } from "react-icons/bs";
@@ -9,8 +9,7 @@ import Restaurants from "@/components/RestaurantsData";
 import { QuantityModal } from "@/components/carts/CartModal";
 import Image from "next/image";
 import { useCart } from "@/contexts/CartContext";
-import { toast } from "react-toastify";
-
+import SuccessModal from "@/components/carts/SuccessModal"
 
 const EachRestaurants = ({ 
   menuItem,
@@ -23,6 +22,7 @@ const EachRestaurants = ({
   const restaurantId = parseInt(id, 10);
   const [quantity, setQuantity] = useState(1);
   const [quantityModalOpen, setQuantityModalOpen] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [selectedMenuItem, setSelectedMenuItem] = useState(null);
   const { cartItems, setCartItems } = useCart();
 
@@ -41,6 +41,9 @@ const EachRestaurants = ({
     setQuantityModalOpen(true);
   } 
 
+const successModal = () => {
+
+}
   const closeQuantityModal = () => {
     setSelectedMenuItem(null);
     setQuantity(1);
@@ -67,15 +70,11 @@ const EachRestaurants = ({
       total,
     };
     setCartItems([...cartItems, newCartItem]); 
-    toast.success('Item added to cart!', {
-      position: toast.POSITION.TOP_RIGHT,
-      autoClose: 2000, 
-      hideProgressBar: true,
-      closeOnClick: true,
-     
-    });
+    setShowSuccessModal(true);
     setQuantityModalOpen(false);
   };
+
+
 
   return (
     <section className="pt-24 pb-40 bg-white">
@@ -150,6 +149,14 @@ const EachRestaurants = ({
     updatePrice={handleTotal} 
   />
 )}
+  {showSuccessModal && (
+  <>
+    {console.log("Rendering SuccessModal")}
+    <SuccessModal showSuccessModal={showSuccessModal} 
+     onClose={() => setShowSuccessModal(false)} />
+  </>
+)}
+
     </section>
   );
 };
