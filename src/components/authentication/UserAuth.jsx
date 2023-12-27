@@ -2,13 +2,14 @@ import { useState } from "react";
 import SignInForm from "./SignInForm";
 import SignUpForm from "./SignUpForm";
 
-const UserAuth = ({ onSuccess }) => {
+const UserAuth = ({ onSuccess, showSuccessModal, setShowSuccessModal }) => {
   const [activeForm, setActiveForm] = useState("signup")
 
   const toggleForm = (formType) => {
     setActiveForm(formType);
   };
-  
+
+
   return (
     <>
       <div className="flex flex-col-2 py-16 justify-center items-center">
@@ -33,9 +34,9 @@ const UserAuth = ({ onSuccess }) => {
           Sign Up
         </button>
       </div>
-
       {activeForm === "signin" && <SignInForm onSuccess={onSuccess} />}
-      {activeForm === "signup" && <SignUpForm onSuccess={onSuccess} />}
+      {activeForm === "signup" && <SignUpForm onSuccess={() => setShowSuccessModal(true)} />}
+      
     </>
   );
 };

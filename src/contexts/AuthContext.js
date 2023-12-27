@@ -1,16 +1,20 @@
 "use client"
 import { createContext, useContext, useEffect, useState } from "react";
-// import { account } from "../lib/appwrite"
-import { account } from "../../utils/appwrite";
+//import { account } from "../lib/appwrite"
+//import { account } from "../../utils/appwrite";
+import { account } from "@/lib/appwrite";
+
+
 const AuthContext = createContext();
 
 export function AuthProvider(props) {
   const [user, setUser] = useState(null);
 
-  async function signin(email, password) {
+  async function signin(userDetails) {
+   
     try {
-      const loggedIn = await account.createEmailSession(email, password);
-    setUser(loggedIn);
+      const loggedIn = await account.createEmailSession(userDetails.email, userDetails.password);
+      setUser(loggedIn)
     } catch (error) {
       alert("Error signing in!");
     }
@@ -21,14 +25,20 @@ export function AuthProvider(props) {
     setUser(null);
   }
 
-  async function signup(email, password, name) {
-   try {
-    await account.create(email, password, name);
-    await signin(email, password);
-   } catch (error) {
-    alert("Something went wrong in AuthContext!");
-   }
+  async function signup(userDetails) {
+    try {
+      await account.create(
+        ID.unique(),
+        userDetails.email,
+        userDetails.password,
+        userDetails.name
+      );
+      await signin(email, password);
+    } catch (error) {
+      console.error("Something went wrong in AuthContext!", error);
+    }
   }
+  
 
   async function init() {
     try {

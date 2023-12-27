@@ -71,52 +71,52 @@ export default Cuisines;
 const foodItems = [
   {
     id: 0,
-    img: "/Assets/Images/cuisines/egusi.png",
+    img: "/Assets/Images/menu/egusi.jpg",
     title: "Egusi Soup",
   },
   {
     id: 1,
-    img: "/Assets/Images/cuisines/egusi-2.jpg",
+    img: "/Assets/Images/menu/egusi.jpg",
     title: "Egusi Soup",
   },
   {
     id: 2,
-    img: "/Assets/Images/cuisines/egusi.png",
+    img: "/Assets/Images/menu/egusi.jpg",
     title: "Egusi Soup",
   },
   {
     id: 3,
-    img: "/Assets/Images/cuisines/egusi.png",
+    img: "/Assets/Images/menu/egusi.jpg",
     title: "Egusi Soup",
   },
   {
     id: 4,
-    img: "/Assets/Images/cuisines/egusi.png",
+    img: "/Assets/Images/menu/egusi.jpg",
     title: "Egusi Soup",
   },
   {
     id: 5,
-    img: "/Assets/Images/cuisines/egusi.png",
+    img: "/Assets/Images/menu/egusi.jpg",
     title: "Egusi Soup",
   },
   {
     id: 6,
-    img: "/Assets/Images/cuisines/egusi.png",
+    img: "/Assets/Images/menu/egusi.jpg",
     title: "Egusi Soup",
   },
   {
     id: 7,
-    img: "/Assets/Images/cuisines/egusi.png",
+    img: "/Assets/Images/menu/egusi.jpg",
     title: "Egusi Soup",
   },
   {
     id: 8,
-    img: "/Assets/Images/cuisines/egusi.png",
+    img: "/Assets/Images/menu/egusi.jpg",
     title: "Egusi Soup",
   },
   {
     id: 9,
-    img: "/Assets/Images/cuisines/egusi.png",
+    img: "/Assets/Images/menu/egusi.jpg",
     title: "Egusi Soup",
   },
 ];

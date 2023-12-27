@@ -1,90 +1,90 @@
 "use client"
-import { useState } from "react";
-import { account,ID } from "../../utils/appwrite";
+import React, { useState, useEffect } from "react";
+import { account, ID } from "../../utils/appwrite";
+//import { useUser } from "@/contexts/AuthContext";
 import { useRouter } from "next/router";
 
-
-export default function useAuth () {
+export default function useAuth() {
   const [showPassword, setShowPassword] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const navigate = useRouter()
 
- 
-const [showSuccessModal, setShowSuccessModal] = useState(false);
-const [userDetails, setUserDetails] = useState({
-    name: "",
+  const [userDetails, setUserDetails] = useState({
     email: "",
-    phone: "",
     password: "",
-    checkbox: true,
+    name: "",
+    checkbox: false, 
   });
-
 
   const [errors, setErrors] = useState({
-    name: "",
-    email: "",
-    phone: "",
+   email: "",
     password: "",
-    checkbox: true,
+    name: "",
+    checkbox: false, 
   });
 
-const togglePasswordVisibility = () => {
+
+  const togglePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
   };
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     const newFormData = { ...userDetails };
     const newErrors = { ...errors };
 
-    if (name === "name") {
+    if (name === "name" || name === "email" || name === "password") {
       newFormData[name] = value;
-      newErrors[name] = value.length < 3 ? "Name is too short" : "";
-    } else  if (name === "phone") {
-      const phoneRegex = /^\+234[789]\d{9}$/;
-      const cleanedValue = value.replace(/\D/g, "");
-      newFormData[name] =
-        cleanedValue.length === 10 ? `+234${cleanedValue}` : value;
-      newErrors[name] = !phoneRegex.test(newFormData[name])
-        ? "Do not include the first 0 digit"
-        : "";
-    } else if (name === "email") {
-      newFormData[name] = value;
-      newErrors[name] = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
-        ? "Enter a valid email"
-        : "";
-    } else if (name === "password") {
-      newFormData[name] = value;
-      newErrors[name] = value.length < 8 ? "Password must be 8 characters" : "";
+      newErrors[name] = value.length < 3 ? `${name} is too short` : "";
     } else if (name === "checkbox") {
       newFormData[name] = checked;
-      newErrors[name] = !checked
-        ? "Please agree to the terms and conditions"
-        : "";
+      newErrors[name] = !checked ? "Please agree to the terms and conditions" : "";
     }
 
     setUserDetails(newFormData);
     setErrors(newErrors);
   };
 
-  const handleSignUpSubmit = (e) => {
+  const handleSignUpSubmit = async (e) => {
     e.preventDefault();
-  const { email, password, phone, name } = userDetails;
+    try {
+      const { email, password, name } = userDetails;
+      console.log("Submitting SignUp Form:", { email, password, name });
     
- };
-  
-  
+      await account.create(
+        ID.unique(),
+        email,
+        password,
+        name
+      );
+      setShowSuccessModal(true);
+  console.log(userDetails)
+  }catch(error){
+console.log("Error signup", error)
+  }
+
+  };
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
-   
+    try {
+      const loggedIn = await account.createEmailSession(userDetails.email, userDetails.password);
+      setUserDetails(loggedIn);
+      navigate.replace("/");
+    } catch (error) {
+      console.error("Error Signin", error);
+    }
   };
+
 
   return {
     userDetails,
     handleChange,
-    handleSignUpSubmit,
-    handleLoginSubmit,
     errors,
     showSuccessModal,
     setShowSuccessModal,
     showPassword,
+    handleSignUpSubmit,
+    handleLoginSubmit,
     togglePasswordVisibility,
   };
-};
+}
