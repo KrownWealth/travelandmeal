@@ -4,6 +4,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import { FaStar } from "react-icons/fa";
 import Restaurants from "./RestaurantsData";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
+import Link from "next/link";
 
 const TopRestaurants = () => {
   const [visibleItems, setVisibleItems] = useState(3);
@@ -30,7 +31,7 @@ const TopRestaurants = () => {
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
         {Restaurants.slice(0, visibleItems).map((restaurant) => (
-          <div
+          <Link href={`/restaurants/${restaurant.id}`}
             key={restaurant.id}
             className="max-w-sm rounded overflow-hidden shadow-lg bg-white"
           >
@@ -84,13 +85,13 @@ const TopRestaurants = () => {
                 </span>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
       <div className="pt-16 flex justify-center items-center">
         {visibleItems < Restaurants.length && (
           <button className="w-[280px]" onClick={handleVisibility}>
-            View All Fast-food
+           Load More Fast-food
           </button>
         )}
       </div>

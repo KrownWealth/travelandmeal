@@ -21,7 +21,7 @@ const ExploreMarket = ({ isMobile }) => {
         stopOnHover={true}
         showThumbs={false}
       >
-        {slide("villagemarket", "village market desktop")}
+        {slide("villagemarket mobile", "village market desktop")}
         {slide("village market-2 mobile", "village market-2")}
         {slide("Banana bg-1 mobile", "Banana bg-1")}
       </Carousel>
@@ -33,7 +33,7 @@ const ExploreMarket = ({ isMobile }) => {
       <div className={styles.villageImg}>
         <Image
           src={`/Assets/Images/${isMobile ? mobileImage : desktopImage}.png`}
-          alt="Carousel Image"
+          alt="Explore village market"
           width={1000}
           height={1000}
         />

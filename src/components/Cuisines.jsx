@@ -76,8 +76,8 @@ const foodItems = [
   },
   {
     id: 1,
-    img: "/Assets/Images/menu/egusi.jpg",
-    title: "Egusi Soup",
+    img: "/Assets/Images/menu/afang with semo.jpg",
+    title: "Afang soup",
   },
   {
     id: 2,
@@ -86,37 +86,37 @@ const foodItems = [
   },
   {
     id: 3,
-    img: "/Assets/Images/menu/egusi.jpg",
-    title: "Egusi Soup",
+    img: "/Assets/Images/menu/eba with vegetable.jpg",
+    title: "Vegetable Soup",
   },
   {
     id: 4,
-    img: "/Assets/Images/menu/egusi.jpg",
-    title: "Egusi Soup",
+    img: "/Assets/Images/menu/jollof rice.jpg",
+    title: "Jollof rice",
   },
   {
     id: 5,
-    img: "/Assets/Images/menu/egusi.jpg",
-    title: "Egusi Soup",
+    img: "/Assets/Images/menu/small chops.jpg",
+    title: "Small chops",
   },
   {
     id: 6,
-    img: "/Assets/Images/menu/egusi.jpg",
-    title: "Egusi Soup",
+    img: "/Assets/Images/menu/shawarma roll.jpg",
+    title: "Shawarma roll",
   },
   {
     id: 7,
-    img: "/Assets/Images/menu/egusi.jpg",
-    title: "Egusi Soup",
+    img: "/Assets/Images/menu/meatpie.jpg",
+    title: "Meatpie",
   },
   {
     id: 8,
-    img: "/Assets/Images/menu/egusi.jpg",
-    title: "Egusi Soup",
+    img: "/Assets/Images/menu/yam porridge.jpg",
+    title: "Yam porridge",
   },
   {
     id: 9,
-    img: "/Assets/Images/menu/egusi.jpg",
-    title: "Egusi Soup",
+    img: "/Assets/Images/menu/whiterice.jpg",
+    title: "White rice",
   },
 ];
