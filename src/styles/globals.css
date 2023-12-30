@@ -124,8 +124,7 @@ header{
 .topNav {
  
   display: flex;
-  justify-content: flex-end;
-  gap: 2rem;
+  gap: 4rem;
   padding: 2rem;
 }
 
@@ -278,7 +277,7 @@ input{
 .input-field {
   width: 100%;
   padding: 10px;
-  text-align: center;
+  text-align: start;
 }
 
 @media (min-width: 768px) {

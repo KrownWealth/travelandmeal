@@ -16,7 +16,7 @@ const Modal = ({ show, onClose,onSuccess }) => {
             <button onClick={onClose}  className="pointer bg-transparent text-black text-xl"><FaRegTimesCircle /></button>
           </div>
           <div className={styles.modalBody}>
-          <UserAuth onSuccess={onSuccess} />
+              <UserAuth onSuccess={onSuccess} />
           </div>
         </div>
       </div>

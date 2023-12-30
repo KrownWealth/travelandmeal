@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "@/styles/HeroBanner.module.css";
-import SearchBar from "./authentication/SearchBar";
+import SearchBar from "./SearchBar";
 import AlreadyUserBtn from "./AlreadyUserBtn";
 import { FaShoppingCart } from "react-icons/fa";
 import Link from "next/link";
@@ -42,7 +42,7 @@ const HeroBanner = ({showModal, setShowModal}) => {
       <div className={styles.heroText}>
         <h1 className="text-white py-6">Explore RoadSide Fast-food and more.</h1>
       <SearchBar />
-        <AlreadyUserBtn />
+        <AlreadyUserBtn handleSignInClick={handleSignInClick} />
 
       </div>
       

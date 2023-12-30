@@ -2,18 +2,18 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaUser} from "react-icons/fa";
 import Modal from "./authentication/AuthModal";
 import SuccessMessage from "./authentication/SuccessModal";
 import { useCart } from "@/contexts/CartContext"
-import { user } from "@/contexts/AuthContext";
-import { useRouter } from "next/navigation";
-
+import { useUser } from "@/contexts/AuthContext";
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const { cartItems } = useCart();
+  const { user } = useUser(); 
 
   const handleSignInClick = () => {
     setShowModal(true);
@@ -50,19 +50,24 @@ const Header = () => {
             />
           </Link>
         </div>
-        <div className="topNav">
-          <p className="text-[#d62828] pt-2 lg:block hidden">
+        <div className="text-header text-[#d62828] lg:block hidden text-center pt-8">
+          <p >
             Need help with your order? Please Call 0700 0000 000
-          </p>
+          </p></div>
+        <div className="topNav">
           <Link href="" className="pt-1 hover:border-b-2 hover:border-[#d62828] hover:text-[#d62828] text-xl lg:block hidden">
             Fast-foods
           </Link>
-          <button onClick={handleSignInClick} className="ctaBgRed">
-            Sign in
-          </button>
-          <button onClick={handleSignUpClick} className="ctaBgWhite">
-            Sign up
-          </button>
+          
+          <div className="text-[#d62828] text-2xl items-center space-x-4">
+            <button onClick={handleSignInClick} className="ctaBgRed">
+              Sign in
+            </button>
+            <button onClick={handleSignUpClick} className="ctaBgWhite">
+              Sign up
+            </button>
+          </div>
+       
           <div className="pt-2 text-[#d62828] text-2xl items-center">
             <Link href="/cart" className="flex" >
                 <FaShoppingCart />
@@ -70,6 +75,19 @@ const Header = () => {
               
             </Link>
           </div>
+          <div className="pt-2 text-[#d62828] text-2xl items-center">
+          <div
+            className="flex flex-col items-center"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <FaUser />
+            {user && isHovered && (
+              <span className="ml-2 hover:underline cursor-pointer">{user.name}</span>
+            )}
+            {!user && isHovered && <span className="ml-2 text-base">Not signed in</span>}
+          </div>
+        </div>
         </div>
       </div>
       {showModal && <Modal onClose={handleCloseModal} onSuccess={() => setShowSuccessModal(true)} />}

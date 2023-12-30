@@ -3,7 +3,7 @@ import useAuth from "../../hooks/useAuth";
 import SuccessModal from "./SuccessModal";
 import { AiOutlineMail } from "react-icons/ai";
 import { IoLockClosedOutline } from "react-icons/io5";
-
+import LoadingModal from "../LoadingModal";
 import { FaRegUser } from "react-icons/fa";
 
 const SignUpForm = () => {
@@ -16,11 +16,14 @@ const SignUpForm = () => {
     showPassword,
     handleSignUpSubmit,
     togglePasswordVisibility,
+    loading,
   } = useAuth();
 
   return (
     <>
       <form onSubmit={handleSignUpSubmit}>
+      {loading && <LoadingModal />} 
+      
         <div className="pb-4 w-[100%] relative">
           <div className="flex flex-col space-y-2">
             <label>Full Name</label>
@@ -103,7 +106,7 @@ const SignUpForm = () => {
             I Agree To The Terms And Conditions And Privacy Policy
           </label>
         </div>
-        <button type="submit" className="w-[100%] bg-[#d62828]">
+        <button type="submit" disabled={loading} className="w-[100%] bg-[#d62828]">
           Sign Up
         </button>
         <div className="flex flex-row w-[100%] justify-center items-center mx-auto">

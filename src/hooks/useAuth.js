@@ -1,13 +1,15 @@
 "use client"
 import React, { useState, useEffect } from "react";
 import { account, ID } from "../../utils/appwrite";
-//import { useUser } from "@/contexts/AuthContext";
 import { useRouter } from "next/router";
+import { useUser } from "@/contexts/AuthContext";
 
 export default function useAuth() {
   const [showPassword, setShowPassword] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
-  const navigate = useRouter()
+  const [loading, setLoading] = useState(false);
+  const { loginUser} = useUser();
+  const navigate = useRouter();
 
   const [userDetails, setUserDetails] = useState({
     email: "",
@@ -48,6 +50,7 @@ export default function useAuth() {
   const handleSignUpSubmit = async (e) => {
     e.preventDefault();
     try {
+      setLoading(true);
       const { email, password, name } = userDetails;
       console.log("Submitting SignUp Form:", { email, password, name });
     
@@ -57,23 +60,38 @@ export default function useAuth() {
         password,
         name
       );
+      await account.createVerification(email, "http://localhost:3000/verification");
+
+       loginUser({ email, name });
       setShowSuccessModal(true);
+      onSuccess();
   console.log(userDetails)
   }catch(error){
 console.log("Error signup", error)
+  } finally {
+    setLoading(false); 
+   
   }
 
   };
-  const handleLoginSubmit = async (e) => {
+  const handleLoginSubmit = async (e, closeModalCallback) => {
     e.preventDefault();
     try {
-      const loggedIn = await account.createEmailSession(userDetails.email, userDetails.password);
+      const loggedIn = await account.createEmailSession(
+        userDetails.email,
+        userDetails.password
+      );
+     
+      loginUser(loggedIn);
       setUserDetails(loggedIn);
+      closeModalCallback();
+      onSuccess();
       navigate.replace("/");
     } catch (error) {
       console.error("Error Signin", error);
     }
   };
+
 
 
   return {
@@ -86,5 +104,6 @@ console.log("Error signup", error)
     handleSignUpSubmit,
     handleLoginSubmit,
     togglePasswordVisibility,
+    loading,
   };
 }

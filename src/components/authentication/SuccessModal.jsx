@@ -1,6 +1,9 @@
 import { FaCheck } from "react-icons/fa";
+import Link from "next/link";
+
 
 const SuccessModal = ({ showSuccessModal, onClose }) => {
+
   return ( 
   <div className={`fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 ${
       showSuccessModal ? "block" : "hidden"
@@ -17,7 +20,8 @@ const SuccessModal = ({ showSuccessModal, onClose }) => {
           </div>
           <div>
             <button className="bg-[#003049]" onClick={onClose}>
-             Login
+              <Link href="/?signin">Login</Link>
+             
             </button>
           </div>
         </div>
