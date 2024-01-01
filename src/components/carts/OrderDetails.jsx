@@ -26,7 +26,7 @@ const OrderDetails = () => {
     <div>
       {cartItems.length > 0 ? (
         cartItems.map((item, index) => (
-          <div key={index} className="flex flex-row justify-around p-4">
+          <div key={index} className="flex flex-row justify-between p-4">
             <div className="flex">
               <Image
                 src={item.imgSrc}
@@ -58,7 +58,7 @@ const OrderDetails = () => {
       ) : (
         <p>Your cart is empty</p>
       )}
-      <div className="flex justify-center items-center mb-4">
+      <div className="flex justify-center items-center mb-4 font-bold">
         <p>Total Items: #{totalCartPrice.toFixed(2)}</p>
       </div>
     </div>

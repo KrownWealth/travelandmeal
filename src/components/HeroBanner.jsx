@@ -5,8 +5,10 @@ import AlreadyUserBtn from "./AlreadyUserBtn";
 import { FaShoppingCart } from "react-icons/fa";
 import Link from "next/link";
 import Modal from "./authentication/AuthModal";
+import { useCart } from "@/contexts/CartContext";
 
 const HeroBanner = ({showModal, setShowModal}) => {
+  const { cartItems } = useCart();
   const handleSignInClick = () => {
     setShowModal(true);
   };
@@ -32,7 +34,13 @@ const HeroBanner = ({showModal, setShowModal}) => {
         <div className={styles.heroTopBtn}>
         <button onClick={handleSignInClick} className={styles.ctaBgRed}>Sign in</button>
         <button onClick={handleSignUpClick} className={styles.ctaBg2}>Sign up</button>
-        <div className="pt-2 text-white text-2xl" id=""><FaShoppingCart /></div>
+        <div className="pt-2 text-white text-2xl" id="">
+        <Link href="/cart" className="flex" >
+                <FaShoppingCart />
+                <span className="ml-2">{cartItems.length}</span>
+              
+            </Link>
+        </div>
         </div>
       </div>
       <div className="lg:hidden md:hidden block">

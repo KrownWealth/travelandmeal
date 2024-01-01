@@ -35,7 +35,7 @@ const UserAuth = ({ onSuccess, showSuccessModal, setShowSuccessModal }) => {
         </button>
       </div>
       {activeForm === "signin" && <SignInForm  onSuccess={onSuccess} />}
-      {activeForm === "signup" && <SignUpForm onSuccess={onSuccess} />}
+      {activeForm === "signup" && <SignUpForm onSuccess={() => setShowSuccessModal(true)} />}
       
     </>
   );

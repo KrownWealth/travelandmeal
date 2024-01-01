@@ -151,7 +151,7 @@ export const Restaurants  =
     snackMenu: [
       {
         name: 'Meatpie',
-        imgSrc: '/Assets/Images/menu/meatpis.jpg',
+        imgSrc: '/Assets/Images/menu/meatpie.jpg',
         altText: 'meatpie',
         price: Number(100.00).toFixed(2),
         description: 'Refreshing Snack Menu'
@@ -327,7 +327,7 @@ export const Restaurants  =
     snackMenu: [
       {
         name: 'Meatpie',
-        imgSrc: '/Assets/Images/menu/meatpis.jpg',
+        imgSrc: '/Assets/Images/menu/meatpie.jpg',
         altText: 'meatpie',
         price: Number(100.00).toFixed(2),
         description: 'Refreshing Snack Menu'
@@ -632,7 +632,7 @@ export const Restaurants  =
     snackMenu: [
       {
         name: 'Meatpie',
-        imgSrc: '/Assets/Images/menu/meatpis.jpg',
+        imgSrc: '/Assets/Images/menu/meatpie.jpg',
         altText: 'meatpie',
         price: Number(100.00).toFixed(2),
         description: 'Refreshing Snack Menu'
@@ -1171,7 +1171,7 @@ export const Restaurants  =
     snackMenu: [
       {
         name: 'Meatpie',
-        imgSrc: '/Assets/Images/menu/meatpis.jpg',
+        imgSrc: '/Assets/Images/menu/meatpie.jpg',
         altText: 'meatpie',
         price: Number(100.00).toFixed(2),
         description: 'Refreshing Snack Menu'
@@ -1347,7 +1347,7 @@ export const Restaurants  =
     snackMenu: [
       {
         name: 'Meatpie',
-        imgSrc: '/Assets/Images/menu/meatpis.jpg',
+        imgSrc: '/Assets/Images/menu/meatpie.jpg',
         altText: 'meatpie',
         price: Number(100.00).toFixed(2),
         description: 'Refreshing Snack Menu'
@@ -1523,7 +1523,7 @@ export const Restaurants  =
     snackMenu: [
       {
         name: 'Meatpie',
-        imgSrc: '/Assets/Images/menu/meatpis.jpg',
+        imgSrc: '/Assets/Images/menu/meatpie.jpg',
         altText: 'meatpie',
         price: Number(100.00).toFixed(2),
         description: 'Refreshing Snack Menu'

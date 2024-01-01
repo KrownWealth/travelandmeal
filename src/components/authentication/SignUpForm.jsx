@@ -5,6 +5,7 @@ import { AiOutlineMail } from "react-icons/ai";
 import { IoLockClosedOutline } from "react-icons/io5";
 import LoadingModal from "../LoadingModal";
 import { FaRegUser } from "react-icons/fa";
+import SocialSignIn from "./SocialLogin"
 
 const SignUpForm = () => {
   const {
@@ -16,12 +17,12 @@ const SignUpForm = () => {
     showPassword,
     handleSignUpSubmit,
     togglePasswordVisibility,
-    loading,
+    loading
   } = useAuth();
 
   return (
     <>
-      <form onSubmit={handleSignUpSubmit}>
+      <form >
       {loading && <LoadingModal />} 
       
         <div className="pb-4 w-[100%] relative">
@@ -29,10 +30,10 @@ const SignUpForm = () => {
             <label>Full Name</label>
             <div className="relative">
               <input
-                id="name"
+                id="username"
                 type="name"
-                name="name"
-                value={userDetails.name}
+                name="username"
+                value={userDetails.username}
                 onChange={handleChange}
                 className="input-field h-8 pl-10 rounded bg-gray-100"
                 autoComplete="false"
@@ -106,7 +107,7 @@ const SignUpForm = () => {
             I Agree To The Terms And Conditions And Privacy Policy
           </label>
         </div>
-        <button type="submit" disabled={loading} className="w-[100%] bg-[#d62828]">
+        <button onClick={handleSignUpSubmit} disabled={loading} className="w-[100%] bg-[#d62828]">
           Sign Up
         </button>
         <div className="flex flex-row w-[100%] justify-center items-center mx-auto">
@@ -115,12 +116,7 @@ const SignUpForm = () => {
           <hr className="w-[37.5%] border-t border-custom-color" />
         </div>
 
-        <button type="submit" className="w-[100%] bg-[#003049] relative">
-          <div className="absolute pl-[1rem] lg:pl-[5rem] pt-[0.4rem]">
-            <FcGoogle />
-          </div>
-          <span className="pl-10">Sign up using Google</span>
-        </button>
+        <SocialSignIn />
       </form>
 
       <SuccessModal showSuccessModal={showSuccessModal} onClose={() => setShowSuccessModal(false)} />

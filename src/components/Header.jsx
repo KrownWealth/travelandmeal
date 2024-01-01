@@ -13,8 +13,9 @@ const Header = () => {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const { cartItems } = useCart();
-  const { user } = useUser(); 
-
+  const { user, logout } = useUser();
+  
+  
   const handleSignInClick = () => {
     setShowModal(true);
   };
@@ -81,10 +82,16 @@ const Header = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            <FaUser />
-            {user && isHovered && (
-              <span className="ml-2 hover:underline cursor-pointer">{user.name}</span>
-            )}
+             <FaUser />
+          {user && isHovered && (
+            <div className="ml-2">
+              <span className="hover:underline cursor-pointer text-base">{user.name}</span>
+              <div className="dropdown">
+                <Link href="/profile">Profile</Link>
+                <button onClick={() => logout()}>Logout</button>
+              </div>
+            </div>
+          )}
             {!user && isHovered && <span className="ml-2 text-base">Not signed in</span>}
           </div>
         </div>

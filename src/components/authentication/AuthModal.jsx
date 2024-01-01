@@ -7,7 +7,7 @@ const Modal = ({ show, onClose,onSuccess }) => {
   return (
     <div
       className={`${styles.modalOverlay} ${show ? styles.show : ""}`}
-      onClick={(e) => e.stopPropagation()}
+      onClick={(e) => e.stopPropagation() } 
     >
       <div className={styles.modalWrapper}>
         <div className={styles.modal}>

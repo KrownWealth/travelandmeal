@@ -1,19 +1,7 @@
-import { useRouter } from 'next/router';
+import ProfilePage from '@/components/ProfilePage';
 
-const UserProfile = () => {
-  const router = useRouter();
-  const { id } = router.query;
-
-  return (
-    <section className="py-40">
-      <h1>Profile</h1>
-      <hr />
-
-      <p className="text-4xl">
-        Profile page <span>{id}</span>
-      </p>
-    </section>
-  );
+const Profile = () => {
+  return <ProfilePage />;
 };
 
-export default UserProfile;
+export default Profile;

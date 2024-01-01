@@ -1,8 +1,8 @@
-import { FcGoogle } from "react-icons/fc";
+
 import useAuth from "../../hooks/useAuth"
 import { AiOutlineMail } from "react-icons/ai";
 import { IoLockClosedOutline } from "react-icons/io5";
-
+import SocialSignIn from "./SocialLogin"
 
 
 const SignInForm = () => {
@@ -10,6 +10,7 @@ const SignInForm = () => {
     userDetails,
     handleChange,
     errors,
+    loginError,
     showPassword,
     handleLoginSubmit,
     togglePasswordVisibility,
@@ -18,12 +19,7 @@ const SignInForm = () => {
  
   return (
     <form onSubmit={handleLoginSubmit} className="w-[100%]">
-      <button type="submit" className=" w-[100%] bg-[#003049]">
-        <div className="absolute pl-[1rem] lg:pl-[10rem] pt-[0.4rem]">
-          <FcGoogle />
-        </div>
-        <span>Sign in using Google</span>
-      </button>
+      <SocialSignIn />
       <div className="flex flex-row pb-4 w-[100%] pt-4 justify-center items-center mx-auto">
         <hr className="w-[37.5%] border-t border-custom-color" />
         <p className="w-[25%] text-center">or signin with email</p>
@@ -76,6 +72,7 @@ const SignInForm = () => {
                 {showPassword ? "Hide Password" : "Show Password"}
               </label>
             </div>
+            {loginError && <p className="text-red-500">{loginError}</p>}
           </div>
         </div>
       <button type="submit" className="w-[100%] bg-[#d62828]">

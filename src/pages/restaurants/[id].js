@@ -8,23 +8,33 @@ import MenusCard from "@/components/MenusCard";
 import Restaurants from "@/components/RestaurantsData";
 import { QuantityModal } from "@/components/carts/CartModal";
 import Image from "next/image";
-import { useCart } from "@/contexts/CartContext";
 import SuccessModal from "@/components/carts/SuccessModal"
+import useCartHook from "@/hooks/useCartHook";
 
 const EachRestaurants = ({ 
   menuItem,
   loading
  }) => {
+  
 
 
   const router = useRouter();
   const { id } = router.query;
   const restaurantId = parseInt(id, 10);
-  const [quantity, setQuantity] = useState(1);
-  const [quantityModalOpen, setQuantityModalOpen] = useState(false);
-  const [showSuccessModal, setShowSuccessModal] = useState(false);
-  const [selectedMenuItem, setSelectedMenuItem] = useState(null);
-  const { cartItems, setCartItems } = useCart();
+ 
+  const { 
+    quantity, 
+    quantityModalOpen, 
+    showSuccessModal,
+    selectedMenuItem, 
+    openQuantityModal, 
+    closeQuantityModal,
+    handleAdd, 
+    handleSubtract, 
+    handleTotal, 
+    handleAddToCart,
+    setShowSuccessModal,
+ } = useCartHook();
 
 
   
@@ -34,47 +44,6 @@ const EachRestaurants = ({
     return <div>Restaurant not found</div>;
   }
   
-
-  const openQuantityModal = (menuItem, defaultQuantity ) => {
-    setSelectedMenuItem(menuItem);
-    setQuantity(defaultQuantity);
-    setQuantityModalOpen(true);
-  } 
-
-const successModal = () => {
-
-}
-  const closeQuantityModal = () => {
-    setSelectedMenuItem(null);
-    setQuantity(1);
-    setQuantityModalOpen(false);
-  };
- 
-  const handleAdd = () => {
-    setQuantity(quantity + 1);
-  };
-
-  const handleSubtract = () => {
-    setQuantity(Math.max(quantity - 1, 1));
-  };
-
-  const handleTotal = () => {
-    return quantity * (parseFloat(selectedMenuItem?.price) || 1);
-  }
- 
-  const handleAddToCart = () => {
-    const total = handleTotal();
-    const newCartItem = {
-      ...selectedMenuItem,
-      quantity,
-      total,
-    };
-    setCartItems([...cartItems, newCartItem]); 
-    setShowSuccessModal(true);
-    setQuantityModalOpen(false);
-  };
-
-
 
   return (
     <section className="pt-24 pb-40 bg-white">
@@ -138,12 +107,12 @@ const successModal = () => {
 
       {(quantityModalOpen &&
   <QuantityModal
-    isOpen={quantityModalOpen}
-    onClose={closeQuantityModal}
+    openQuantityModal={quantityModalOpen}
+    closeQuantityModal={closeQuantityModal}
     quantity={quantity}
-    onAdd={handleAdd}
-    onSubtract={handleSubtract}
-    onAddToCart={handleAddToCart}
+    handleAdd={handleAdd}
+    handleSubtract={handleSubtract}
+    handleAddToCart={handleAddToCart}
     selectedMenuItem={selectedMenuItem}
     handleTotal={handleTotal}
     updatePrice={handleTotal} 
@@ -151,7 +120,6 @@ const successModal = () => {
 )}
   {showSuccessModal && (
   <>
-    {console.log("Rendering SuccessModal")}
     <SuccessModal showSuccessModal={showSuccessModal} 
      onClose={() => setShowSuccessModal(false)} />
   </>

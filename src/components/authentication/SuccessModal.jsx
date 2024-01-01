@@ -1,8 +1,10 @@
 import { FaCheck } from "react-icons/fa";
 import Link from "next/link";
+import useCartHook from "@/hooks/useCartHook";
 
 
-const SuccessModal = ({ showSuccessModal, onClose }) => {
+const SuccessModal = () => {
+  const { showSuccessModal, onClose } = useCartHook()
 
   return ( 
   <div className={`fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 ${
