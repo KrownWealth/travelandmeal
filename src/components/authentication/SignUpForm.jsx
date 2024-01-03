@@ -1,11 +1,10 @@
-import { FcGoogle } from "react-icons/fc";
 import useAuth from "../../hooks/useAuth";
 import SuccessModal from "./SuccessModal";
 import { AiOutlineMail } from "react-icons/ai";
 import { IoLockClosedOutline } from "react-icons/io5";
 import LoadingModal from "../LoadingModal";
 import { FaRegUser } from "react-icons/fa";
-import SocialSignIn from "./SocialLogin"
+import SocialSignIn from "./SocialLogin";
 
 const SignUpForm = () => {
   const {
@@ -17,14 +16,14 @@ const SignUpForm = () => {
     showPassword,
     handleSignUpSubmit,
     togglePasswordVisibility,
-    loading
+    loading,
   } = useAuth();
 
   return (
     <>
-      <form >
-      {loading && <LoadingModal />} 
-      
+      <form>
+        {loading && <LoadingModal />}
+
         <div className="pb-4 w-[100%] relative">
           <div className="flex flex-col space-y-2">
             <label>Full Name</label>
@@ -63,36 +62,42 @@ const SignUpForm = () => {
         </div>
 
         <div className="md:grid grid-cols gap-10 pb-4 w-[100%]">
-          <div className="flex flex-col space-y-2">
-            <label>Password</label>
-            <div className="relative">
-              <input
-                id="password"
-                name="password"
-                type={showPassword ? "text" : "password"}
-                value={userDetails.password}
-                onChange={handleChange}
-                autoComplete="false"
-                className="input-field h-8 pl-10 rounded bg-gray-100"
-              />
-              <IoLockClosedOutline className="icon " />
-            </div>
-            {errors.password && <p className="text-red-500">{errors.password}</p>}
-            <div className="flex">
-              <input
-                type="checkbox"
-                id="showPasswordCheckbox"
-                onChange={togglePasswordVisibility}
-                checked={showPassword}
-                autoComplete="false"
-                className="mr-2 mt-1 cursor-pointer"
-              />
-              <label htmlFor="showPasswordCheckbox" className="text-blue-500 cursor-pointer">
-                {showPassword ? "Hide Password" : "Show Password"}
-              </label>
-            </div>
-          </div>
-        </div>
+  <div className="flex flex-col space-y-2">
+    <label htmlFor="password">Password</label>
+    <div className="relative">
+      <input
+        id="password"
+        name="password"
+        type={showPassword ? "text" : "password"}
+        value={userDetails.password}
+        onChange={handleChange}
+        autoComplete="false"
+        className="input-field h-8 pl-10 rounded bg-gray-100"
+      />
+      <IoLockClosedOutline className="icon " />
+    </div>
+    {errors.password && (
+      <p className="text-red-500">{errors.password}</p>
+    )}
+    <div className="flex">
+      <input
+        type="checkbox"
+        id="showPasswordCheckbox"
+        onChange={togglePasswordVisibility}
+        checked={showPassword}
+        autoComplete="false"
+        className="mr-2 mt-1 cursor-pointer"
+      />
+      <label
+        htmlFor="showPasswordCheckbox"
+        className="text-blue-500 cursor-pointer"
+      >
+        {showPassword ? "Hide Password" : "Show Password"}
+      </label>
+    </div>
+  </div>
+</div>
+
 
         <div className="flex flex-row pb-4 w-[100%]">
           <input
@@ -107,9 +112,23 @@ const SignUpForm = () => {
             I Agree To The Terms And Conditions And Privacy Policy
           </label>
         </div>
-        <button onClick={handleSignUpSubmit} disabled={loading} className="w-[100%] bg-[#d62828]">
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-[100%] bg-[#d62828]"
+          aria-label="Sign Up"
+          role="button"
+          onClick={handleSignUpSubmit}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              handleSignUpSubmit();
+            }
+          }}
+        >
           Sign Up
         </button>
+
         <div className="flex flex-row w-[100%] justify-center items-center mx-auto">
           <hr className="w-[37.5%] border-t border-custom-color" />
           <p className="w-[25%] text-center">or</p>
@@ -119,9 +138,13 @@ const SignUpForm = () => {
         <SocialSignIn />
       </form>
 
-      <SuccessModal showSuccessModal={showSuccessModal} onClose={() => setShowSuccessModal(false)} />
+      <SuccessModal
+        showSuccessModal={showSuccessModal}
+        onClose={() => setShowSuccessModal(false)}
+      />
     </>
   );
 };
 
 export default SignUpForm;
+

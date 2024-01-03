@@ -43,7 +43,7 @@ const HowItWorks = () => {
         {/*Display on desktop*/}
         <div className="lg:grid space-x-10 space-y-8 md:grid-cols-3 hidden text-center">
         <div>
-          <Image src="/Assets/Images/search trans.svg" alt="search for fast-food, cuisines, and dishes " 
+          <Image src="/Assets/Images/search trans.svg" alt="search for fast-food, cuisines, and dishes" 
           width={100} height={100} className="m-auto animatedImage" />
           <h2>Search</h2>
           <h3>Search for restaurants, cuisines with the automatic advance location detection search option.</h3>

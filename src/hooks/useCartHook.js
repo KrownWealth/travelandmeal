@@ -8,7 +8,7 @@ const useCartHook = () => {
   const [quantityModalOpen, setQuantityModalOpen] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [selectedMenuItem, setSelectedMenuItem] = useState(null);
-  const { cartItems, setCartItems } = useCart();
+  // const { cartItems, setCartItems } = useCart();
  
   const openQuantityModal = (menuItem, defaultQuantity) => {
     setSelectedMenuItem(menuItem);

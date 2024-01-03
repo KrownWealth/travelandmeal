@@ -12,7 +12,7 @@ const Home = () => {
   const [showModal, setShowModal] = useState(false);
   return(
     <>
-     <HeroBanner showModal={showModal} setShowModal={setShowModal} />
+    <HeroBanner showModal={showModal} setShowModal={setShowModal} />
    <HowItWorks />
    <VillageMarket />
    <ExploreMarket />

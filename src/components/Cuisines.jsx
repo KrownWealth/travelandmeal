@@ -41,7 +41,8 @@ const Cuisines = () => {
         </h3>
       </div>
       <div className="px-8 lg:px-16 pb-20 bg-white w-[100%]">
-        <Slider {...settings}>
+      {Slider && 
+       <Slider {...settings}>
           {foodItems.map((item) => (
             <div
               key={item.id}
@@ -51,7 +52,7 @@ const Cuisines = () => {
                 <Image
                   className="w-40 h-40"
                   src={item.img}
-                  alt="Sunset in the mountains"
+                  alt={item.title}
                   width={100}
                   height={100}
                 />
@@ -62,6 +63,7 @@ const Cuisines = () => {
             </div>
           ))}
         </Slider>
+        }
       </div>
     </section>
   );

@@ -75,9 +75,22 @@ const SignInForm = () => {
             {loginError && <p className="text-red-500">{loginError}</p>}
           </div>
         </div>
-      <button type="submit" className="w-[100%] bg-[#d62828]">
-      Sign In
-      </button>
+        <button
+  type="submit"
+  className="w-[100%] bg-[#d62828]"
+  aria-label="Sign In"
+  role="button"
+  onClick={handleLoginSubmit}
+  onKeyDown={(e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      handleLoginSubmit();
+    }
+  }}
+>
+  Sign In
+</button>
+
     </form>
   );
 };

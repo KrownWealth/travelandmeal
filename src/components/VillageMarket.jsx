@@ -1,9 +1,10 @@
+import React from 'react';
 import Image from "next/image";
 import Link from "next/link";
 
 
-
 const VillageMarket = () => {
+  
   return(
     <>
     <section className=" px-0 lg:px-16 pt-20 bg-white">
@@ -49,7 +50,5 @@ Pick up your items seamlessly when your bus makes a stop at our vetted restauran
      </>
   )
 }
-
-export default VillageMarket
-
-
+VillageMarket.displayName = 'VillageMarket';
+export default VillageMarket;
