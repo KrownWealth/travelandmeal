@@ -5,17 +5,17 @@ import { FaRegTimesCircle } from "react-icons/fa";
 
 const Modal = ({ show, onClose,onSuccess }) => {
   return (
-    <div
+    <div data-testid="modal-overlay"
       className={`${styles.modalOverlay} ${show ? styles.show : ""}`}
       onClick={(e) => e.stopPropagation() } 
     >
-      <div className={styles.modalWrapper}>
+      <div data-testid="modal-wrapper" className={styles.modalWrapper}>
         <div className={styles.modal}>
           <div className={styles.modalHeader}>
             <div><h1>Login/SignUp</h1></div>
             <button onClick={onClose}  className="pointer bg-transparent text-black text-xl"><FaRegTimesCircle /></button>
           </div>
-          <div className={styles.modalBody}>
+          <div data-testid="modal" className={styles.modalBody}>
               <UserAuth onSuccess={onSuccess} />
           </div>
         </div>
