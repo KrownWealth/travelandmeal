@@ -11,7 +11,7 @@ const Payment = ({total}) => {
 
   return (
     <div>
-      <h1>Checkout</h1>
+      <h1 data-testid="checkout">Checkout</h1>
       <form onSubmit={handleSubmit}>
       <div className="grid grid-rows-2 pt-12 h-28">
       <label htmlFor="name">Name: </label>

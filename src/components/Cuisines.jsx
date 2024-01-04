@@ -32,7 +32,7 @@ const Cuisines = () => {
     ],
   };
   return (
-    <section className=" px-8 lg:px-16 py-20  bg-white  w-[100%]">
+    <section data-testid="cuisines" className=" px-8 lg:px-16 py-20  bg-white  w-[100%]">
       <div className="grid grid-rows-3 text-center items-center justify-center space-y-6">
         <h1 className="text-center">Recently Ordered Menus </h1>
         <h3 className="text-center ">

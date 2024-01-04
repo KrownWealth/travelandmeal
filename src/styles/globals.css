@@ -122,9 +122,8 @@ header{
 }
 
 .topNav {
- 
   display: flex;
-  gap: 4rem;
+  gap: 2rem;
   padding: 2rem;
 }
 
@@ -299,6 +298,12 @@ input{
 
 
 @media (min-width: 1024px){ 
+  
+.topNav {
+  display: flex;
+  gap: 4rem;
+  padding: 2rem;
+}
   button.arrowBtn{
     align-items: center;
     text-align: center;

@@ -32,7 +32,7 @@ const Header = () => {
     <>
       <div className="navigation">
         <div className="logo">
-          <Link href="/">
+          {/* <Link href="/">
             <Image
               src="/Assets/Images/TM.svg"
               alt="logo"
@@ -40,7 +40,7 @@ const Header = () => {
               height={250}
               className="block lg:hidden pt-4"
             />
-          </Link>
+          </Link> */}
           <Link href="/">
             <Image
               src="/Assets/Images/TravelandMeal desktoplogo.svg"

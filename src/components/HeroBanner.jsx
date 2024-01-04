@@ -22,10 +22,10 @@ const HeroBanner = ({ showModal, setShowModal }) => {
   };
 
   return (
-    <section className={styles.heroSection}>
+    <section data-testid="hero-banner" className={styles.heroSection}>
       <div className={styles.heroImg}>
         <div className={styles.heroTopNav}>
-          <div className={`${styles.heroTopLogo} lg:block md:block  hidden`}>
+          <div data-testid="hero-top-logo" className={`${styles.heroTopLogo} lg:block md:block  hidden`}>
             <Link href="/">
               <Image
                 src="/Assets/Images/TravelandMeal herologo.svg"
@@ -38,7 +38,7 @@ const HeroBanner = ({ showModal, setShowModal }) => {
           </div>
           <div className={styles.heroTopBtn}>
             <button
-              aria-label="Sign In"
+              aria-label="Sign-In"
               role="button"
               className={styles.ctaBgRed}
               onClick={handleSignInClick}
@@ -70,7 +70,7 @@ const HeroBanner = ({ showModal, setShowModal }) => {
                 href="/cart"
                 className="flex items-center focus:outline-none"
                 role="button"
-                aria-label="View Cart"
+                aria-label="View-Cart"
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
                     e.preventDefault();
@@ -79,7 +79,7 @@ const HeroBanner = ({ showModal, setShowModal }) => {
                 }}
               >
                 <FaShoppingCart />
-                <span className="ml-2">{cartItems.length}</span>
+                <span data-testid="cart-item-count" className="ml-2">{cartItems.length}</span>
               </Link>
             </div>
           </div>

@@ -10,7 +10,7 @@ const ExploreMarket = ({ isMobile }) => {
   const [intervalz, setIntervalz] = useState(3000);
   
   return (
-    <section className={styles.villageSection}>
+    <section data-testid="explore-market" className={styles.villageSection}>
       <Carousel
         showArrows={false}
         showStatus={false}
@@ -50,7 +50,7 @@ const ExploreMarket = ({ isMobile }) => {
         <h3 className="text-white">
           Shop from home and fill your cart with fresh produce, frozen entrees, deli delights, and more.
         </h3>
-        <button className="w-[220px]">
+        <button data-testid="explore-link" className="w-[220px]">
           <Link href="/explore-village-market">Explore Village Market</Link>
         </button>
       </div>

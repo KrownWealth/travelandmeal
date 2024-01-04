@@ -14,7 +14,7 @@ const TopRestaurants = () => {
   };
 
   return (
-    <section className=" px-8 lg:px-16 py-20  bg-[#f8f4d3]  w-[100%]">
+    <section data-testid="top-restaurants" className=" px-8 lg:px-16 py-20  bg-[#f8f4d3]  w-[100%]">
       <div className="grid grid-rows-3 text-center items-center justify-center space-y-6 px-8">
         <h1 className="text-center">Top Fast-Food </h1>
         <h3>

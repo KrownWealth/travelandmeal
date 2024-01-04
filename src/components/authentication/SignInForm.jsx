@@ -15,10 +15,9 @@ const SignInForm = () => {
     handleLoginSubmit,
     togglePasswordVisibility,
   } = useAuth();
-  
  
   return (
-    <form onSubmit={handleLoginSubmit} className="w-[100%]">
+    <form onSubmit={handleLoginSubmit} className="w-[100%]"  aria-label="Sign-In">
       <SocialSignIn />
       <div className="flex flex-row pb-4 w-[100%] pt-4 justify-center items-center mx-auto">
         <hr className="w-[37.5%] border-t border-custom-color" />
@@ -59,9 +58,10 @@ const SignInForm = () => {
               <IoLockClosedOutline className="icon " />
             </div>
             {errors.password && <p className="text-red-500">{errors.password}</p>}
-            <div className="flex">
+            <div className="flex" data-testid="showPasswordCheckbox">
               <input
                 type="checkbox"
+                
                 id="showPasswordCheckbox"
                 onChange={togglePasswordVisibility}
                 checked={showPassword}
@@ -72,13 +72,13 @@ const SignInForm = () => {
                 {showPassword ? "Hide Password" : "Show Password"}
               </label>
             </div>
-            {loginError && <p className="text-red-500">{loginError}</p>}
+            {loginError && <p className="text-red-500" data-testid="signin-error ">{loginError}</p>}
           </div>
         </div>
         <button
   type="submit"
   className="w-[100%] bg-[#d62828]"
-  aria-label="Sign In"
+  aria-label="Submit-Sign-In-Form"
   role="button"
   onClick={handleLoginSubmit}
   onKeyDown={(e) => {

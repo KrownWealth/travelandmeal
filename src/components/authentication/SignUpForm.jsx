@@ -19,12 +19,15 @@ const SignUpForm = () => {
     loading,
   } = useAuth();
 
+  
+
   return (
+
     <>
-      <form>
+      <form aria-label="Sign-Up">
         {loading && <LoadingModal />}
 
-        <div className="pb-4 w-[100%] relative">
+        <div className="pb-4 w-[100%] relative" >
           <div className="flex flex-col space-y-2">
             <label>Full Name</label>
             <div className="relative">
@@ -116,7 +119,7 @@ const SignUpForm = () => {
           type="submit"
           disabled={loading}
           className="w-[100%] bg-[#d62828]"
-          aria-label="Sign Up"
+          aria-label="Submit-Sign-Up-Form"
           role="button"
           onClick={handleSignUpSubmit}
           onKeyDown={(e) => {

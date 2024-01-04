@@ -9,11 +9,11 @@ const Modal = ({ show, onClose,onSuccess }) => {
       className={`${styles.modalOverlay} ${show ? styles.show : ""}`}
       onClick={(e) => e.stopPropagation() } 
     >
-      <div data-testid="modal-wrapper" className={styles.modalWrapper}>
+      <div data-testid="modal-overlay" className={styles.modalWrapper}>
         <div className={styles.modal}>
           <div className={styles.modalHeader}>
             <div><h1>Login/SignUp</h1></div>
-            <button onClick={onClose}  className="pointer bg-transparent text-black text-xl"><FaRegTimesCircle /></button>
+            <button data-testid="modal-close-button" onClick={onClose}  className="pointer bg-transparent text-black text-xl"><FaRegTimesCircle /></button>
           </div>
           <div data-testid="modal" className={styles.modalBody}>
               <UserAuth onSuccess={onSuccess} />

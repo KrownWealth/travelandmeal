@@ -23,10 +23,10 @@ const OrderDetails = () => {
   const totalCartPrice = cartItems.reduce((total, item) => total + item.total, 0);
 
   return (
-    <div>
+    <div data-testid="order-detail">
       {cartItems.length > 0 ? (
         cartItems.map((item, index) => (
-          <div key={index} className="flex flex-row justify-between p-4">
+          <div key={index} className="flex flex-row justify-between p-4" data-testid="cart-item">
             <div className="flex">
               <Image
                 src={item.imgSrc}
@@ -34,32 +34,34 @@ const OrderDetails = () => {
                 width={100}
                 height={100}
                 className="rounded overflow-hidden shadow-lg "
+                data-testid={`item-image-${index}`}
               />
             </div>
             <div className="flex flex-col">
-              <p> {item.name}</p>
-              <p> {item.price}</p>
+              <p data-testid={`item-name-${index}`} > {item.name}</p>
+              <p data-testid={`item-price-${index}`}> {item.price}</p>
               <div className="flex items-center">
                <p className="mr-4">Qty: </p>
-                  <FaMinus onClick={() => handleQuantityChange(index, item.quantity - 1)} />
+                  <FaMinus data-testid={`quantity-increase-${index}`} onClick={() => handleQuantityChange(index, item.quantity - 1)} />
                 <span className="mx-2">{item.quantity}</span>
-                  <FaPlus onClick={() => handleQuantityChange(index, item.quantity + 1)} />
+                  <FaPlus data-testid={`quantity-decrease-${index}`} onClick={() => handleQuantityChange(index, item.quantity + 1)} />
               </div>
             </div>
             <div className="flex">
-              <p>Total: {item.total}</p>
+              <p data-testid={`item-total-${index}`}>Total: {item.total}</p>
               <RiDeleteBinLine
                 onClick={() => handleRemoveItem(index)}
                 className="text-[#d62828] ml-2 cursor-pointer"
+                data-testid={`remove-button-${index}`}
               />
             </div>
           </div>
         ))
       ) : (
-        <p>Your cart is empty</p>
+        <p data-testid="empty-cart-message">Your cart is empty</p>
       )}
       <div className="flex justify-center items-center mb-4 font-bold">
-        <p>Total Items: #{totalCartPrice.toFixed(2)}</p>
+        <p data-testid="total-cart-price" >Total Items: #{totalCartPrice.toFixed(2)}</p>
       </div>
     </div>
   );

@@ -12,8 +12,9 @@ const UserAuth = ({ onSuccess, showSuccessModal, setShowSuccessModal }) => {
 
   return (
     <>
-      <div className="flex flex-col-2 py-16 justify-center items-center">
+      <div  className="flex flex-col-2 py-16 justify-center items-center">
         <button
+        arial-label="switch-to-signin"
           onClick={() => toggleForm("signin")}
           className={`w-[120px] pr-8 ${
             activeForm === "signin"
@@ -24,6 +25,7 @@ const UserAuth = ({ onSuccess, showSuccessModal, setShowSuccessModal }) => {
           Sign In
         </button>
         <button
+        arial-label="switch-to-signup"
           onClick={() => toggleForm("signup")}
           className={`relative right-8 w-[120px] ${
             activeForm === "signup"
