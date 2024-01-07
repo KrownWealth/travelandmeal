@@ -14,12 +14,14 @@ export const QuantityModal = ({
   handleTotal,
   updatePrice,
 }) => {
-  
+  console.log("Selected MenuItem in QuantityModal:", selectedMenuItem);
   const { cartItems, setCartItems } = useCart();
- 
+
   const formatCurrency = (amount) => {
     return new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(amount);
   };
+
+  const initialOrderCost = formatCurrency(updatePrice({ ...selectedMenuItem, image: selectedMenuItem?.imgSrc || '' }));
 
  
 
@@ -32,7 +34,7 @@ export const QuantityModal = ({
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-md shadow-md">
         <div className="flex justify-between mb-4">
         <p>
-            Initial order cost: {formatCurrency(updatePrice(selectedMenuItem))}
+            Initial order cost: {initialOrderCost}
           </p>
           <button
             onClick={closeQuantityModal} 
@@ -56,7 +58,7 @@ export const QuantityModal = ({
         </div>
         <div className="flex items-center justify-center mx-auto">
           <button  className="bg-deep-blue rounded-2 w-[150px] "
-          onClick={() => handleAddToCart(setCartItems, cartItems)} >
+       onClick={handleAddToCart} >
            Add To Cart
           </button>
         </div>

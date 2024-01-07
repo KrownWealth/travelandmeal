@@ -1,9 +1,9 @@
-
-import useAuth from "../../hooks/useAuth"
+import useAuth from "../../hooks/useAuth";
 import { AiOutlineMail } from "react-icons/ai";
 import { IoLockClosedOutline } from "react-icons/io5";
-import SocialSignIn from "./SocialLogin"
-
+import SocialSignIn from "./SocialLogin";
+import LoadingModal from "../LoadingModal";
+import SuccessModal from "./SuccessModal";
 
 const SignInForm = () => {
   const {
@@ -14,17 +14,26 @@ const SignInForm = () => {
     showPassword,
     handleLoginSubmit,
     togglePasswordVisibility,
+    showSuccessModal,
+    setShowSuccessModal,
+    loading,
   } = useAuth();
- 
+
   return (
-    <form onSubmit={handleLoginSubmit} className="w-[100%]"  aria-label="Sign-In">
-      <SocialSignIn />
-      <div className="flex flex-row pb-4 w-[100%] pt-4 justify-center items-center mx-auto">
-        <hr className="w-[37.5%] border-t border-custom-color" />
-        <p className="w-[25%] text-center">or signin with email</p>
-        <hr className="w-[37.5%] border-t border-custom-color" />
-      </div>
-      <div className="pb-4 w-[100%] relative">
+    <>
+      <form
+        onSubmit={handleLoginSubmit}
+        className="w-[100%]"
+        aria-label="Sign-In"
+      >
+        {loading && <LoadingModal />}
+        <SocialSignIn />
+        <div className="flex flex-row pb-4 w-[100%] pt-4 justify-center items-center mx-auto">
+          <hr className="w-[37.5%] border-t border-custom-color" />
+          <p className="w-[25%] text-center">or signin with email</p>
+          <hr className="w-[37.5%] border-t border-custom-color" />
+        </div>
+        <div className="pb-4 w-[100%] relative">
           <div className="flex flex-col space-y-2">
             <label>Email</label>
             <div className="relative">
@@ -57,41 +66,54 @@ const SignInForm = () => {
               />
               <IoLockClosedOutline className="icon " />
             </div>
-            {errors.password && <p className="text-red-500">{errors.password}</p>}
-            <div className="flex" data-testid="showPasswordCheckbox">
+            {errors.password && (
+              <p className="text-red-500">{errors.password}</p>
+            )}
+            <div className="flex">
               <input
                 type="checkbox"
-                
+                aria-label="showPasswordCheckbox"
                 id="showPasswordCheckbox"
                 onChange={togglePasswordVisibility}
                 checked={showPassword}
                 autoComplete="false"
                 className="mr-2 mt-1 cursor-pointer"
               />
-              <label htmlFor="showPasswordCheckbox" className="text-blue-500 cursor-pointer">
+              <label
+                htmlFor="showPasswordCheckbox"
+                className="text-blue-500 cursor-pointer"
+              >
                 {showPassword ? "Hide Password" : "Show Password"}
               </label>
             </div>
-            {loginError && <p className="text-red-500" data-testid="signin-error ">{loginError}</p>}
+            {loginError && (
+              <p className="text-red-500" data-testid="signin-error ">
+                {loginError}
+              </p>
+            )}
           </div>
         </div>
         <button
-  type="submit"
-  className="w-[100%] bg-[#d62828]"
-  aria-label="Submit-Sign-In-Form"
-  role="button"
-  onClick={handleLoginSubmit}
-  onKeyDown={(e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      handleLoginSubmit();
-    }
-  }}
->
-  Sign In
-</button>
-
-    </form>
+          type="submit"
+          className="w-[100%] bg-[#d62828]"
+          aria-label="Submit-Sign-In-Form"
+          role="button"
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              handleLoginSubmit();
+            }
+          }}
+        >
+          Sign In
+        </button>
+      </form>
+      <SuccessModal
+        showSuccessModal={showSuccessModal}
+        onClose={() => setShowSuccessModal(false)}
+        successTitle="Login Successfully"
+      />
+    </>
   );
 };
 export default SignInForm;

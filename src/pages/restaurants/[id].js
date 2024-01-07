@@ -27,6 +27,7 @@ const EachRestaurants = ({
     quantityModalOpen, 
     showSuccessModal,
     selectedMenuItem, 
+    setSelectedMenuItem,
     openQuantityModal, 
     closeQuantityModal,
     handleAdd, 
@@ -71,14 +72,16 @@ const EachRestaurants = ({
           </button>
         </div>
         <div className="basis-2/4 bg-white ">
-          {" "}
-          <Image
-            src={restaurant.imgSrc}
-            alt={restaurant.altText}
-            width={300}
-            height={300}
-            className=" justify-center items-center mx-auto"
-          />
+          {restaurant.imgSrc && (
+  <Image
+    src={restaurant.imgSrc}
+    alt={restaurant.altText}
+    width={300}
+    height={300}
+    className=" justify-center items-center mx-auto"
+  />
+)}
+
         </div>
       </div>
       <hr />
@@ -90,15 +93,17 @@ const EachRestaurants = ({
         ) : (
           
           <MenusCard
-          restaurant={restaurant}
-          isOpen={openQuantityModal}
-          onClose={closeQuantityModal}
-          onAdd={handleAdd}
-          onSubtract={handleSubtract}
-  onAddToCart={handleAddToCart}
-  selectedMenuItem={selectedMenuItem}
-  handleTotal={handleTotal}
-         
+            restaurant={restaurant}
+            isOpen={openQuantityModal}
+            onClose={closeQuantityModal}
+            onAdd={handleAdd}
+            onSubtract={handleSubtract}
+            onAddToCart={() => {
+              // Pass the selectedMenuItem to the onAddToCart function
+              handleAddToCart(selectedMenuItem);
+            }}
+            selectedMenuItem={selectedMenuItem}
+            handleTotal={handleTotal}
           />
         )}
         <br />
@@ -121,7 +126,8 @@ const EachRestaurants = ({
   {showSuccessModal && (
   <>
     <SuccessModal showSuccessModal={showSuccessModal} 
-     onClose={() => setShowSuccessModal(false)} />
+     onClose={() => setShowSuccessModal(false)} 
+     successCart="Items Successfully Added to Cart! 👍"/>
   </>
 )}
 

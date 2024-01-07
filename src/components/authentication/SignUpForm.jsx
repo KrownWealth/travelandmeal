@@ -19,15 +19,12 @@ const SignUpForm = () => {
     loading,
   } = useAuth();
 
-  
-
   return (
-
     <>
-      <form aria-label="Sign-Up">
+      <form aria-label="Sign-Up" onSubmit={handleSignUpSubmit}>
         {loading && <LoadingModal />}
 
-        <div className="pb-4 w-[100%] relative" >
+        <div className="pb-4 w-[100%] relative">
           <div className="flex flex-col space-y-2">
             <label>Full Name</label>
             <div className="relative">
@@ -65,42 +62,41 @@ const SignUpForm = () => {
         </div>
 
         <div className="md:grid grid-cols gap-10 pb-4 w-[100%]">
-  <div className="flex flex-col space-y-2">
-    <label htmlFor="password">Password</label>
-    <div className="relative">
-      <input
-        id="password"
-        name="password"
-        type={showPassword ? "text" : "password"}
-        value={userDetails.password}
-        onChange={handleChange}
-        autoComplete="false"
-        className="input-field h-8 pl-10 rounded bg-gray-100"
-      />
-      <IoLockClosedOutline className="icon " />
-    </div>
-    {errors.password && (
-      <p className="text-red-500">{errors.password}</p>
-    )}
-    <div className="flex">
-      <input
-        type="checkbox"
-        id="showPasswordCheckbox"
-        onChange={togglePasswordVisibility}
-        checked={showPassword}
-        autoComplete="false"
-        className="mr-2 mt-1 cursor-pointer"
-      />
-      <label
-        htmlFor="showPasswordCheckbox"
-        className="text-blue-500 cursor-pointer"
-      >
-        {showPassword ? "Hide Password" : "Show Password"}
-      </label>
-    </div>
-  </div>
-</div>
-
+          <div className="flex flex-col space-y-2">
+            <label htmlFor="password">Password</label>
+            <div className="relative">
+              <input
+                id="password"
+                name="password"
+                type={showPassword ? "text" : "password"}
+                value={userDetails.password}
+                onChange={handleChange}
+                autoComplete="false"
+                className="input-field h-8 pl-10 rounded bg-gray-100"
+              />
+              <IoLockClosedOutline className="icon " />
+            </div>
+            {errors.password && (
+              <p className="text-red-500">{errors.password}</p>
+            )}
+            <div className="flex">
+              <input
+                type="checkbox"
+                id="showPasswordCheckbox"
+                onChange={togglePasswordVisibility}
+                checked={showPassword}
+                autoComplete="false"
+                className="mr-2 mt-1 cursor-pointer"
+              />
+              <label
+                htmlFor="showPasswordCheckbox"
+                className="text-blue-500 cursor-pointer"
+              >
+                {showPassword ? "Hide Password" : "Show Password"}
+              </label>
+            </div>
+          </div>
+        </div>
 
         <div className="flex flex-row pb-4 w-[100%]">
           <input
@@ -121,7 +117,6 @@ const SignUpForm = () => {
           className="w-[100%] bg-[#d62828]"
           aria-label="Submit-Sign-Up-Form"
           role="button"
-          onClick={handleSignUpSubmit}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
               e.preventDefault();
@@ -144,10 +139,10 @@ const SignUpForm = () => {
       <SuccessModal
         showSuccessModal={showSuccessModal}
         onClose={() => setShowSuccessModal(false)}
+        successTitle="Successfully signed up! 👍"
       />
     </>
   );
 };
 
 export default SignUpForm;
-
