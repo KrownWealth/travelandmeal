@@ -1,14 +1,12 @@
-"use client"
+"use client";
 import { FaPlus } from "react-icons/fa";
 import { PiCaretCircleDownFill } from "react-icons/pi";
 import Image from "next/image";
 import useMenuVisibility from "@/hooks/useMenuVisibility";
 
-
-
-const MenusCard = ({ restaurant, quantity, setQuantity, isOpen }) => {
+const MenusCard = ({ restaurant, setQuantity, isOpen }) => {
   const [menuVisibility, handlePreview] = useMenuVisibility();
-  
+
   return (
     <section>
       <div className="flex flex-col bg-blue pb-8 border py-12">
@@ -18,7 +16,10 @@ const MenusCard = ({ restaurant, quantity, setQuantity, isOpen }) => {
               <div key={menuType}>
                 <div className="flex mx-auto justify-center items-center">
                   {restaurant[menuType].map((menuItem) => (
-                    <div key={menuItem.name} className="rounded overflow-hidden shadow-lg m-4">
+                    <div
+                      key={menuItem.name}
+                      className="rounded overflow-hidden shadow-lg m-4"
+                    >
                       <Image
                         src={menuItem.imgSrc}
                         alt={menuItem.altText}
@@ -45,13 +46,20 @@ const MenusCard = ({ restaurant, quantity, setQuantity, isOpen }) => {
                   {menuVisibility[menuType] && (
                     <div>
                       {restaurant[menuType].map((menuItem) => (
-                        <div key={menuItem.name} menuType={menuItem}
-                         className="flex flex-col border-b mb-4 pb-4">
+                        <div
+                          key={`${menuItem.name}-`}
+                          menuType={menuItem}
+                          className="flex flex-col border-b mb-4 pb-4"
+                        >
                           <div className="flex justify-between">
                             <h3>{menuItem.name}</h3>
+                            {console.log(menuItem.price, menuItem.description)}
+
                             <h3 className="text-center">{menuItem.price}</h3>
-                            <button className="flex rounded-2 items-center text-base"
-                            onClick={() => isOpen(menuItem, 1, setQuantity)}>
+                            <button
+                              className="flex rounded-2 items-center text-base"
+                              onClick={() => isOpen(menuItem, 1, setQuantity)}
+                            >
                               Quantity
                             </button>
                           </div>

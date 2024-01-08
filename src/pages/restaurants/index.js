@@ -1,12 +1,71 @@
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { IoLocationOutline } from "react-icons/io5";
 import { FaStar } from "react-icons/fa";
 import Link from "next/link";
-import Restaurants from "@/components/RestaurantsData";
+import LoadingModal from "@/components/LoadingModal";
+import Modal from "@/components/authentication/AuthModal";
+import { useUser } from "@/contexts/AuthContext";
+import ProtectedRoute from "@/components/ProtectedRoute";
 
 const FastFoods = () => {
+  const [restaurants, setRestaurants] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [showModal, setShowModal] = React.useState(false);
+  const { user } = useUser();
+
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/api/products"); 
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        setRestaurants(data.restaurants);
+        setLoading(false);
+      } catch (error) {
+        setError(error.message);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+  
+  useEffect(() => {
+  }, [loading]);
+
+  const openLoginModal = () => {
+    setShowModal(true);
+  };
+
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+  
+  if (loading) {
+    return <LoadingModal />;
+  }
+
+  if (!user) {
+    
+    return (
+      <div className="flex flex-col py-40 ">
+        <h3 className="text-center justify-center">Please log in to access this page.</h3>
+        <button onClick={openLoginModal} className="mx-auto">Login</button>
+        {showModal && <Modal onClose={closeLoginModal} />}
+      </div>
+    );
+  }
+
   return (
-    <>
+    <ProtectedRoute>
       <section className=" px-8 pt-44 lg:px-16 pb-20  bg-white  w-[100%]">
         <div className="flex flex-row text-center items-center justify-between border-b-2">
           <h3 className="font-bold">Fastfoods</h3>
@@ -19,7 +78,7 @@ const FastFoods = () => {
           </select>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 py-20">
-          {Restaurants.slice(1, 9).map((restaurant) => (
+          {restaurants.slice(1, 9).map((restaurant) => (
             <Link
               href={`/restaurants/${restaurant.id}`}
               key={restaurant.id}
@@ -49,12 +108,8 @@ const FastFoods = () => {
                     </p>
                   </div>
                   <div className="flex flex-row justify-between pb-8">
-                    <p className="text-base">
-                     {restaurant.workDay}
-                    </p>
-                    <p className="text-base">
-                    {restaurant.workHour}
-                    </p>
+                    <p className="text-base">{restaurant.workDay}</p>
+                    <p className="text-base">{restaurant.workHour}</p>
                   </div>
                 </div>
                 <hr />
@@ -108,7 +163,7 @@ const FastFoods = () => {
           </form>
         </div>
       </section>
-    </>
+    </ProtectedRoute>
   );
 };
 

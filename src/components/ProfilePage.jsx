@@ -14,7 +14,7 @@ const ProfilePage = () => {
   }, []);
 
   return (
-    <div className="my-3">
+    <div className="my-3 py-40 px-16">
       <h6>UID: {user ? user.$id : ''} </h6>
       <h6>Name: {user ? user.name : ''} </h6>
       <h6>Email: {user ? user.email : ''} </h6>

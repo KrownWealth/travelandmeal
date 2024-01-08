@@ -1,5 +1,6 @@
-import { Restaurants } from "@/components/RestaurantsData"
+
+import RestaurantsData from "@/components/RestaurantsData";
 
 export default function handler(req, res) {
-  res.status(200).json({ Restaurants });
+  res.status(200).json({ restaurants: RestaurantsData });
 }

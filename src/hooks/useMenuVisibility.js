@@ -18,12 +18,7 @@ const useMenuVisibility = () => {
   };
 
   useEffect(() => {
-    // The cleanup function should only reset the state if the component unmounts
-    // or if you want to reset the state when the dependencies change.
-    // If you don't want to reset the state, remove the cleanup function.
-
     return () => {
-      // Comment out the following line if you don't want to reset the state on unmount
       setMenuVisibility((prevVisibility) => ({
         ...prevVisibility,
         soupMenu: false,

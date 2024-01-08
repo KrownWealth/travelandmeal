@@ -1,15 +1,23 @@
 import { useState } from "react";
+import { databases, ID } from "../../utils/appwrite";
+import { useUser } from "@/contexts/AuthContext";
 import { useCart } from "@/contexts/CartContext";
 
 
+const collectionId = process.env.NEXT_PUBLIC_APPWRITE_COLLECTIONS_ID;
+const databasesId = process.env.NEXT_PUBLIC_APPWRITE_DATABASES_ID;
+//const bucketId = process.env.NEXT_PUBLIC_APPWRITE_BUCKET_ID;
 
 const useCartHook = () => {
   const [quantity, setQuantity] = useState(1);
   const [quantityModalOpen, setQuantityModalOpen] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [selectedMenuItem, setSelectedMenuItem] = useState(null);
-  // const { cartItems, setCartItems } = useCart();
- 
+  const { user } = useUser();
+  const { cartItems, setCartItems } = useCart();
+  
+
+  
   const openQuantityModal = (menuItem, defaultQuantity) => {
     setSelectedMenuItem(menuItem);
     setQuantity(defaultQuantity);
@@ -31,24 +39,44 @@ const useCartHook = () => {
   };
 
   const handleTotal = () => {
-    return quantity * (parseFloat(selectedMenuItem?.price) || 1);
+    
+    
+    return selectedMenuItem ? quantity * (parseFloat(selectedMenuItem.price) || 1) : 0;
   };
-  const updatePrice = () => {
-    return quantity * (parseFloat(selectedMenuItem?.price) || 1);
-  };
-
-  const handleAddToCart = (setCartItems, cartItems) => {
+  
+  const handleAddToCart = async () => {
     const total = handleTotal();
+    const documentId = ID.unique();
     const newCartItem = {
-      ...selectedMenuItem,
+       userId: user.name,
+       ...selectedMenuItem,
       quantity,
       total,
     };
+
+
     setCartItems([...cartItems, newCartItem]);
     setShowSuccessModal(true);
     setQuantityModalOpen(false);
-  };
 
+    if (user) {
+      try {
+        
+        await databases.createDocument(
+          databasesId,
+          collectionId,
+          documentId,
+         newCartItem
+        );
+
+        console.log("New Cart Item (without image):", cartItemWithoutImage);
+      } catch (error) {
+        console.error("Error creating user items:", error);
+      }
+    }
+  };
+  
+   
   return {
     quantity,
     quantityModalOpen,
@@ -60,7 +88,6 @@ const useCartHook = () => {
     handleSubtract,
     handleTotal,
     handleAddToCart,
-    updatePrice,
     setShowSuccessModal,
     showSuccessModal,
   };

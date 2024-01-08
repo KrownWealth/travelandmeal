@@ -1,24 +1,43 @@
-import { useEffect } from 'react';
-import { useUser } from '@/contexts/AuthContext';
-import Modal from '@/components/authentication/AuthModal';
+import React, { useEffect } from "react";
+import Modal from "@/components/authentication/AuthModal";
+import ProtectedRoute from "@/components/ProtectedRoute";
+import { useUser } from "@/contexts/AuthContext";
+import LoadingModal from "@/components/LoadingModal";
 
-const ProtectedPage = ({ showModal, setShowModal, setShowSuccessModal, children }) => {
-  const { user } = useUser();
+const ProtectedPage = () => {
+  const { user, loading } = useUser();
+  const [showModal, setShowModal] = React.useState(false);
+
+  const openLoginModal = () => {
+    setShowModal(true);
+  };
+
+  const closeLoginModal = () => {
+    setShowModal(false);
+  };
 
   useEffect(() => {
-    if (!user) {
-      // if user is not signed in, show modal popup for user to sign in
-      setShowModal(true);
-    }
-  }, [user, setShowModal]);
+  }, [loading]);
+
+  if (loading) {
+    return <LoadingModal />;
+  }
+
+  if (!user) {
+    
+    return (
+      <div className="flex flex-col py-40 ">
+        <h3 className="text-center justify-center">Please log in to access the cart.</h3>
+        <button onClick={openLoginModal} className="mx-auto">Login</button>
+        {showModal && <Modal onClose={closeLoginModal} />}
+      </div>
+    );
+  }
 
   return (
-    <>
-      {showModal && (
-        <Modal onClose={() => setShowModal(false)} onSuccess={() => setShowSuccessModal(true)} />
-      )}
-      {user && children}
-    </>
+    null
+    // <ProtectedRoute>      
+    // </ProtectedRoute>
   );
 };
 
