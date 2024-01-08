@@ -12,7 +12,7 @@ const AlreadyUserBtn = ({handleSignInClick}) => {
           role="button"
           onClick={handleSignInClick}
           onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
+            if (e.key === "Enter") {
               e.preventDefault();
               handleSignInClick();
             }

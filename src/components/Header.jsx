@@ -7,20 +7,21 @@ import Modal from './authentication/AuthModal'
 import SuccessMessage from './authentication/SuccessModal'
 import { useCart } from '@/contexts/CartContext'
 import { useUser } from '@/contexts/AuthContext'
+import useAuth from '@/hooks/useAuth'
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false)
   const [showSuccessModal, setShowSuccessModal] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
-  const { cartItems } = useCart()
-  const { user, logout } = useUser()
+  const { cartItems } = useCart();
+  const { user, logout } = useUser();
+  const { handleSignUpSubmit, handleLoginSubmit } = useAuth();
 
-  const handleSignInClick = () => {
-    setShowModal(true)
-  }
-
-  const handleSignUpClick = () => {
-    setShowModal(true)
+  const handleButtonKeyDown  = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      setShowModal(true)
+    }
   }
 
   const handleCloseModal = () => {
@@ -62,10 +63,10 @@ const Header = () => {
           </Link>
 
           <div className="text-[#d62828] text-2xl items-center space-x-4">
-            <button onClick={handleSignInClick} className="ctaBgRed">
+            <button tabIndex={0} onKeyDown={handleButtonKeyDown } className="ctaBgRed">
               Sign in
             </button>
-            <button onClick={handleSignUpClick} className="ctaBgWhite">
+            <button  onKeyDown={handleButtonKeyDown } className="ctaBgWhite">
               Sign up
             </button>
           </div>
@@ -90,7 +91,7 @@ const Header = () => {
                   </span>
                   <div className="dropdown">
                     <Link href="/profile">Profile</Link>
-                    <button onClick={() => logout()}>Logout</button>
+                    <button tabIndex={0}  onKeyDown={handleButtonKeyDown } onClick={() => logout()}>Logout</button>
                   </div>
                 </div>
               )}

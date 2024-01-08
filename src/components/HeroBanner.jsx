@@ -42,12 +42,14 @@ const HeroBanner = ({ showModal, setShowModal }) => {
               role="button"
               className={styles.ctaBgRed}
               onClick={handleSignInClick}
+              tabIndex={0}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
                   e.preventDefault();
                   handleSignInClick();
                 }
               }}
+              
             >
               Sign In
             </button>

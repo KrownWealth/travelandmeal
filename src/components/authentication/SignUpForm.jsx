@@ -117,8 +117,9 @@ const SignUpForm = () => {
           className="w-[100%] bg-[#d62828]"
           aria-label="Submit-Sign-Up-Form"
           role="button"
+          tabIndex={0}
           onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
+            if (e.key === "Enter") {
               e.preventDefault();
               handleSignUpSubmit();
             }
