@@ -1,9 +1,11 @@
+"use client"
 import React, { useEffect } from "react";
 import Modal from "@/components/authentication/AuthModal";
 import ProfilePage from "@/components/ProfilePage";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import { useUser } from "@/contexts/AuthContext";
 import LoadingModal from "@/components/LoadingModal";
+
 
 const MyProfilePage = () => {
   const { user, loading } = useUser();
@@ -38,7 +40,7 @@ const MyProfilePage = () => {
 
   return (
     <ProtectedRoute>
-                <h1>ProfilePage</h1>
+     <h1>ProfilePage</h1>
             <ProfilePage />
     </ProtectedRoute>
   );

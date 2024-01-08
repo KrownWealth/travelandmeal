@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect } from "react";
 import Modal from "@/components/authentication/AuthModal";
 import CartPage from "@/components/carts/CartPage";

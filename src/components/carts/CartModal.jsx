@@ -1,14 +1,9 @@
-"use client";
-import { FaPlus, FaMinus } from "react-icons/fa";
+'use client'
+import { FaPlus, FaMinus } from 'react-icons/fa'
 
-const formatCurrency = (amount) => {
-  return new Intl.NumberFormat("en-NG", {
-    style: "currency",
-    currency: "NGN",
-  }).format(amount);
-};
 
-export const QuantityModal = ({
+
+const QuantityModal = ({
   openQuantityModal,
   closeQuantityModal,
   quantity,
@@ -18,10 +13,18 @@ export const QuantityModal = ({
   selectedMenuItem,
   handleTotal,
 }) => {
+
+  const formatCurrency = (amount) => {
+    return new Intl.NumberFormat('en-NG', {
+      style: 'currency',
+      currency: 'NGN',
+    }).format(amount)
+  }
+
   return (
     <div
       className={`fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 ${
-        openQuantityModal ? "block" : "hidden"
+        openQuantityModal ? 'block' : 'hidden'
       }`}
     >
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-md shadow-md">
@@ -52,7 +55,7 @@ export const QuantityModal = ({
             </span>
           </div>
           <div className="font-bold">
-            Total:{formatCurrency(handleTotal(selectedMenuItem))}{" "}
+            Total:{formatCurrency(handleTotal(selectedMenuItem))}{' '}
           </div>
         </div>
         <div className="flex items-center justify-center mx-auto">
@@ -65,5 +68,7 @@ export const QuantityModal = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
+
+export default QuantityModal;

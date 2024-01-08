@@ -2,8 +2,8 @@ import { useState } from "react";
 import SignInForm from "./SignInForm";
 import SignUpForm from "./SignUpForm";
 
-const UserAuth = ({ onSuccess, showSuccessModal, setShowSuccessModal }) => {
-  const [activeForm, setActiveForm] = useState("signup")
+const UserAuth = ({ onSuccess, setShowSuccessModal }) => {
+  const [activeForm, setActiveForm] = useState("signin")
 
   const toggleForm = (formType) => {
     setActiveForm(formType);

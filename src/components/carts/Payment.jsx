@@ -1,7 +1,8 @@
+"use client"
 import React from "react";
 
 
-const Payment = ({total, onSuccess }) => {
+const Payment = ({total}) => {
     
   return (
     <div>

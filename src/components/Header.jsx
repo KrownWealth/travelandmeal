@@ -55,7 +55,7 @@ const Header = () => {
         </div>
         <div className="topNav">
           <Link
-            href=""
+            href="/restaurants"
             className="pt-1 hover:border-b-2 hover:border-[#d62828] hover:text-[#d62828] text-xl lg:block hidden"
           >
             Fast-foods

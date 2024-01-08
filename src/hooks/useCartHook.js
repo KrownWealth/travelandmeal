@@ -1,12 +1,12 @@
+"use client"
 import { useState } from "react";
 import { databases, ID } from "../../utils/appwrite";
-import { useUser } from "@/contexts/AuthContext";
+import { useUser } from "@/contexts/AuthContext";;
 import { useCart } from "@/contexts/CartContext";
-
 
 const collectionId = process.env.NEXT_PUBLIC_APPWRITE_COLLECTIONS_ID;
 const databasesId = process.env.NEXT_PUBLIC_APPWRITE_DATABASES_ID;
-//const bucketId = process.env.NEXT_PUBLIC_APPWRITE_BUCKET_ID;
+
 
 const useCartHook = () => {
   const [quantity, setQuantity] = useState(1);
@@ -15,8 +15,6 @@ const useCartHook = () => {
   const [selectedMenuItem, setSelectedMenuItem] = useState(null);
   const { user } = useUser();
   const { cartItems, setCartItems } = useCart();
-  
-
   
   const openQuantityModal = (menuItem, defaultQuantity) => {
     setSelectedMenuItem(menuItem);
@@ -38,9 +36,7 @@ const useCartHook = () => {
     setQuantity(Math.max(quantity - 1, 1));
   };
 
-  const handleTotal = () => {
-    
-    
+  const handleTotal = () => {  
     return selectedMenuItem ? quantity * (parseFloat(selectedMenuItem.price) || 1) : 0;
   };
   
@@ -50,11 +46,11 @@ const useCartHook = () => {
     const newCartItem = {
        userId: user.name,
        ...selectedMenuItem,
+       userId: user.name,
+       ...selectedMenuItem,
       quantity,
       total,
     };
-
-
     setCartItems([...cartItems, newCartItem]);
     setShowSuccessModal(true);
     setQuantityModalOpen(false);

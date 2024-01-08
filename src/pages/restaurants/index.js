@@ -15,8 +15,6 @@ const FastFoods = () => {
   const [showModal, setShowModal] = React.useState(false);
   const { user } = useUser();
 
-
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -44,7 +42,9 @@ const FastFoods = () => {
     setShowModal(true);
   };
 
-
+  const closeLoginModal = () => {
+    setShowModal(false);
+  };
   if (error) {
     return <div>Error: {error}</div>;
   }
@@ -124,13 +124,13 @@ const FastFoods = () => {
                     </span>
                   </div>
                   <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                    #photography
+                    #restaurants
                   </span>
                   <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                     #travel
                   </span>
                   <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                    #winter
+                    #food
                   </span>
                 </div>
               </div>

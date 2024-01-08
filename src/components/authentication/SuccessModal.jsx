@@ -1,10 +1,9 @@
 import { FaCheck } from "react-icons/fa";
 import Link from "next/link";
-import useCartHook from "@/hooks/useCartHook";
 
 
-const SuccessModal = () => {
-  const { showSuccessModal, onClose } = useCartHook()
+
+const SuccessModal = ( {showSuccessModal, onClose, successTitle}) => {
 
   return ( 
   <div data-testid="modal" className={`fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 ${
@@ -18,11 +17,11 @@ const SuccessModal = () => {
             <FaCheck />
           </div>
           <div>
-            <h2>Successfully signed up! 👍</h2>
+            <h2>{successTitle}</h2>
           </div>
           <div>
             <button className="bg-[#003049]" onClick={onClose}>
-              <Link href="/?signin">Login</Link>
+              <Link href="/">Login/Close</Link>
              
             </button>
           </div>

@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { IoLocationOutline } from "react-icons/io5";
 import { BsFillArrowDownCircleFill } from "react-icons/bs";
 import MenusCard from "@/components/MenusCard";
-import { QuantityModal } from "@/components/carts/CartModal";
+import  QuantityModal from "@/components/carts/CartModal";
 import Image from "next/image";
 import SuccessModal from "@/components/carts/SuccessModal";
 import useCartHook from "@/hooks/useCartHook";
@@ -73,9 +73,7 @@ const EachRestaurants = ({ loading }) => {
     setShowModal(false);
   };
 
-
   if (loading) {
-    // If still loading, show a loading modal
     return <LoadingModal />;
   }
 
@@ -116,14 +114,16 @@ const EachRestaurants = ({ loading }) => {
           </button>
         </div>
         <div className="basis-2/4 bg-white ">
-          {" "}
-          <Image
-            src={restaurant.imgSrc}
-            alt={restaurant.altText}
-            width={300}
-            height={300}
-            className=" justify-center items-center mx-auto"
-          />
+          {restaurant.imgSrc && (
+  <Image
+    src={restaurant.imgSrc}
+    alt={restaurant.altText}
+    width={300}
+    height={300}
+    className=" justify-center items-center mx-auto"
+  />
+)}
+
         </div>
       </div>
       <hr />

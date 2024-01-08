@@ -8,9 +8,9 @@ export default function useAuth() {
   const [showPassword, setShowPassword] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [loginError, setLoginError] = useState("");
-  const [loading, setLoading] = useState(false);
  const router = useRouter();
- const { user, login } = useUser();
+ const { user, login, loading, setLoading } = useUser(); 
+
 
   const [userDetails, setUserDetails] = useState({
     email: '',
@@ -96,8 +96,10 @@ export default function useAuth() {
       if (!loggedIn.name) {
         loggedIn.name = email.slice(0, 5).toLowerCase();
       }
+      setShowSuccessModal(true)
       login(loggedIn);
       router.push("/")
+
       // console.log(loggedIn)
     } catch (error) {
       console.error('Error Signin', error)
@@ -106,25 +108,28 @@ export default function useAuth() {
 
   const handleGoogleSignIn = async (e) => {
     e.preventDefault();
-
+  
     try {
-      await account.revokeSessions();
+      setLoading(true);
+      const googleOAuth2URL = process.env.NEXT_APPWRITE_GOOGLE_OAUTH2_URL;
       account.createOAuth2Session(
-        "google",
-        "http://localhost:3000/", 
-        "http://localhost:3000/", 
-        // "http://localhost:3000/profile" 
+        'google',
+        'http://localhost:3000/', // Redirect URL
+        'http://localhost:3000/', // Success URL
+        'http://localhost:3000/', // Failure URL
+        googleOAuth2URL
       );
-      const updatedUserDetails = await account.get();
-      console.log("Updated User Details:", updatedUserDetails);
-      setUserDetails(updatedUserDetails);
-     // Only redirect if there's a valid Google authentication
-     if (updatedUserDetails.oauth2 && updatedUserDetails.oauth2.google) {
-      router.push('/profile');
-    }} catch (err) {
-      console.log("Error from useAuth", err);
+  
+      window.location.href = 'http://localhost:3000/';
+    } catch (err) {
+      console.error('Error from useAuth', err);
+    } finally {
+      setLoading(false);
     }
   };
+  
+  
+  
 
 
 
@@ -139,6 +144,7 @@ export default function useAuth() {
     setShowSuccessModal,
     showPassword,
     loading,
+    setLoading,
     handleSignUpSubmit,
     handleLoginSubmit,
     togglePasswordVisibility,

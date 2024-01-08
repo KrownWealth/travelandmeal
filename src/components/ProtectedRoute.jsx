@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useEffect } from 'react';
 import { useUser } from '../contexts/AuthContext';
 import Modal from "@/components/authentication/AuthModal";

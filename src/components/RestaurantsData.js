@@ -98,7 +98,7 @@ export const Restaurants  =
       },
       {
         name: 'Egusi Soup with Semo',
-         imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
+        imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
         altText: 'egusi soup with semo',
         price: Number(100.00).toFixed(2),
         description: 'African Delicacies of soup'
@@ -164,9 +164,9 @@ export const Restaurants  =
         description: 'Refreshing Snack Menu'
       },
       {
-        name: 'Spring Roll',
-         imgSrc: '/Assets/Images/menu/spring roll.jpg',
-        altText: 'spring roll',
+        name: 'Spring Rolls',
+         imgSrc: '/Assets/Images/menu/Spring Rolls.jpg',
+        altText: 'Spring Rolls',
         price: Number(100.00).toFixed(2),
         description: 'Refreshing Snack'
       },
@@ -340,9 +340,9 @@ export const Restaurants  =
         description: 'Refreshing Snack Menu'
       },
       {
-        name: 'Spring Roll',
-         imgSrc: '/Assets/Images/menu/spring roll.jpg',
-        altText: 'spring roll',
+        name: 'Spring Rolls',
+         imgSrc: '/Assets/Images/menu/Spring Rolls.jpg',
+        altText: 'Spring Rolls',
         price: Number(100.00).toFixed(2),
         description: 'Refreshing Snack'
       },
@@ -645,9 +645,9 @@ export const Restaurants  =
         description: 'Refreshing Snack Menu'
       },
       {
-        name: 'Spring Roll',
-         imgSrc: '/Assets/Images/menu/spring roll.jpg',
-        altText: 'spring roll',
+        name: 'Spring Rolls',
+         imgSrc: '/Assets/Images/menu/Spring Rolls.jpg',
+        altText: 'Spring Rolls',
         price: Number(100.00).toFixed(2),
         description: 'Refreshing Snack'
       },
@@ -1184,9 +1184,9 @@ export const Restaurants  =
         description: 'Refreshing Snack Menu'
       },
       {
-        name: 'Spring Roll',
-         imgSrc: '/Assets/Images/menu/spring roll.jpg',
-        altText: 'spring roll',
+        name: 'Spring Rolls',
+         imgSrc: '/Assets/Images/menu/Spring Rolls.jpg',
+        altText: 'Spring Rolls',
         price: Number(100.00).toFixed(2),
         description: 'Refreshing Snack'
       },
@@ -1360,9 +1360,9 @@ export const Restaurants  =
         description: 'Refreshing Snack Menu'
       },
       {
-        name: 'Spring Roll',
-         imgSrc: '/Assets/Images/menu/spring roll.jpg',
-        altText: 'spring roll',
+        name: 'Spring Rolls',
+         imgSrc: '/Assets/Images/menu/Spring Rolls.jpg',
+        altText: 'Spring Rolls',
         price: Number(100.00).toFixed(2),
         description: 'Refreshing Snack'
       },
@@ -1536,9 +1536,9 @@ export const Restaurants  =
         description: 'Refreshing Snack Menu'
       },
       {
-        name: 'Spring Roll',
-         imgSrc: '/Assets/Images/menu/spring roll.jpg',
-        altText: 'spring roll',
+        name: 'Spring Rolls',
+         imgSrc: '/Assets/Images/menu/Spring Rolls.jpg',
+        altText: 'Spring Rolls',
         price: Number(100.00).toFixed(2),
         description: 'Refreshing Snack'
       },

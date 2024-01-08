@@ -1,5 +1,4 @@
 "use client";
-import { FaPlus } from "react-icons/fa";
 import { PiCaretCircleDownFill } from "react-icons/pi";
 import Image from "next/image";
 import useMenuVisibility from "@/hooks/useMenuVisibility";
@@ -48,7 +47,7 @@ const MenusCard = ({ restaurant, setQuantity, isOpen }) => {
                       {restaurant[menuType].map((menuItem) => (
                         <div
                           key={`${menuItem.name}-`}
-                          menuType={menuItem}
+                          // menuType={menuItem}
                           className="flex flex-col border-b mb-4 pb-4"
                         >
                           <div className="flex justify-between">

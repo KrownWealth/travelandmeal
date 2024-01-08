@@ -1,18 +1,19 @@
+"use client"
 import React from "react";
 import OrderDetails from "./OrderDetails"
 import Payment from "./Payment";
 import { useCart } from "@/contexts/CartContext";
+import SuccessModal from "./SuccessModal";
 
-
-const calculateTotal = (items) => {
-  return items.reduce((total, item) => total + item.total, 0);
-};
-
-
-
-const CartPage = () => {
+const CartPage = ({showSuccessModal, setShowSuccessModal }) => {
   const { cartItems } = useCart(); 
+
   const totalCartPrice = calculateTotal(cartItems);
+
+  const calculateTotal = (items) => {
+    return items.reduce((total, item) => total + item.total, 0);
+  
+  };
 
   return (
     <div className="pt-44 pb-24">
@@ -22,9 +23,17 @@ const CartPage = () => {
      <div className="basis-full lg:basis-3/5 bg-white ">
       <OrderDetails /></div>
       <div className="basis-full lg:basis-2/5 bg-gray-100 pt-12  p-4">
-        <Payment total={totalCartPrice} /></div>
+        <Payment total={totalCartPrice} />
+        </div>
      </div>
     </div>
+    {showSuccessModal && (
+  <>
+    <SuccessModal showSuccessModal={showSuccessModal} 
+     onClose={() => setShowSuccessModal(false)} 
+     successCart="Your Order is on it way!"/>
+  </>
+)}
     </div>
   );
 };
