@@ -1,14 +1,16 @@
-import { createContext, useContext, useState, useEffect } from "react";
-import { account } from "../../utils/appwrite";
+import { createContext, useContext, useState, useEffect } from 'react';
+import { account } from '../../utils/appwrite';
+import { useRouter } from 'next/navigation';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
-    const storedUser = JSON.parse(localStorage.getItem("user"));
+    const storedUser = JSON.parse(localStorage.getItem('user'));
     if (storedUser) {
       setUser(storedUser);
     }
@@ -24,55 +26,41 @@ export const AuthProvider = ({ children }) => {
 
   const login = (userDetails) => {
     setUser(userDetails);
-    localStorage.setItem("user", JSON.stringify(userDetails));
+    localStorage.setItem('user', JSON.stringify(userDetails));
   };
   const logout = () => {
     try {
-      account.deleteSession("current");
+      account.deleteSession('current');
       setUser(null);
-      localStorage.removeItem("user");
+      localStorage.removeItem('user');
+      router.push('/');
     } catch (error) {
-      console.error("Error during logout:", error);
+      console.error('Error during logout:', error);
     }
   };
-  
+
   const fetchUser = async () => {
     try {
       const user = await account.get();
-      setUser(user);
+      login(user);
     } catch (error) {
-      console.error("Error fetching user:", error);
+      console.error('Error fetching user:', error);
     }
+  };
 
-  // const logout = () => {
-  //   account.deleteSession("current");
-  //   // setUser(null);
-  //   // localStorage.removeItem("user");
-    
-  // };
-  // const fetchUser = async () => {
-  //   // You can modify this function to fetch user data from your API or storage
-  //   // For example, you might use appwrite to get the user details
-  //   try {
-  //     const user = await account.get();
-  //     setUser(user);
-  //   } catch (error) {
-  //     console.error("Error fetching user:", error);
-  //   }
-  // };
-  }
   const contextValue = {
     user,
     login,
     logout,
     fetchUser,
     loading,
-    setLoading
+    setLoading,
   };
 
-  return <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
+  );
 };
-
 
 export const useUser = () => {
   const context = useContext(AuthContext);

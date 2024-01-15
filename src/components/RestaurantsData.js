@@ -1,9 +1,8 @@
-"use client"
+'use client';
 
-export const Restaurants  = 
-  [
+export const Restaurants = [
   {
-    id:0,
+    id: 0,
     title: 'Anambra Kitchen',
     dealings: 'Fast-food',
     location: 'Lagos-Benin Expressway,Ore',
@@ -12,13 +11,11 @@ export const Restaurants  =
     rating: 5.0,
     minOrder: 'MIN ORDER OF',
     imgSrc: '/Assets/Images/restaurants/Anambra kitchen.jpg',
-    altText:'anambra kitchen fastfood',
-    menu:[
-      
-    ]
+    altText: 'anambra kitchen fastfood',
+    menu: [],
   },
   {
-    id:1,
+    id: 1,
     title: 'Anambra Kitchen',
     dealings: 'Fast-food',
     location: 'Lagos-Benin Expressway,Ore',
@@ -27,174 +24,174 @@ export const Restaurants  =
     rating: 5.0,
     minOrder: 'MIN ORDER OF',
     imgSrc: '/Assets/Images/restaurants/Anambra kitchen.jpg',
-    altText:'anambra kitchen fastfood',
-    soupMenu: [
+    altText: 'anambra kitchen fastfood',
+    soupMenu_Anambra: [
       {
         name: 'Egusi Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Egusi Soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Afang Soup',
         imgSrc: '/Assets/Images/menu/afang with semo.jpg',
         altText: 'Afang soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Bitter-leaf Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Bitter-leaf Soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Ogbonor Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Ogbonor Soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
     ],
-   riceMenu: [
+    riceMenu_Anambra: [
       {
         name: 'Jollof rice',
         imgSrc: '/Assets/Images/menu/jollof rice.jpg',
         altText: 'jollof rice',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
       {
         name: 'Fried Rice',
-         imgSrc: '/Assets/Images/menu/whiterice.jpg',
+        imgSrc: '/Assets/Images/menu/whiterice.jpg',
         altText: 'fried rice',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
       {
         name: 'White Rice',
-         imgSrc: '/Assets/Images/menu/whiterice.jpg',
+        imgSrc: '/Assets/Images/menu/whiterice.jpg',
         altText: 'White rice',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
       {
         name: 'Salad',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Salad',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
     ],
-   comboMenu: [
+    comboMenu_Anambra: [
       {
         name: 'Vegetable soup with Eba',
         imgSrc: '/Assets/Images/menu/eba with vegetable.jpg',
         altText: 'eba with vegetable soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Egusi Soup with Semo',
         imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
         altText: 'egusi soup with semo',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Egusi Soup with Semo',
-         imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
+        imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
         altText: 'egusi soup with semo',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Yam Porridge',
-         imgSrc: '/Assets/Images/menu/yam porridge.jpg',
+        imgSrc: '/Assets/Images/menu/yam porridge.jpg',
         altText: 'Yam porridge',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
     ],
-    proteinMenu: [
+    proteinMenu_Anambra: [
       {
         name: 'Cow Meat(Beef)',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Beef',
-        price: Number(100.00).toFixed(2),
-        description: 'Proteins'
+        price: Number(100.0).toFixed(2),
+        description: 'Proteins',
       },
       {
         name: 'Peppered Turkey',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'fried pepper turkey',
-        price: Number(100.00).toFixed(2),
-        description: 'Proteins'
+        price: Number(100.0).toFixed(2),
+        description: 'Proteins',
       },
       {
         name: 'Peppered Chicken',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'peppered chicken',
-        price: Number(100.00).toFixed(2),
-        description: 'protein'
+        price: Number(100.0).toFixed(2),
+        description: 'protein',
       },
       {
         name: 'Samond Fish',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'samond fish',
-        price: Number(100.00).toFixed(2),
-        description: 'Proteins'
+        price: Number(100.0).toFixed(2),
+        description: 'Proteins',
       },
     ],
-    snackMenu: [
+    snackMenu_Anambra: [
       {
         name: 'Meatpie',
         imgSrc: '/Assets/Images/menu/meatpie.jpg',
         altText: 'meatpie',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack Menu'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack Menu',
       },
       {
         name: 'Shawarma Roll',
-         imgSrc: '/Assets/Images/menu/shawarma roll.jpg',
+        imgSrc: '/Assets/Images/menu/shawarma roll.jpg',
         altText: 'shawarma roll',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack Menu'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack Menu',
       },
       {
         name: 'Spring Rolls',
-         imgSrc: '/Assets/Images/menu/Spring Rolls.jpg',
+        imgSrc: '/Assets/Images/menu/Spring Rolls.jpg',
         altText: 'Spring Rolls',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack',
       },
       {
         name: 'Burger',
-         imgSrc: '/Assets/Images/menu/burger.jpg',
+        imgSrc: '/Assets/Images/menu/burger.jpg',
         altText: 'burger',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack',
       },
     ],
-    water: [
+    water_Anambra: [
       {
         name: 'Eva Water big',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'water',
-        price: Number(100.00).toFixed(2),
+        price: Number(100.0).toFixed(2),
       },
       {
         name: 'Cocacola',
-         imgSrc: '/Assets/Images/menu/coke.jpg',
+        imgSrc: '/Assets/Images/menu/coke.jpg',
         altText: 'cocacola',
-        price: Number(100.00).toFixed(2),
+        price: Number(100.0).toFixed(2),
       },
-    ]
+    ],
   },
   {
-    id:2,
+    id: 2,
     title: 'Bottom Pot',
     dealings: 'Fast-food',
     location: 'Lagos-Benin Expressway,Ore',
@@ -203,174 +200,174 @@ export const Restaurants  =
     rating: 5.0,
     minOrder: 'MIN ORDER OF #2000.00',
     imgSrc: '/Assets/Images/restaurants/Bottom pot.jpg',
-    altText:'bottom pot fastfood',
-    soupMenu: [
+    altText: 'bottom pot fastfood',
+    soupMenu_Bottom: [
       {
         name: 'Egusi Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Egusi Soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Afang Soup',
         imgSrc: '/Assets/Images/menu/afang with semo.jpg',
         altText: 'Afang soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Bitter-leaf Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Bitter-leaf Soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Ogbonor Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Ogbonor Soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
     ],
-   riceMenu: [
+    riceMenu_Bottom: [
       {
         name: 'Jollof rice',
         imgSrc: '/Assets/Images/menu/jollof rice.jpg',
         altText: 'jollof rice',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
       {
         name: 'Fried Rice',
-         imgSrc: '/Assets/Images/menu/whiterice.jpg',
+        imgSrc: '/Assets/Images/menu/whiterice.jpg',
         altText: 'fried rice',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
       {
         name: 'White Rice',
-         imgSrc: '/Assets/Images/menu/whiterice.jpg',
+        imgSrc: '/Assets/Images/menu/whiterice.jpg',
         altText: 'White rice',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
       {
         name: 'Salad',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Salad',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
     ],
-   comboMenu: [
+    comboMenu_Bottom: [
       {
         name: 'Vegetable soup with Eba',
         imgSrc: '/Assets/Images/menu/eba with vegetable.jpg',
         altText: 'eba with vegetable soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Egusi Soup with Semo',
-         imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
+        imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
         altText: 'egusi soup with semo',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Egusi Soup with Semo',
-         imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
+        imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
         altText: 'egusi soup with semo',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Yam Porridge',
-         imgSrc: '/Assets/Images/menu/yam porridge.jpg',
+        imgSrc: '/Assets/Images/menu/yam porridge.jpg',
         altText: 'Yam porridge',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
     ],
-    proteinMenu: [
+    proteinMenu_Bottom: [
       {
         name: 'Cow Meat(Beef)',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Beef',
-        price: Number(100.00).toFixed(2),
-        description: 'Proteins'
+        price: Number(100.0).toFixed(2),
+        description: 'Proteins',
       },
       {
         name: 'Peppered Turkey',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'fried pepper turkey',
-        price: Number(100.00).toFixed(2),
-        description: 'Proteins'
+        price: Number(100.0).toFixed(2),
+        description: 'Proteins',
       },
       {
         name: 'Peppered Chicken',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'peppered chicken',
-        price: Number(100.00).toFixed(2),
-        description: 'protein'
+        price: Number(100.0).toFixed(2),
+        description: 'protein',
       },
       {
         name: 'Samond Fish',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'samond fish',
-        price: Number(100.00).toFixed(2),
-        description: 'Proteins'
+        price: Number(100.0).toFixed(2),
+        description: 'Proteins',
       },
     ],
-    snackMenu: [
+    snackMenu_Bottom: [
       {
         name: 'Meatpie',
         imgSrc: '/Assets/Images/menu/meatpie.jpg',
         altText: 'meatpie',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack Menu'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack Menu',
       },
       {
         name: 'Shawarma Roll',
-         imgSrc: '/Assets/Images/menu/shawarma roll.jpg',
+        imgSrc: '/Assets/Images/menu/shawarma roll.jpg',
         altText: 'shawarma roll',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack Menu'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack Menu',
       },
       {
         name: 'Spring Rolls',
-         imgSrc: '/Assets/Images/menu/Spring Rolls.jpg',
+        imgSrc: '/Assets/Images/menu/Spring Rolls.jpg',
         altText: 'Spring Rolls',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack',
       },
       {
         name: 'Burger',
-         imgSrc: '/Assets/Images/menu/burger.jpg',
+        imgSrc: '/Assets/Images/menu/burger.jpg',
         altText: 'burger',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack',
       },
     ],
-    water: [
+    water_Bottom: [
       {
         name: 'Eva Water big',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'water',
-        price: Number(100.00).toFixed(2),
+        price: Number(100.0).toFixed(2),
       },
       {
         name: 'Cocacola',
-         imgSrc: '/Assets/Images/menu/coke.jpg',
+        imgSrc: '/Assets/Images/menu/coke.jpg',
         altText: 'cocacola',
-        price: Number(100.00).toFixed(2),
+        price: Number(100.0).toFixed(2),
       },
-    ]
+    ],
   },
   {
-    id:3,
+    id: 3,
     title: 'Glofes Fastfood',
     dealings: 'Fast-food',
     location: 'Lagos-Benin Expressway,Ore',
@@ -379,8 +376,8 @@ export const Restaurants  =
     rating: 5.0,
     minOrder: 'MIN ORDER OF #2000.00',
     imgSrc: '/Assets/Images/restaurants/Ken Republic.jpg',
-    altText:'ken clinton fastfood',
-    soupMenu: [
+    altText: 'ken clinton fastfood',
+    soupMenu_Glofes: [
       {
         name: 'Egusi Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
@@ -402,7 +399,7 @@ export const Restaurants  =
         altText: 'Ogbonor Soup',
       },
     ],
-    comboMenu: [
+    comboMenu_Glofes: [
       {
         name: 'Egusi Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
@@ -424,7 +421,7 @@ export const Restaurants  =
         altText: 'Ogbonor Soup',
       },
     ],
-    riceMenu: [
+    riceMenu_Glofes: [
       {
         name: 'White Rice',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
@@ -437,11 +434,11 @@ export const Restaurants  =
       },
       {
         name: 'Fried Rice',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Bitter-leaf Soup',
       },
     ],
-    proteinMenu: [
+    proteinMenu_Glofes: [
       {
         name: 'Cow Meat(Beef)',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
@@ -459,11 +456,11 @@ export const Restaurants  =
       },
       {
         name: 'Ice-Fish',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Ogbonor Soup',
       },
     ],
-    snackMenu: [
+    snackMenu_Glofes: [
       {
         name: 'Meatpie',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
@@ -471,21 +468,21 @@ export const Restaurants  =
       },
       {
         name: 'Chicken Pie',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Okro Soup',
       },
       {
         name: 'Egg-roll',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Bitter-leaf Soup',
       },
       {
         name: 'Doughnut',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Ogbonor Soup',
       },
     ],
-    water: [
+    water_Glofes: [
       {
         name: 'Eva Water big',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
@@ -493,13 +490,13 @@ export const Restaurants  =
       },
       {
         name: 'Eva water small',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Okro Soup',
       },
-    ]
+    ],
   },
   {
-    id:4,
+    id: 4,
     title: 'Continental Place',
     dealings: 'Fast-food',
     location: 'Lagos-Benin Expressway,Ore',
@@ -508,174 +505,174 @@ export const Restaurants  =
     rating: 5.0,
     minOrder: 'MIN ORDER OF #2000.00',
     imgSrc: '/Assets/Images/restaurants/continentalplace.jpg',
-    altText:'continental place fastfood',
-    soupMenu: [
+    altText: 'continental place fastfood',
+    soupMenu_Con: [
       {
         name: 'Egusi Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Egusi Soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Afang Soup',
         imgSrc: '/Assets/Images/menu/afang with semo.jpg',
         altText: 'Afang soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Bitter-leaf Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Bitter-leaf Soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Ogbonor Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Ogbonor Soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
     ],
-   riceMenu: [
+    riceMenu_Con: [
       {
         name: 'Jollof rice',
         imgSrc: '/Assets/Images/menu/jollof rice.jpg',
         altText: 'jollof rice',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
       {
         name: 'Fried Rice',
-         imgSrc: '/Assets/Images/menu/whiterice.jpg',
+        imgSrc: '/Assets/Images/menu/whiterice.jpg',
         altText: 'fried rice',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
       {
         name: 'White Rice',
-         imgSrc: '/Assets/Images/menu/whiterice.jpg',
+        imgSrc: '/Assets/Images/menu/whiterice.jpg',
         altText: 'White rice',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
       {
         name: 'Salad',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Salad',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
     ],
-   comboMenu: [
+    comboMenu_Con: [
       {
         name: 'Vegetable soup with Eba',
         imgSrc: '/Assets/Images/menu/eba with vegetable.jpg',
         altText: 'eba with vegetable soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Egusi Soup with Semo',
-         imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
+        imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
         altText: 'egusi soup with semo',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Egusi Soup with Semo',
-         imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
+        imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
         altText: 'egusi soup with semo',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Yam Porridge',
-         imgSrc: '/Assets/Images/menu/yam porridge.jpg',
+        imgSrc: '/Assets/Images/menu/yam porridge.jpg',
         altText: 'Yam porridge',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
     ],
-    proteinMenu: [
+    proteinMenu_Con: [
       {
         name: 'Cow Meat(Beef)',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Beef',
-        price: Number(100.00).toFixed(2),
-        description: 'Proteins'
+        price: Number(100.0).toFixed(2),
+        description: 'Proteins',
       },
       {
         name: 'Peppered Turkey',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'fried pepper turkey',
-        price: Number(100.00).toFixed(2),
-        description: 'Proteins'
+        price: Number(100.0).toFixed(2),
+        description: 'Proteins',
       },
       {
         name: 'Peppered Chicken',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'peppered chicken',
-        price: Number(100.00).toFixed(2),
-        description: 'protein'
+        price: Number(100.0).toFixed(2),
+        description: 'protein',
       },
       {
         name: 'Samond Fish',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'samond fish',
-        price: Number(100.00).toFixed(2),
-        description: 'Proteins'
+        price: Number(100.0).toFixed(2),
+        description: 'Proteins',
       },
     ],
-    snackMenu: [
+    snackMenu_Con: [
       {
         name: 'Meatpie',
         imgSrc: '/Assets/Images/menu/meatpie.jpg',
         altText: 'meatpie',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack Menu'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack Menu',
       },
       {
         name: 'Shawarma Roll',
-         imgSrc: '/Assets/Images/menu/shawarma roll.jpg',
+        imgSrc: '/Assets/Images/menu/shawarma roll.jpg',
         altText: 'shawarma roll',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack Menu'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack Menu',
       },
       {
         name: 'Spring Rolls',
-         imgSrc: '/Assets/Images/menu/Spring Rolls.jpg',
+        imgSrc: '/Assets/Images/menu/Spring Rolls.jpg',
         altText: 'Spring Rolls',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack',
       },
       {
         name: 'Burger',
-         imgSrc: '/Assets/Images/menu/burger.jpg',
+        imgSrc: '/Assets/Images/menu/burger.jpg',
         altText: 'burger',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack',
       },
     ],
-    water: [
+    water_Con: [
       {
         name: 'Eva Water big',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'water',
-        price: Number(100.00).toFixed(2),
+        price: Number(100.0).toFixed(2),
       },
       {
         name: 'Cocacola',
-         imgSrc: '/Assets/Images/menu/coke.jpg',
+        imgSrc: '/Assets/Images/menu/coke.jpg',
         altText: 'cocacola',
-        price: Number(100.00).toFixed(2),
+        price: Number(100.0).toFixed(2),
       },
-    ]
+    ],
   },
   {
-    id:5,
+    id: 5,
     title: 'Tongue Tells',
     dealings: 'Fast-food',
     location: 'Lagos-Benin Expressway,Ore',
@@ -684,8 +681,8 @@ export const Restaurants  =
     rating: 5.0,
     minOrder: 'MIN ORDER OF #2000.00',
     imgSrc: '/Assets/Images/restaurants/tonguetells.jpg',
-    altText:'tonguetells fastfood',
-    soupMenu: [
+    altText: 'tonguetells fastfood',
+    soupMenu_Tong: [
       {
         name: 'Egusi Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
@@ -693,21 +690,21 @@ export const Restaurants  =
       },
       {
         name: 'Okro Soup',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Okro Soup',
       },
       {
         name: 'Bitter-leaf Soup',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Bitter-leaf Soup',
       },
       {
         name: 'Ogbonor Soup',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Ogbonor Soup',
       },
     ],
-    comboMenu: [
+    comboMenu_Tong: [
       {
         name: 'Egusi Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
@@ -715,21 +712,21 @@ export const Restaurants  =
       },
       {
         name: 'Okro Soup',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Okro Soup',
       },
       {
         name: 'Bitter-leaf Soup',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Bitter-leaf Soup',
       },
       {
         name: 'Ogbonor Soup',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Ogbonor Soup',
       },
     ],
-    riceMenu: [
+    riceMenu_Tong: [
       {
         name: 'White Rice',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
@@ -737,16 +734,16 @@ export const Restaurants  =
       },
       {
         name: 'Jollof Rice',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Okro Soup',
       },
       {
         name: 'Fried Rice',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Bitter-leaf Soup',
       },
     ],
-    proteinMenu: [
+    proteinMenu_Tong: [
       {
         name: 'Cow Meat(Beef)',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
@@ -754,21 +751,21 @@ export const Restaurants  =
       },
       {
         name: 'Turkey',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Okro Soup',
       },
       {
         name: 'Chicken',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Bitter-leaf Soup',
       },
       {
         name: 'Ice-Fish',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Ogbonor Soup',
       },
     ],
-    snackMenu: [
+    snackMenu_Tong: [
       {
         name: 'Meatpie',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
@@ -776,140 +773,35 @@ export const Restaurants  =
       },
       {
         name: 'Chicken Pie',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Okro Soup',
       },
       {
         name: 'Egg-roll',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Bitter-leaf Soup',
       },
       {
         name: 'Doughnut',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Ogbonor Soup',
       },
     ],
-      soupMenu: [
-        {
-          name: 'Egusi Soup',
-          imgSrc: '/Assets/Images/menu/egusi.jpg',
-          altText: 'Egusi Soup',
-        },
-        {
-          name: 'Okro Soup',
-          imgSrc: '/Assets/Images/menu/egusi.jpg',
-          altText: 'Okro Soup',
-        },
-        {
-          name: 'Bitter-leaf Soup',
-          imgSrc: '/Assets/Images/menu/egusi.jpg',
-          altText: 'Bitter-leaf Soup',
-        },
-        {
-          name: 'Ogbonor Soup',
-          imgSrc: '/Assets/Images/menu/egusi.jpg',
-          altText: 'Ogbonor Soup',
-        },
-      ],
-      comboMenu: [
-        {
-          name: 'Egusi Soup',
-          imgSrc: '/Assets/Images/menu/egusi.jpg',
-          altText: 'Egusi Soup',
-        },
-        {
-          name: 'Okro Soup',
-           imgSrc: '/Assets/Images/menu/egusi.jpg',
-          altText: 'Okro Soup',
-        },
-        {
-          name: 'Bitter-leaf Soup',
-           imgSrc: '/Assets/Images/menu/egusi.jpg',
-          altText: 'Bitter-leaf Soup',
-        },
-        {
-          name: 'Ogbonor Soup',
-           imgSrc: '/Assets/Images/menu/egusi.jpg',
-          altText: 'Ogbonor Soup',
-        },
-      ],
-      riceMenu: [
-        {
-          name: 'White Rice',
-          imgSrc: '/Assets/Images/menu/egusi.jpg',
-          altText: 'Egusi Soup',
-        },
-        {
-          name: 'Jollof Rice',
-           imgSrc: '/Assets/Images/menu/egusi.jpg',
-          altText: 'Okro Soup',
-        },
-        {
-          name: 'Fried Rice',
-           imgSrc: '/Assets/Images/menu/egusi.jpg',
-          altText: 'Bitter-leaf Soup',
-        },
-      ],
-      proteinMenu: [
-        {
-          name: 'Cow Meat(Beef)',
-          imgSrc: '/Assets/Images/menu/egusi.jpg',
-          altText: 'Egusi Soup',
-        },
-        {
-          name: 'Turkey',
-           imgSrc: '/Assets/Images/menu/egusi.jpg',
-          altText: 'Okro Soup',
-        },
-        {
-          name: 'Chicken',
-           imgSrc: '/Assets/Images/menu/egusi.jpg',
-          altText: 'Bitter-leaf Soup',
-        },
-        {
-          name: 'Ice-Fish',
-           imgSrc: '/Assets/Images/menu/egusi.jpg',
-          altText: 'Ogbonor Soup',
-        },
-      ],
-      snackMenu: [
-        {
-          name: 'Meatpie',
-          imgSrc: '/Assets/Images/menu/egusi.jpg',
-          altText: 'Egusi Soup',
-        },
-        {
-          name: 'Chicken Pie',
-           imgSrc: '/Assets/Images/menu/egusi.jpg',
-          altText: 'Okro Soup',
-        },
-        {
-          name: 'Egg-roll',
-           imgSrc: '/Assets/Images/menu/egusi.jpg',
-          altText: 'Bitter-leaf Soup',
-        },
-        {
-          name: 'Doughnut',
-           imgSrc: '/Assets/Images/menu/egusi.jpg',
-          altText: 'Ogbonor Soup',
-        },
-      ],
-      water: [
-        {
-          name: 'Eva Water big',
-          imgSrc: '/Assets/Images/menu/egusi.jpg',
-          altText: 'Egusi Soup',
-        },
-        {
-          name: 'Eva water small',
-           imgSrc: '/Assets/Images/menu/egusi.jpg',
-          altText: 'Okro Soup',
-        },
-    ]
+    water_Tong: [
+      {
+        name: 'Eva Water big',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
+        altText: 'Egusi Soup',
+      },
+      {
+        name: 'Eva water small',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
+        altText: 'Okro Soup',
+      },
+    ],
   },
   {
-    id:6,
+    id: 6,
     title: 'Glofes Fastfood',
     dealings: 'Fast-food',
     location: 'Lagos-Benin Expressway,Ore',
@@ -918,8 +810,8 @@ export const Restaurants  =
     rating: 5.0,
     minOrder: 'MIN ORDER OF #2000.00',
     imgSrc: '/Assets/Images/restaurants/Glofes Fastfood.jpg',
-    altText:'S.O Glofes fastfood',
-    soupMenu: [
+    altText: 'S.O Glofes fastfood',
+    soupMenu_Fes: [
       {
         name: 'Egusi Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
@@ -941,7 +833,7 @@ export const Restaurants  =
         altText: 'Ogbonor Soup',
       },
     ],
-    comboMenu: [
+    comboMenu_Fes: [
       {
         name: 'Egusi Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
@@ -949,21 +841,21 @@ export const Restaurants  =
       },
       {
         name: 'Okro Soup',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Okro Soup',
       },
       {
         name: 'Bitter-leaf Soup',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Bitter-leaf Soup',
       },
       {
         name: 'Ogbonor Soup',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Ogbonor Soup',
       },
     ],
-    riceMenu: [
+    riceMenu_Fes: [
       {
         name: 'White Rice',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
@@ -971,16 +863,16 @@ export const Restaurants  =
       },
       {
         name: 'Jollof Rice',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Okro Soup',
       },
       {
         name: 'Fried Rice',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Bitter-leaf Soup',
       },
     ],
-    proteinMenu: [
+    proteinMenu_Fes: [
       {
         name: 'Cow Meat(Beef)',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
@@ -988,21 +880,21 @@ export const Restaurants  =
       },
       {
         name: 'Turkey',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Okro Soup',
       },
       {
         name: 'Chicken',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Bitter-leaf Soup',
       },
       {
         name: 'Ice-Fish',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Ogbonor Soup',
       },
     ],
-    snackMenu: [
+    snackMenu_Fes: [
       {
         name: 'Meatpie',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
@@ -1010,21 +902,21 @@ export const Restaurants  =
       },
       {
         name: 'Chicken Pie',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Okro Soup',
       },
       {
         name: 'Egg-roll',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Bitter-leaf Soup',
       },
       {
         name: 'Doughnut',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Ogbonor Soup',
       },
     ],
-    water: [
+    water_Fes: [
       {
         name: 'Eva Water big',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
@@ -1032,13 +924,13 @@ export const Restaurants  =
       },
       {
         name: 'Eva water small',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Okro Soup',
       },
-    ]
+    ],
   },
   {
-    id:7,
+    id: 7,
     title: 'FoodHouse',
     dealings: 'Fast-food',
     location: 'Lagos-Benin Expressway,Ore',
@@ -1047,174 +939,174 @@ export const Restaurants  =
     rating: 5.0,
     minOrder: 'MIN ORDER OF #2000.00',
     imgSrc: '/Assets/Images/restaurants/FoodHouse.jpg',
-    altText:'foodhouse',
-    soupMenu: [
+    altText: 'foodhouse',
+    soupMenu_Fh: [
       {
         name: 'Egusi Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Egusi Soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Afang Soup',
         imgSrc: '/Assets/Images/menu/afang with semo.jpg',
         altText: 'Afang soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Bitter-leaf Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Bitter-leaf Soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Ogbonor Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Ogbonor Soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
     ],
-   riceMenu: [
+    riceMenu_Fh: [
       {
         name: 'Jollof rice',
         imgSrc: '/Assets/Images/menu/jollof rice.jpg',
         altText: 'jollof rice',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
       {
         name: 'Fried Rice',
-         imgSrc: '/Assets/Images/menu/whiterice.jpg',
+        imgSrc: '/Assets/Images/menu/whiterice.jpg',
         altText: 'fried rice',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
       {
         name: 'White Rice',
-         imgSrc: '/Assets/Images/menu/whiterice.jpg',
+        imgSrc: '/Assets/Images/menu/whiterice.jpg',
         altText: 'White rice',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
       {
         name: 'Salad',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Salad',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
     ],
-   comboMenu: [
+    comboMenu_Fh: [
       {
         name: 'Vegetable soup with Eba',
         imgSrc: '/Assets/Images/menu/eba with vegetable.jpg',
         altText: 'eba with vegetable soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Egusi Soup with Semo',
-         imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
+        imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
         altText: 'egusi soup with semo',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Egusi Soup with Semo',
-         imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
+        imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
         altText: 'egusi soup with semo',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Yam Porridge',
-         imgSrc: '/Assets/Images/menu/yam porridge.jpg',
+        imgSrc: '/Assets/Images/menu/yam porridge.jpg',
         altText: 'Yam porridge',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
     ],
-    proteinMenu: [
+    proteinMenu_Fh: [
       {
         name: 'Cow Meat(Beef)',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Beef',
-        price: Number(100.00).toFixed(2),
-        description: 'Proteins'
+        price: Number(100.0).toFixed(2),
+        description: 'Proteins',
       },
       {
         name: 'Peppered Turkey',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'fried pepper turkey',
-        price: Number(100.00).toFixed(2),
-        description: 'Proteins'
+        price: Number(100.0).toFixed(2),
+        description: 'Proteins',
       },
       {
         name: 'Peppered Chicken',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'peppered chicken',
-        price: Number(100.00).toFixed(2),
-        description: 'protein'
+        price: Number(100.0).toFixed(2),
+        description: 'protein',
       },
       {
         name: 'Samond Fish',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'samond fish',
-        price: Number(100.00).toFixed(2),
-        description: 'Proteins'
+        price: Number(100.0).toFixed(2),
+        description: 'Proteins',
       },
     ],
-    snackMenu: [
+    snackMenu_Fh: [
       {
         name: 'Meatpie',
         imgSrc: '/Assets/Images/menu/meatpie.jpg',
         altText: 'meatpie',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack Menu'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack Menu',
       },
       {
         name: 'Shawarma Roll',
-         imgSrc: '/Assets/Images/menu/shawarma roll.jpg',
+        imgSrc: '/Assets/Images/menu/shawarma roll.jpg',
         altText: 'shawarma roll',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack Menu'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack Menu',
       },
       {
         name: 'Spring Rolls',
-         imgSrc: '/Assets/Images/menu/Spring Rolls.jpg',
+        imgSrc: '/Assets/Images/menu/Spring Rolls.jpg',
         altText: 'Spring Rolls',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack',
       },
       {
         name: 'Burger',
-         imgSrc: '/Assets/Images/menu/burger.jpg',
+        imgSrc: '/Assets/Images/menu/burger.jpg',
         altText: 'burger',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack',
       },
     ],
-    water: [
+    water_Fh: [
       {
         name: 'Eva Water big',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'water',
-        price: Number(100.00).toFixed(2),
+        price: Number(100.0).toFixed(2),
       },
       {
         name: 'Cocacola',
-         imgSrc: '/Assets/Images/menu/coke.jpg',
+        imgSrc: '/Assets/Images/menu/coke.jpg',
         altText: 'cocacola',
-        price: Number(100.00).toFixed(2),
+        price: Number(100.0).toFixed(2),
       },
-    ]
+    ],
   },
   {
-    id:8,
+    id: 8,
     title: 'Smart Fastfood',
     dealings: 'Fast-food',
     location: 'Lagos-Benin Expressway,Ore',
@@ -1223,174 +1115,174 @@ export const Restaurants  =
     rating: 5.0,
     minOrder: 'MIN ORDER OF #2000.00',
     imgSrc: '/Assets/Images/restaurants/smart fastfood.jpg',
-     altText:'smart foodhouse',
-     soupMenu: [
+    altText: 'smart foodhouse',
+    soupMenu_Smart: [
       {
         name: 'Egusi Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Egusi Soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Afang Soup',
         imgSrc: '/Assets/Images/menu/afang with semo.jpg',
         altText: 'Afang soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Bitter-leaf Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Bitter-leaf Soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Ogbonor Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Ogbonor Soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
     ],
-   riceMenu: [
+    riceMenu_Smart: [
       {
         name: 'Jollof rice',
         imgSrc: '/Assets/Images/menu/jollof rice.jpg',
         altText: 'jollof rice',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
       {
         name: 'Fried Rice',
-         imgSrc: '/Assets/Images/menu/whiterice.jpg',
+        imgSrc: '/Assets/Images/menu/whiterice.jpg',
         altText: 'fried rice',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
       {
         name: 'White Rice',
-         imgSrc: '/Assets/Images/menu/whiterice.jpg',
+        imgSrc: '/Assets/Images/menu/whiterice.jpg',
         altText: 'White rice',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
       {
         name: 'Salad',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Salad',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
     ],
-   comboMenu: [
+    comboMenu_Smart: [
       {
         name: 'Vegetable soup with Eba',
         imgSrc: '/Assets/Images/menu/eba with vegetable.jpg',
         altText: 'eba with vegetable soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Egusi Soup with Semo',
-         imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
+        imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
         altText: 'egusi soup with semo',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Egusi Soup with Semo',
-         imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
+        imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
         altText: 'egusi soup with semo',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Yam Porridge',
-         imgSrc: '/Assets/Images/menu/yam porridge.jpg',
+        imgSrc: '/Assets/Images/menu/yam porridge.jpg',
         altText: 'Yam porridge',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
     ],
-    proteinMenu: [
+    proteinMenu_Smart: [
       {
         name: 'Cow Meat(Beef)',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Beef',
-        price: Number(100.00).toFixed(2),
-        description: 'Proteins'
+        price: Number(100.0).toFixed(2),
+        description: 'Proteins',
       },
       {
         name: 'Peppered Turkey',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'fried pepper turkey',
-        price: Number(100.00).toFixed(2),
-        description: 'Proteins'
+        price: Number(100.0).toFixed(2),
+        description: 'Proteins',
       },
       {
         name: 'Peppered Chicken',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'peppered chicken',
-        price: Number(100.00).toFixed(2),
-        description: 'protein'
+        price: Number(100.0).toFixed(2),
+        description: 'protein',
       },
       {
         name: 'Samond Fish',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'samond fish',
-        price: Number(100.00).toFixed(2),
-        description: 'Proteins'
+        price: Number(100.0).toFixed(2),
+        description: 'Proteins',
       },
     ],
-    snackMenu: [
+    snackMenu_Smart: [
       {
         name: 'Meatpie',
         imgSrc: '/Assets/Images/menu/meatpie.jpg',
         altText: 'meatpie',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack Menu'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack Menu',
       },
       {
         name: 'Shawarma Roll',
-         imgSrc: '/Assets/Images/menu/shawarma roll.jpg',
+        imgSrc: '/Assets/Images/menu/shawarma roll.jpg',
         altText: 'shawarma roll',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack Menu'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack Menu',
       },
       {
         name: 'Spring Rolls',
-         imgSrc: '/Assets/Images/menu/Spring Rolls.jpg',
+        imgSrc: '/Assets/Images/menu/Spring Rolls.jpg',
         altText: 'Spring Rolls',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack',
       },
       {
         name: 'Burger',
-         imgSrc: '/Assets/Images/menu/burger.jpg',
+        imgSrc: '/Assets/Images/menu/burger.jpg',
         altText: 'burger',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack',
       },
     ],
-    water: [
+    water_Smart: [
       {
         name: 'Eva Water big',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'water',
-        price: Number(100.00).toFixed(2),
+        price: Number(100.0).toFixed(2),
       },
       {
         name: 'Cocacola',
-         imgSrc: '/Assets/Images/menu/coke.jpg',
+        imgSrc: '/Assets/Images/menu/coke.jpg',
         altText: 'cocacola',
-        price: Number(100.00).toFixed(2),
+        price: Number(100.0).toFixed(2),
       },
-    ]
+    ],
   },
   {
-    id:9,
+    id: 9,
     title: 'Akanchawa Restaurant',
     dealings: 'Fast-food',
     location: 'Lagos-Benin Expressway,Ore',
@@ -1398,173 +1290,173 @@ export const Restaurants  =
     workHour: '7am - 5pm',
     rating: 5.0,
     minOrder: 'MIN ORDER OF #2000.00',
-   imgSrc: '/Assets/Images/restaurants/Anambra kitchen.jpg',
-    altText:'anambra kitchen fastfood',
-    soupMenu: [
+    imgSrc: '/Assets/Images/restaurants/Anambra kitchen.jpg',
+    altText: 'anambra kitchen fastfood',
+    soupMenu_Akan: [
       {
         name: 'Egusi Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Egusi Soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Afang Soup',
         imgSrc: '/Assets/Images/menu/afang with semo.jpg',
         altText: 'Afang soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Bitter-leaf Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Bitter-leaf Soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Ogbonor Soup',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Ogbonor Soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
     ],
-   riceMenu: [
+    riceMenu_Akan: [
       {
         name: 'Jollof rice',
         imgSrc: '/Assets/Images/menu/jollof rice.jpg',
         altText: 'jollof rice',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
       {
         name: 'Fried Rice',
-         imgSrc: '/Assets/Images/menu/whiterice.jpg',
+        imgSrc: '/Assets/Images/menu/whiterice.jpg',
         altText: 'fried rice',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
       {
         name: 'White Rice',
-         imgSrc: '/Assets/Images/menu/whiterice.jpg',
+        imgSrc: '/Assets/Images/menu/whiterice.jpg',
         altText: 'White rice',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
       {
         name: 'Salad',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Salad',
-        price: Number(100.00).toFixed(2),
-        description: 'Continental Dishes'
+        price: Number(100.0).toFixed(2),
+        description: 'Continental Dishes',
       },
     ],
-   comboMenu: [
+    comboMenu_Akan: [
       {
         name: 'Vegetable soup with Eba',
         imgSrc: '/Assets/Images/menu/eba with vegetable.jpg',
         altText: 'eba with vegetable soup',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Egusi Soup with Semo',
-         imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
+        imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
         altText: 'egusi soup with semo',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Egusi Soup with Semo',
-         imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
+        imgSrc: '/Assets/Images/menu/egusi with semo.jpg',
         altText: 'egusi soup with semo',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
       {
         name: 'Yam Porridge',
-         imgSrc: '/Assets/Images/menu/yam porridge.jpg',
+        imgSrc: '/Assets/Images/menu/yam porridge.jpg',
         altText: 'Yam porridge',
-        price: Number(100.00).toFixed(2),
-        description: 'African Delicacies of soup'
+        price: Number(100.0).toFixed(2),
+        description: 'African Delicacies of soup',
       },
     ],
-    proteinMenu: [
+    proteinMenu_Akan: [
       {
         name: 'Cow Meat(Beef)',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'Beef',
-        price: Number(100.00).toFixed(2),
-        description: 'Proteins'
+        price: Number(100.0).toFixed(2),
+        description: 'Proteins',
       },
       {
         name: 'Peppered Turkey',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'fried pepper turkey',
-        price: Number(100.00).toFixed(2),
-        description: 'Proteins'
+        price: Number(100.0).toFixed(2),
+        description: 'Proteins',
       },
       {
         name: 'Peppered Chicken',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'peppered chicken',
-        price: Number(100.00).toFixed(2),
-        description: 'protein'
+        price: Number(100.0).toFixed(2),
+        description: 'protein',
       },
       {
         name: 'Samond Fish',
-         imgSrc: '/Assets/Images/menu/egusi.jpg',
+        imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'samond fish',
-        price: Number(100.00).toFixed(2),
-        description: 'Proteins'
+        price: Number(100.0).toFixed(2),
+        description: 'Proteins',
       },
     ],
-    snackMenu: [
+    snackMenu_Akan: [
       {
         name: 'Meatpie',
         imgSrc: '/Assets/Images/menu/meatpie.jpg',
         altText: 'meatpie',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack Menu'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack Menu',
       },
       {
         name: 'Shawarma Roll',
-         imgSrc: '/Assets/Images/menu/shawarma roll.jpg',
+        imgSrc: '/Assets/Images/menu/shawarma roll.jpg',
         altText: 'shawarma roll',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack Menu'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack Menu',
       },
       {
         name: 'Spring Rolls',
-         imgSrc: '/Assets/Images/menu/Spring Rolls.jpg',
+        imgSrc: '/Assets/Images/menu/Spring Rolls.jpg',
         altText: 'Spring Rolls',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack',
       },
       {
         name: 'Burger',
-         imgSrc: '/Assets/Images/menu/burger.jpg',
+        imgSrc: '/Assets/Images/menu/burger.jpg',
         altText: 'burger',
-        price: Number(100.00).toFixed(2),
-        description: 'Refreshing Snack'
+        price: Number(100.0).toFixed(2),
+        description: 'Refreshing Snack',
       },
     ],
-    water: [
+    water_Akan: [
       {
         name: 'Eva Water big',
         imgSrc: '/Assets/Images/menu/egusi.jpg',
         altText: 'water',
-        price: Number(100.00).toFixed(2),
+        price: Number(100.0).toFixed(2),
       },
       {
         name: 'Cocacola',
-         imgSrc: '/Assets/Images/menu/coke.jpg',
+        imgSrc: '/Assets/Images/menu/coke.jpg',
         altText: 'cocacola',
-        price: Number(100.00).toFixed(2),
+        price: Number(100.0).toFixed(2),
       },
-    ]
+    ],
   },
 ];
- 
-export default Restaurants
+
+export default Restaurants;

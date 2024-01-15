@@ -1,7 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
-import Restaurants from "./RestaurantsData";
-import { PiCaretCircleDownFill } from "react-icons/pi";
+import Image from 'next/image';
+import Link from 'next/link';
+import Restaurants from './RestaurantsData';
+import { PiCaretCircleDownFill } from 'react-icons/pi';
 
 const EachResCuisines = () => {
   return (

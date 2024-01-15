@@ -1,32 +1,21 @@
-'use client'
-import React, { useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { FaShoppingCart, FaUser } from 'react-icons/fa'
-import Modal from './authentication/AuthModal'
-import SuccessMessage from './authentication/SuccessModal'
-import { useCart } from '@/contexts/CartContext'
-import { useUser } from '@/contexts/AuthContext'
-import useAuth from '@/hooks/useAuth'
+'use client';
+import React, { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { FaShoppingCart, FaUser } from 'react-icons/fa';
+import Modal from './authentication/AuthModal';
+import SuccessMessage from './authentication/SuccessModal';
+import { useCart } from '@/contexts/CartContext';
+import { useUser } from '@/contexts/AuthContext';
+import useAuth from '@/hooks/useAuth';
 
 const Header = () => {
-  const [showModal, setShowModal] = useState(false)
-  const [showSuccessModal, setShowSuccessModal] = useState(false)
-  const [isHovered, setIsHovered] = useState(false)
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const { cartItems } = useCart();
   const { user, logout } = useUser();
-  const { handleSignUpSubmit, handleLoginSubmit } = useAuth();
-
-  const handleButtonKeyDown  = (e) => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      setShowModal(true)
-    }
-  }
-
-  const handleCloseModal = () => {
-    setShowModal(false)
-  }
+  const { showModal, handleSignInClick, handleButtonClick, handleCloseModal } =
+    useAuth();
 
   return (
     <>
@@ -63,10 +52,24 @@ const Header = () => {
           </Link>
 
           <div className="text-[#d62828] text-2xl items-center space-x-4">
-            <button tabIndex={0} onKeyDown={handleButtonKeyDown } className="ctaBgRed">
+            <button
+              tabIndex={0}
+              onClick={handleButtonClick}
+              className="ctaBgRed"
+            >
               Sign in
             </button>
-            <button  onKeyDown={handleButtonKeyDown } className="ctaBgWhite">
+            <button
+              onClick={handleButtonClick}
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  e.preventDefault();
+                  handleButtonClick();
+                }
+              }}
+              className="ctaBgWhite"
+            >
               Sign up
             </button>
           </div>
@@ -91,7 +94,18 @@ const Header = () => {
                   </span>
                   <div className="dropdown">
                     <Link href="/profile">Profile</Link>
-                    <button tabIndex={0}  onKeyDown={handleButtonKeyDown } onClick={() => logout()}>Logout</button>
+                    <button
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          handleButtonClick();
+                        }
+                      }}
+                      onClick={() => logout()}
+                    >
+                      Logout
+                    </button>
                   </div>
                 </div>
               )}
@@ -116,7 +130,7 @@ const Header = () => {
         />
       )}
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

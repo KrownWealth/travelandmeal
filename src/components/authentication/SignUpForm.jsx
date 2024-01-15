@@ -1,22 +1,22 @@
-import useAuth from "../../hooks/useAuth";
-import SuccessModal from "./SuccessModal";
-import { AiOutlineMail } from "react-icons/ai";
-import { IoLockClosedOutline } from "react-icons/io5";
-import LoadingModal from "../LoadingModal";
-import { FaRegUser } from "react-icons/fa";
-import SocialSignIn from "./SocialLogin";
+import useAuth from '../../hooks/useAuth';
+import SuccessModal from './SuccessModal';
+import { AiOutlineMail } from 'react-icons/ai';
+import { IoLockClosedOutline } from 'react-icons/io5';
+import LoadingModal from '../LoadingModal';
+import { FaRegUser } from 'react-icons/fa';
+import SocialSignIn from './SocialLogin';
 
 const SignUpForm = () => {
   const {
     userDetails,
     handleChange,
     errors,
-    showSuccessModal,
-    setShowSuccessModal,
     showPassword,
     handleSignUpSubmit,
     togglePasswordVisibility,
     loading,
+    showSuccessModal,
+    setShowSuccessModal,
   } = useAuth();
 
   return (
@@ -68,7 +68,7 @@ const SignUpForm = () => {
               <input
                 id="password"
                 name="password"
-                type={showPassword ? "text" : "password"}
+                type={showPassword ? 'text' : 'password'}
                 value={userDetails.password}
                 onChange={handleChange}
                 autoComplete="false"
@@ -92,7 +92,7 @@ const SignUpForm = () => {
                 htmlFor="showPasswordCheckbox"
                 className="text-blue-500 cursor-pointer"
               >
-                {showPassword ? "Hide Password" : "Show Password"}
+                {showPassword ? 'Hide Password' : 'Show Password'}
               </label>
             </div>
           </div>
@@ -119,7 +119,7 @@ const SignUpForm = () => {
           role="button"
           tabIndex={0}
           onKeyDown={(e) => {
-            if (e.key === "Enter") {
+            if (e.key === 'Enter') {
               e.preventDefault();
               handleSignUpSubmit();
             }

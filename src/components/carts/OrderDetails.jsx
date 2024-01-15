@@ -1,8 +1,8 @@
-import React from "react";
-import { useCart } from "@/contexts/CartContext";
-import Image from "next/image";
-import { RiDeleteBinLine } from "react-icons/ri";
-import { FaPlus, FaMinus } from "react-icons/fa";
+import React from 'react';
+import { useCart } from '@/contexts/CartContext';
+import Image from 'next/image';
+import { RiDeleteBinLine } from 'react-icons/ri';
+import { FaPlus, FaMinus } from 'react-icons/fa';
 
 const OrderDetails = () => {
   const { cartItems, setCartItems } = useCart();
@@ -20,13 +20,20 @@ const OrderDetails = () => {
     setCartItems(updatedCartItems);
   };
 
-  const totalCartPrice = cartItems.reduce((total, item) => total + item.total, 0);
+  const totalCartPrice = cartItems.reduce(
+    (total, item) => total + item.total,
+    0
+  );
 
   return (
     <div data-testid="order-detail">
       {cartItems.length > 0 ? (
         cartItems.map((item, index) => (
-          <div key={index} className="flex flex-row justify-between p-4" data-testid="cart-item">
+          <div
+            key={index}
+            className="flex flex-row justify-between p-4"
+            data-testid="cart-item"
+          >
             <div className="flex">
               <Image
                 src={item.imgSrc}
@@ -38,13 +45,19 @@ const OrderDetails = () => {
               />
             </div>
             <div className="flex flex-col">
-              <p data-testid={`item-name-${index}`} > {item.name}</p>
+              <p data-testid={`item-name-${index}`}> {item.name}</p>
               <p data-testid={`item-price-${index}`}> {item.price}</p>
               <div className="flex items-center">
-               <p className="mr-4">Qty: </p>
-                  <FaMinus data-testid={`quantity-increase-${index}`} onClick={() => handleQuantityChange(index, item.quantity - 1)} />
+                <p className="mr-4">Qty: </p>
+                <FaMinus
+                  data-testid={`quantity-increase-${index}`}
+                  onClick={() => handleQuantityChange(index, item.quantity - 1)}
+                />
                 <span className="mx-2">{item.quantity}</span>
-                  <FaPlus data-testid={`quantity-decrease-${index}`} onClick={() => handleQuantityChange(index, item.quantity + 1)} />
+                <FaPlus
+                  data-testid={`quantity-decrease-${index}`}
+                  onClick={() => handleQuantityChange(index, item.quantity + 1)}
+                />
               </div>
             </div>
             <div className="flex">
@@ -61,7 +74,9 @@ const OrderDetails = () => {
         <p data-testid="empty-cart-message">Your cart is empty</p>
       )}
       <div className="flex justify-center items-center mb-4 font-bold">
-        <p data-testid="total-cart-price" >Total Items: #{totalCartPrice.toFixed(2)}</p>
+        <p data-testid="total-cart-price">
+          Total Items: #{totalCartPrice.toFixed(2)}
+        </p>
       </div>
     </div>
   );

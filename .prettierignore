@@ -1,0 +1,5 @@
+#ignore these files and folder
+
+.next/
+
+package-lock.json

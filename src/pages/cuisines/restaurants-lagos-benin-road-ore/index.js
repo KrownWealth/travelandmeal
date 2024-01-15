@@ -1,11 +1,10 @@
-import Image from "next/image";
-import { BsFillArrowDownCircleFill } from "react-icons/bs";
-import { FaLongArrowAltRight } from "react-icons/fa";
-import EachResCuisines from "@/components/EachResCuisines";
-import Link from "next/link";
+import Image from 'next/image';
+import { BsFillArrowDownCircleFill } from 'react-icons/bs';
+import { FaLongArrowAltRight } from 'react-icons/fa';
+import EachResCuisines from '@/components/EachResCuisines';
+import Link from 'next/link';
 
 const Cuisines = ({ restaurant }) => {
- 
   return (
     <section className="pt-24 pb-40 bg-white">
       <div className="lg:pl-16 flex flex-row bg-light-orange-2 justify-between">
@@ -31,7 +30,7 @@ const Cuisines = ({ restaurant }) => {
           </Link>
         </div>
         <div className="basis-2/4 bg-white ">
-          {" "}
+          {' '}
           <Image
             src="/Assets/Images/cuisines heroimage.png"
             alt=""

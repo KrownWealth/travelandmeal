@@ -1,68 +1,30 @@
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import { IoLocationOutline } from "react-icons/io5";
-import { FaStar } from "react-icons/fa";
-import Link from "next/link";
-import LoadingModal from "@/components/LoadingModal";
-import Modal from "@/components/authentication/AuthModal";
-import { useUser } from "@/contexts/AuthContext";
-import ProtectedRoute from "@/components/ProtectedRoute";
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { IoLocationOutline } from 'react-icons/io5';
+import { FaStar } from 'react-icons/fa';
+import Link from 'next/link';
+import ProtectedRoute from '@/components/ProtectedRoute';
 
 const FastFoods = () => {
   const [restaurants, setRestaurants] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [showModal, setShowModal] = React.useState(false);
-  const { user } = useUser();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/products"); 
+        const response = await fetch('/api/products');
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
         const data = await response.json();
         setRestaurants(data.restaurants);
-        setLoading(false);
       } catch (error) {
-        setError(error.message);
-        setLoading(false);
+        console.error('Fetch error:', error);
       }
     };
 
     fetchData();
   }, []);
-  
-  useEffect(() => {
-  }, [loading]);
-
-  const openLoginModal = () => {
-    setShowModal(true);
-  };
-
-  const closeLoginModal = () => {
-    setShowModal(false);
-  };
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-  
-  if (loading) {
-    return <LoadingModal />;
-  }
-
-  if (!user) {
-    
-    return (
-      <div className="flex flex-col py-40 ">
-        <h3 className="text-center justify-center">Please log in to access this page.</h3>
-        <button onClick={openLoginModal} className="mx-auto">Login</button>
-        {showModal && <Modal onClose={closeLoginModal} />}
-      </div>
-    );
-  }
 
   return (
     <ProtectedRoute>

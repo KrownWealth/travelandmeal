@@ -1,22 +1,18 @@
-import Image from "next/image";
-import styles from "@/styles/HeroBanner.module.css";
-import SearchBar from "./SearchBar";
-import AlreadyUserBtn from "./AlreadyUserBtn";
-import { FaShoppingCart } from "react-icons/fa";
-import Link from "next/link";
-import Modal from "./authentication/AuthModal";
-import { useCart } from "@/contexts/CartContext";
+import Image from 'next/image';
+import styles from '@/styles/HeroBanner.module.css';
+import SearchBar from './SearchBar';
+import AlreadyUserBtn from './AlreadyUserBtn';
+import { FaShoppingCart } from 'react-icons/fa';
+import Link from 'next/link';
+import Modal from './authentication/AuthModal';
+import { useCart } from '@/contexts/CartContext';
 
 const HeroBanner = ({ showModal, setShowModal }) => {
   const { cartItems } = useCart();
-  const handleSignInClick = () => {
+
+  const handleButtonClick = () => {
     setShowModal(true);
   };
-
-  const handleSignUpClick = () => {
-    setShowModal(true);
-  };
-
   const handleCloseModal = () => {
     setShowModal(false);
   };
@@ -25,7 +21,10 @@ const HeroBanner = ({ showModal, setShowModal }) => {
     <section data-testid="hero-banner" className={styles.heroSection}>
       <div className={styles.heroImg}>
         <div className={styles.heroTopNav}>
-          <div data-testid="hero-top-logo" className={`${styles.heroTopLogo} lg:block md:block  hidden`}>
+          <div
+            data-testid="hero-top-logo"
+            className={`${styles.heroTopLogo} lg:block md:block  hidden`}
+          >
             <Link href="/">
               <Image
                 src="/Assets/Images/TravelandMeal herologo.svg"
@@ -41,15 +40,14 @@ const HeroBanner = ({ showModal, setShowModal }) => {
               aria-label="Sign-In"
               role="button"
               className={styles.ctaBgRed}
-              onClick={handleSignInClick}
+              onClick={handleButtonClick}
               tabIndex={0}
               onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
+                if (e.key === 'Enter') {
                   e.preventDefault();
-                  handleSignInClick();
+                  handleButtonClick();
                 }
               }}
-              
             >
               Sign In
             </button>
@@ -57,11 +55,11 @@ const HeroBanner = ({ showModal, setShowModal }) => {
               aria-label="Sign Up"
               role="button"
               className={styles.ctaBg2}
-              onClick={handleSignUpClick}
+              onClick={handleButtonClick}
               onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
+                if (e.key === 'Enter') {
                   e.preventDefault();
-                  handleSignUpClick();
+                  handleButtonClick();
                 }
               }}
             >
@@ -74,14 +72,16 @@ const HeroBanner = ({ showModal, setShowModal }) => {
                 role="button"
                 aria-label="View-Cart"
                 onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
+                  if (e.key === 'Enter') {
                     e.preventDefault();
-                    window.location.href = "/cart";
+                    window.location.href = '/cart';
                   }
                 }}
               >
                 <FaShoppingCart />
-                <span data-testid="cart-item-count" className="ml-2">{cartItems.length}</span>
+                <span data-testid="cart-item-count" className="ml-2">
+                  {cartItems.length}
+                </span>
               </Link>
             </div>
           </div>
@@ -100,7 +100,7 @@ const HeroBanner = ({ showModal, setShowModal }) => {
             Explore RoadSide Fast-food and more.
           </h1>
           <SearchBar />
-          <AlreadyUserBtn handleSignInClick={handleSignInClick} />
+          <AlreadyUserBtn handleSignInClick={handleButtonClick} />
         </div>
       </div>
       {showModal && <Modal onClose={handleCloseModal} />}

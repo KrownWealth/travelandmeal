@@ -1,14 +1,11 @@
-import styles from "@/styles/VillageMarket.module.css";
-import Image from "next/image";
-import Link from "next/link";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import styles from '@/styles/VillageMarket.module.css';
+import Image from 'next/image';
+import Link from 'next/link';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
-import { useState } from "react";
-import getIsMobile from "./IsMobile";
+import getIsMobile from './IsMobile';
 
 const ExploreMarket = ({ isMobile }) => {
-  const [intervalz, setIntervalz] = useState(3000);
-  
   return (
     <section data-testid="explore-market" className={styles.villageSection}>
       <Carousel
@@ -16,14 +13,14 @@ const ExploreMarket = ({ isMobile }) => {
         showStatus={false}
         showIndicators={true}
         autoPlay
-        interval={intervalz}
+        interval={3000}
         infiniteLoop={true}
         stopOnHover={true}
         showThumbs={false}
       >
-        {slide("villagemarket mobile", "village market desktop")}
-        {slide("village market-2 mobile", "village market-2")}
-        {slide("Banana bg-1 mobile", "Banana bg-1")}
+        {slide('villagemarket mobile', 'village market desktop')}
+        {slide('village market-2 mobile', 'village market-2')}
+        {slide('Banana bg-1 mobile', 'Banana bg-1')}
       </Carousel>
     </section>
   );
@@ -45,10 +42,15 @@ const ExploreMarket = ({ isMobile }) => {
   function textContainer() {
     return (
       <div className={styles.textContainer}>
-        <h1 className="text-white">Get grocery and convenience store essentials</h1>
-        <h2 className="text-white text-[22px]">Grocery delivery, exactly how you want it.</h2>
+        <h1 className="text-white">
+          Get grocery and convenience store essentials
+        </h1>
+        <h2 className="text-white text-[22px]">
+          Grocery delivery, exactly how you want it.
+        </h2>
         <h3 className="text-white">
-          Shop from home and fill your cart with fresh produce, frozen entrees, deli delights, and more.
+          Shop from home and fill your cart with fresh produce, frozen entrees,
+          deli delights, and more.
         </h3>
         <button data-testid="explore-link" className="w-[220px]">
           <Link href="/explore-village-market">Explore Village Market</Link>

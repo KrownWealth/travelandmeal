@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import Image from "next/image";
-import { IoLocationOutline } from "react-icons/io5";
-import { FaStar } from "react-icons/fa";
-import Restaurants from "./RestaurantsData";
-import { FaRegHeart, FaHeart } from "react-icons/fa";
-import Link from "next/link";
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { IoLocationOutline } from 'react-icons/io5';
+import { FaStar } from 'react-icons/fa';
+import Restaurants from './RestaurantsData';
+import { FaRegHeart, FaHeart } from 'react-icons/fa';
+import Link from 'next/link';
 
 const TopRestaurants = () => {
   const [visibleItems, setVisibleItems] = useState(3);
@@ -14,7 +14,10 @@ const TopRestaurants = () => {
   };
 
   return (
-    <section data-testid="top-restaurants" className=" px-8 lg:px-16 py-20  bg-[#f8f4d3]  w-[100%]">
+    <section
+      data-testid="top-restaurants"
+      className=" px-8 lg:px-16 py-20  bg-[#f8f4d3]  w-[100%]"
+    >
       <div className="grid grid-rows-3 text-center items-center justify-center space-y-6 px-8">
         <h1 className="text-center">Top Fast-Food </h1>
         <h3>
@@ -31,14 +34,15 @@ const TopRestaurants = () => {
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
         {Restaurants.slice(0, visibleItems).map((restaurant) => (
-          <Link href={`/restaurants/${restaurant.id}`}
+          <Link
+            href={`/restaurants/${restaurant.id}`}
             key={restaurant.id}
             className="max-w-sm rounded overflow-hidden shadow-lg bg-white"
           >
             <Image
               src={restaurant.imgSrc}
               alt="Sunset in the mountains"
-             width={200}
+              width={200}
               height={200}
               className="cover items-center justify-center mx-auto"
             />
@@ -73,12 +77,12 @@ const TopRestaurants = () => {
 
             <div className="px-6 py-8">
               <div className="flex justify-between">
-              <span className="flex flex-row items-center">
+                <span className="flex flex-row items-center">
                   <FaStar className="text-deep-orange" />
                   <FaStar className="text-deep-orange" />
                   <FaStar className="text-deep-orange" />
-                  <FaStar className="text-deep-orange"  />
-                  <FaStar className="text-deep-orange"  />
+                  <FaStar className="text-deep-orange" />
+                  <FaStar className="text-deep-orange" />
                 </span>
                 <span className="inline-block text-sm font-semibold">
                   {restaurant.minOrder}
@@ -91,7 +95,7 @@ const TopRestaurants = () => {
       <div className="pt-16 flex justify-center items-center">
         {visibleItems < Restaurants.length && (
           <button className="w-[280px]" onClick={handleVisibility}>
-           Load More Fast-food
+            Load More Fast-food
           </button>
         )}
       </div>

@@ -1,12 +1,11 @@
-"use client"
-import { useState } from "react";
-import { databases, ID } from "../../utils/appwrite";
-import { useUser } from "@/contexts/AuthContext";;
-import { useCart } from "@/contexts/CartContext";
+'use client';
+import { useState } from 'react';
+import { databases, ID } from '../../utils/appwrite';
+import { useUser } from '@/contexts/AuthContext';
+import { useCart } from '@/contexts/CartContext';
 
 const collectionId = process.env.NEXT_PUBLIC_APPWRITE_COLLECTIONS_ID;
 const databasesId = process.env.NEXT_PUBLIC_APPWRITE_DATABASES_ID;
-
 
 const useCartHook = () => {
   const [quantity, setQuantity] = useState(1);
@@ -15,7 +14,7 @@ const useCartHook = () => {
   const [selectedMenuItem, setSelectedMenuItem] = useState(null);
   const { user } = useUser();
   const { cartItems, setCartItems } = useCart();
-  
+
   const openQuantityModal = (menuItem, defaultQuantity) => {
     setSelectedMenuItem(menuItem);
     setQuantity(defaultQuantity);
@@ -36,18 +35,18 @@ const useCartHook = () => {
     setQuantity(Math.max(quantity - 1, 1));
   };
 
-  const handleTotal = () => {  
-    return selectedMenuItem ? quantity * (parseFloat(selectedMenuItem.price) || 1) : 0;
+  const handleTotal = () => {
+    return selectedMenuItem
+      ? quantity * (parseFloat(selectedMenuItem.price) || 1)
+      : 0;
   };
-  
+
   const handleAddToCart = async () => {
     const total = handleTotal();
     const documentId = ID.unique();
     const newCartItem = {
-       userId: user.name,
-       ...selectedMenuItem,
-       userId: user.name,
-       ...selectedMenuItem,
+      userId: user.name,
+      ...selectedMenuItem,
       quantity,
       total,
     };
@@ -57,22 +56,18 @@ const useCartHook = () => {
 
     if (user) {
       try {
-        
         await databases.createDocument(
           databasesId,
           collectionId,
           documentId,
-         newCartItem
+          newCartItem
         );
-
-        console.log("New Cart Item (without image):", cartItemWithoutImage);
       } catch (error) {
-        console.error("Error creating user items:", error);
+        console.error('Error creating user items:', error);
       }
     }
   };
-  
-   
+
   return {
     quantity,
     quantityModalOpen,
@@ -85,7 +80,6 @@ const useCartHook = () => {
     handleTotal,
     handleAddToCart,
     setShowSuccessModal,
-    showSuccessModal,
   };
 };
 

@@ -1,5 +1,14 @@
 {
-  "extends": ["next/core-web-vitals", 
-  "plugin:testing-library/react",
-  "plugin:jest-dom/recommended"]
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "next",
+    "prettier",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended"
+  ],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error"
+  }
 }

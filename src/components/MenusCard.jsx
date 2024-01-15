@@ -1,7 +1,7 @@
-"use client";
-import { PiCaretCircleDownFill } from "react-icons/pi";
-import Image from "next/image";
-import useMenuVisibility from "@/hooks/useMenuVisibility";
+'use client';
+import { PiCaretCircleDownFill } from 'react-icons/pi';
+import Image from 'next/image';
+import useMenuVisibility from '@/hooks/useMenuVisibility';
 
 const MenusCard = ({ restaurant, setQuantity, isOpen }) => {
   const [menuVisibility, handlePreview] = useMenuVisibility();
@@ -30,11 +30,11 @@ const MenusCard = ({ restaurant, setQuantity, isOpen }) => {
                   ))}
                 </div>
                 <div className="p-8">
-                  <div className="flex flex-row justify-between py-8">
-                    <h3>{menuType}</h3>
+                  <div className="flex items-end justify-end py-8">
+                    {/* <h3>{menuType}</h3> */}
                     <button
                       onClick={() => handlePreview(menuType)}
-                      className="flex items-center bg-white text-black w-[150px] text-base hover:bg-white"
+                      className="flex bg-white text-black w-[150px] text-base hover:bg-white"
                     >
                       Preview Items
                       <span className="ml-2">
@@ -67,6 +67,7 @@ const MenusCard = ({ restaurant, setQuantity, isOpen }) => {
                       ))}
                     </div>
                   )}
+                  <hr />
                 </div>
               </div>
             );

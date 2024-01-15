@@ -1,7 +1,5 @@
-'use client'
-import { FaPlus, FaMinus } from 'react-icons/fa'
-
-
+'use client';
+import { FaPlus, FaMinus } from 'react-icons/fa';
 
 const QuantityModal = ({
   openQuantityModal,
@@ -13,13 +11,12 @@ const QuantityModal = ({
   selectedMenuItem,
   handleTotal,
 }) => {
-
   const formatCurrency = (amount) => {
     return new Intl.NumberFormat('en-NG', {
       style: 'currency',
       currency: 'NGN',
-    }).format(amount)
-  }
+    }).format(amount);
+  };
 
   return (
     <div
@@ -68,7 +65,7 @@ const QuantityModal = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default QuantityModal;

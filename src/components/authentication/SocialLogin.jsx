@@ -1,19 +1,42 @@
-import useAuth from "@/hooks/useAuth";
-import { FcGoogle } from "react-icons/fc";
+import { useUser } from '@/contexts/AuthContext';
+import { account } from '../../../utils/appwrite';
+import { FcGoogle } from 'react-icons/fc';
 
 const SocialSignIn = () => {
-  const { handleGoogleSignIn } = useAuth();
+  const { fetchUser } = useUser;
+
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await account.createOAuth2Session(
+        'google',
+        'http://localhost:3000/profile',
+        'http://localhost:3000'
+      );
+
+      if (!response) {
+        throw new Error('Empty response received from Google sign-in');
+      }
+
+      console.log(response);
+      // Call fetchUser only if the sign-in is successful
+      await fetchUser();
+    } catch (error) {
+      console.error('Error during Google sign-in:', error);
+      // setLoginError('Failed to sign in with Google. Please try again.');
+    }
+  };
+
   return (
-    
-     <div data-testid="social-sign-in">
+    <div data-testid="social-sign-in">
       <button
         type="submit"
-        className="w-[100%] bg-[#d62828]"
+        className="w-[100%] relative bg-[#d62828]"
         aria-label="Sign up using Google"
         role="button"
         onClick={handleGoogleSignIn}
         onKeyDown={(e) => {
-          if (e.key === "Enter" || e.key === " ") {
+          if (e.key === 'Enter') {
             e.preventDefault();
             handleGoogleSignIn();
           }
@@ -27,4 +50,5 @@ const SocialSignIn = () => {
     </div>
   );
 };
+
 export default SocialSignIn;

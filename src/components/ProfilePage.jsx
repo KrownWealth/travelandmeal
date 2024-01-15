@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 import { useUser } from '@/contexts/AuthContext';
 
 const ProfilePage = () => {
-  const { user, fetchUser } = useUser();
+  const { user, fetchUser, logout } = useUser();
 
   useEffect(() => {
     const fetchData = async () => {
-      await fetchUser(); 
+      await fetchUser();
     };
-  
+
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -18,8 +18,15 @@ const ProfilePage = () => {
       <h6>UID: {user ? user.$id : ''} </h6>
       <h6>Name: {user ? user.name : ''} </h6>
       <h6>Email: {user ? user.email : ''} </h6>
-      <h6>Email Verified: {user ? (user.emailVerification ? 'Verified' : 'Not-Verified') : ''}</h6>
-      <h6>Registered on: {user ? new Date(user.registration * 1000).toDateString() : ''} </h6>
+      <h6>
+        Email Verified:{' '}
+        {user ? (user.emailVerification ? 'Verified' : 'Not-Verified') : ''}
+      </h6>
+      <h6>
+        Registered on:{' '}
+        {user ? new Date(user.registration * 1000).toDateString() : ''}{' '}
+      </h6>
+      <button onClick={logout}>Logout</button>
     </div>
   );
 };

@@ -1,11 +1,11 @@
-import useAuth from "../../hooks/useAuth";
-import { AiOutlineMail } from "react-icons/ai";
-import { IoLockClosedOutline } from "react-icons/io5";
-import SocialSignIn from "./SocialLogin";
-import LoadingModal from "../LoadingModal";
-import SuccessModal from "./SuccessModal";
+import useAuth from '../../hooks/useAuth';
+import { AiOutlineMail } from 'react-icons/ai';
+import { IoLockClosedOutline } from 'react-icons/io5';
+import SocialSignIn from './SocialLogin';
+import LoadingModal from '../LoadingModal';
+import SuccessModal from './SuccessModal';
 
-const SignInForm = () => {
+const SignInForm = ({ onSuccess }) => {
   const {
     userDetails,
     handleChange,
@@ -18,6 +18,10 @@ const SignInForm = () => {
     setShowSuccessModal,
     loading,
   } = useAuth();
+
+  // const handleBothModalsClose = () => {
+  //   setShowModal(false); // Close the authentication modal
+  // };
 
   return (
     <>
@@ -58,7 +62,7 @@ const SignInForm = () => {
               <input
                 id="password"
                 name="password"
-                type={showPassword ? "text" : "password"}
+                type={showPassword ? 'text' : 'password'}
                 value={userDetails.password}
                 onChange={handleChange}
                 autoComplete="false"
@@ -83,11 +87,11 @@ const SignInForm = () => {
                 htmlFor="showPasswordCheckbox"
                 className="text-blue-500 cursor-pointer"
               >
-                {showPassword ? "Hide Password" : "Show Password"}
+                {showPassword ? 'Hide Password' : 'Show Password'}
               </label>
             </div>
             {loginError && (
-              <p className="text-red-500" data-testid="signin-error ">
+              <p className="text-red-500" data-testid="signin-error">
                 {loginError}
               </p>
             )}
@@ -100,7 +104,7 @@ const SignInForm = () => {
           role="button"
           tabIndex={0}
           onKeyDown={(e) => {
-            if (e.key === "Enter" ) {
+            if (e.key === 'Enter') {
               e.preventDefault();
               handleLoginSubmit();
             }
@@ -113,6 +117,7 @@ const SignInForm = () => {
         showSuccessModal={showSuccessModal}
         onClose={() => setShowSuccessModal(false)}
         successTitle="Login Successfully"
+        onSuccess={onSuccess}
       />
     </>
   );

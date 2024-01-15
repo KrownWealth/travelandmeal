@@ -1,9 +1,7 @@
-"use client"
-import React from "react";
+'use client';
+import React from 'react';
 
-
-const Payment = ({total}) => {
-    
+const Payment = ({ total }) => {
   return (
     <div>
       <h1 data-testid="checkout">Checkout</h1>

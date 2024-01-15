@@ -1,5 +1,5 @@
-import React from "react";
-import Loader from "./Loader";
+import React from 'react';
+import Loader from './Loader';
 
 const LoadingModal = () => {
   return (

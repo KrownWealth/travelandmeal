@@ -1,5 +1,4 @@
-import { Html, Head, Main, NextScript } from "next/document";
-
+import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
@@ -14,10 +13,8 @@ export default function Document() {
         <meta name="description" content="Your website description" />
       </Head>
       <body>
-        
-          <Main />
-          <NextScript />
-       
+        <Main />
+        <NextScript />
       </body>
     </Html>
   );
