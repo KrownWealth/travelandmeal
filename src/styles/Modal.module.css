@@ -1,12 +1,10 @@
-
 .modalWrapper {
   width: 350px;
   height: 700px;
   margin: auto;
   top: 120px;
-    position: absolute;
-    overflow-y: auto;
-    
+  position: absolute;
+  overflow-y: auto;
 }
 
 .modal {
@@ -14,8 +12,7 @@
   width: 100%;
   border-radius: 15px;
   padding: 20px;
-  position: relative; 
- 
+  position: relative;
 }
 
 .modalOverlay {
@@ -26,48 +23,45 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed; 
+  position: fixed;
   /* position: absolute; */
-  background-color: rgba(0,0,0,0.7);
-  z-index: 1000; 
-  height: 100vh; 
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  height: 100vh;
   overflow-y: scroll;
 }
 
 .modalBody {
   padding-top: 10px;
   /* overflow-y: scroll;  */
-  max-height: 100%; 
+  max-height: 100%;
 }
 
 .modalHeader {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  position: absolute; 
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  background: #fff; 
+  background: #fff;
 }
-.modalHeader h1{
+.modalHeader h1 {
   font-size: 32px;
 }
 
-
 @media (min-width: 768px) {
-  .modalWrapper{
+  .modalWrapper {
     width: 500px;
     top: 150px;
   }
-
 }
 
 @media (min-width: 1024px) {
-  .modalWrapper{
+  .modalWrapper {
     width: 500px;
     height: 600px;
     top: 150px;
-    
   }
 }

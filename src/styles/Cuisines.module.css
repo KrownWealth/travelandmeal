@@ -1,13 +1,13 @@
-.slick-slider > div{
+.slick-slider > div {
   margin: 0 10px;
 }
 
 button.slick-arrow,
 button.slick-prev,
-b.slick-next{
+b.slick-next {
   background: var(--deep-red);
 }
 
-.slick-next:hover{
-  background: none
+.slick-next:hover {
+  background: none;
 }

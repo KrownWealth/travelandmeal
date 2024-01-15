@@ -3,102 +3,110 @@
 @tailwind utilities;
 @import-normalize;
 
-*{
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
-html, body {
+html,
+body {
   max-width: 100%;
   overflow-x: hidden;
 }
-main{
+main {
   display: block;
 }
 
 :root {
- --deep-red:#d62828;
- --deep-blue:#003049;
- --deep-orange:#f77f00;
- --light-orange:#fcbf49;
- --light-orange-2: #e9e2b7;
- --light-orange-2: rgb(250, 246, 209);
+  --deep-red: #d62828;
+  --deep-blue: #003049;
+  --deep-orange: #f77f00;
+  --light-orange: #fcbf49;
+  --light-orange-2: #e9e2b7;
+  --light-orange-2: rgb(250, 246, 209);
 }
-body{
+body {
   background-color: #000;
 }
-main{
+main {
   background-color: #fff;
-  
 }
-footer{
+footer {
   background-color: var(--deep-blue);
   color: #fff;
 }
-a{
+a {
   /* font-size: 24px; */
   font-size: 18px;
-  font-family: 'Raleway', 'Montserrat' sans-serif;
+  font-family:
+    'Raleway',
+    'Montserrat' sans-serif;
   font-weight: 700;
   /* line-height: 40px; */
   letter-spacing: -0.04ch;
   text-transform: none;
   /* color: rgb(73, 73, 73); */
-    /* text-align: center; */
-    margin: 0px;
-    padding: 0px;
-    display: block;
-    font-variant-ligatures: no-common-ligatures;
-    cursor: pointer;
+  /* text-align: center; */
+  margin: 0px;
+  padding: 0px;
+  display: block;
+  font-variant-ligatures: no-common-ligatures;
+  cursor: pointer;
 }
-h1{
+h1 {
   font-size: 38px;
-  font-family: 'Raleway', 'Montserrat' sans-serif;
+  font-family:
+    'Raleway',
+    'Montserrat' sans-serif;
   font-weight: 700;
   line-height: 40px;
   letter-spacing: -0.04ch;
   text-transform: none;
   color: #000;
-    /* text-align: center; */
-    margin: 0px;
-    padding: 0px;
-    display: block;
-    font-variant-ligatures: no-common-ligatures;
+  /* text-align: center; */
+  margin: 0px;
+  padding: 0px;
+  display: block;
+  font-variant-ligatures: no-common-ligatures;
 }
 
 /* For How it works headings and some other headding*/
-h2{
+h2 {
   font-size: 24px;
-  font-family: 'Raleway', 'Montserrat' sans-serif;
+  font-family:
+    'Raleway',
+    'Montserrat' sans-serif;
   font-weight: 700;
   line-height: 40px;
   letter-spacing: -0.04ch;
   text-transform: none;
-    color: rgb(25, 25, 25);
-    margin: 0px;
-    padding-bottom: 10px;
-    display: block;
-    font-variant-ligatures: no-common-ligatures;
+  color: rgb(25, 25, 25);
+  margin: 0px;
+  padding-bottom: 10px;
+  display: block;
+  font-variant-ligatures: no-common-ligatures;
 }
-h3{
+h3 {
   /* font-size: 24px; */
   font-size: 18px;
-  font-family: 'Raleway', 'Montserrat' sans-serif;
+  font-family:
+    'Raleway',
+    'Montserrat' sans-serif;
   font-weight: 600;
   line-height: 32px;
   letter-spacing: -0.04ch;
   text-transform: none;
-    color: rgb(25, 25, 25);
-    margin: 0px;
-    padding: 0px;
-    display: block;
-    font-variant-ligatures: no-common-ligatures;
+  color: rgb(25, 25, 25);
+  margin: 0px;
+  padding: 0px;
+  display: block;
+  font-variant-ligatures: no-common-ligatures;
 }
 
 /**======================
 Buttons
 ======================**/
-header{
+header {
   width: 100%;
   max-width: 100%;
   position: fixed;
@@ -109,10 +117,9 @@ header{
   background-color: rgb(255, 255, 255);
   padding: 0px 8px;
   border-bottom: 1px solid #f0f0f0;
-  
 }
 
-.navigation{
+.navigation {
   max-height: 100px;
   display: flex;
   flex-direction: row;
@@ -135,78 +142,76 @@ button {
   background-color: #d62828;
   color: #fff;
   font-size: 18px;
-  font-family: 'Raleway', 'Montserrat' sans-serif;
+  font-family:
+    'Raleway',
+    'Montserrat' sans-serif;
   font-weight: 700;
 }
-button:hover{
+button:hover {
   background: #c30404;
 }
 button.longBtn,
-button.arrowBtn{
+button.arrowBtn {
   width: 150px;
 }
 
-
-button.arrowBtn{
+button.arrowBtn {
   display: flex;
   padding: 0;
   padding-top: 15px;
-  background-color:#fff;
+  background-color: #fff;
   color: #d62828;
   position: relative;
   font-size: 18px;
-  font-family: 'Raleway', 'Montserrat' sans-serif;
+  font-family:
+    'Raleway',
+    'Montserrat' sans-serif;
   font-weight: 700;
   align-items: left;
   text-align: left;
   justify-content: left;
-  
 }
 .button.arrowBtn span {
-  left: 10px; 
+  left: 10px;
 }
-button.ctaBgWhite{
+button.ctaBgWhite {
   background-color: #fff;
   color: #000;
 }
-.border-bottom:hover{
- border-bottom: 2px solid white;
+.border-bottom:hover {
+  border-bottom: 2px solid white;
 }
-.border-custom-color{
+.border-custom-color {
   border-color: var(--deep-blue);
 }
 
 /**Input field */
-input{
+input {
   border-width: 1px;
   border-color: #000;
   margin-top: -12px;
-
 }
 /*Slider*/
-.slick-slide > div{
+.slick-slide > div {
   margin: 0 10px;
 }
 
 .slick-prev:hover,
-.slick-next:hover{
-      color:  var(--deep-red);
-      outline: none;
-      background: var(--deep-red);
-  }
+.slick-next:hover {
+  color: var(--deep-red);
+  outline: none;
+  background: var(--deep-red);
+}
 
-  .slick-next,
-  .slick-prev
-  {
-    color:  var(--deep-red) !important;
-    border: none;
-    outline: none;
-    background: var(--deep-red) !important;
-  }
-  
+.slick-next,
+.slick-prev {
+  color: var(--deep-red) !important;
+  border: none;
+  outline: none;
+  background: var(--deep-red) !important;
+}
 
-.exclusive{
-
+.exclusive {
   position: relative;
   height: 400px;
   background: url(/Assets/Images/burgerbg.jpg) center/cover;
@@ -216,8 +221,6 @@ input{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-
 }
 
 /*How it works*/
@@ -255,8 +258,6 @@ input{
 
 /*Form Icons placement*/
 
-
-
 .input-icons {
   width: 100%;
   margin-bottom: 10px;
@@ -270,7 +271,7 @@ input{
   font-size: 32px;
   position: absolute;
   top: -4px;
-  right: 10px; 
+  right: 10px;
 }
 
 .input-field {
@@ -280,36 +281,30 @@ input{
 }
 
 @media (min-width: 768px) {
-
-  h1{
+  h1 {
     font-size: 48px;
   }
-  h2{
+  h2 {
     font-size: 32px;
   }
-  button.arrowBtn{
+  button.arrowBtn {
     align-items: left;
     text-align: center;
     justify-content: left;
-   width: 180px;
+    width: 180px;
   }
 }
 
-
-
-@media (min-width: 1024px){ 
-  
-.topNav {
-  display: flex;
-  gap: 4rem;
-  padding: 2rem;
-}
-  button.arrowBtn{
+@media (min-width: 1024px) {
+  .topNav {
+    display: flex;
+    gap: 4rem;
+    padding: 2rem;
+  }
+  button.arrowBtn {
     align-items: center;
     text-align: center;
     justify-content: center;
     margin: auto;
   }
-  }
-
-
+}
