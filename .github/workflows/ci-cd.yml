@@ -1,4 +1,5 @@
 name: Continuous Integration
+
 on:
   push:
   pull_request:
@@ -9,9 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
         with:
           fetch-depth: 0
+
       - name: Use Node.js
         uses: actions/setup-node@v2
         with:
@@ -28,3 +31,42 @@ jobs:
 
       - name: Build Docker Image
         run: docker build -t travelandmeal:1.0 .
+
+  deploy:
+    name: Deploy to Heroku
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    if: (github.ref == 'refs/heads/main' && github.event_name == 'push') || (github.event_name == 'workflow_dispatch')
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.10.0'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Docker Image
+        run: docker-compose up --build -d
+
+      - name: Log into the Heroku Container Registry
+        run: heroku container:login
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+
+      - name: Tag and Push Docker Image to Heroku
+        run: |
+          docker tag travelandmeal:1.0 registry.heroku.com/travelandmeal/web
+          docker push registry.heroku.com/travelandmeal/web
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+
+      - name: Release the Image to Heroku
+        run: heroku container:release web -a travelandmeal
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
