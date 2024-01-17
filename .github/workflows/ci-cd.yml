@@ -24,16 +24,22 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.10.0'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run lint
+        run: npm run lint
+
+      - name: Run format check
+        run: npm run format
+
       - name: Build Docker Image
-        run: docker build -t $AWS_ECR_REGISTRY_ID/travelandmeal:${{ github.sha }} .
-
-      - name: Login to AWS ECR
-        run: aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $AWS_ECR_REGISTRY_ID
-
-      - name: Tag and Push Docker Image to AWS ECR registry
-        run: |
-          docker tag $AWS_ECR_REGISTRY_ID/travelandmeal:${{ github.sha }} $AWS_ECR_REGISTRY_ID/travelandmeal:${{ github.sha }}
-          docker push $AWS_ECR_REGISTRY_ID/travelandmeal:${{ github.sha }}
+        run: docker build -t $AWS_ECR_REGISTRY_ID/travelandmeal:1.0 .
 
   deploy:
     name: Deploy to AWS EC2
@@ -68,7 +74,7 @@ jobs:
           script: |
             sudo apt update
             sudo apt install docker.io -y
-            sudo docker stop travelandmeal-container || true
-            sudo docker rm travelandmeal-container || true
-            sudo docker pull $AWS_ECR_REGISTRY_ID/travelandmeal:${{ github.sha }}
-            sudo docker run -d --name travelandmeal-container -p 3000:3000 $AWS_ECR_REGISTRY_ID/travelandmeal:${{ github.sha }}
+            sudo docker stop travelandmeal || true
+            sudo docker rm travelandmeal || true
+            sudo docker pull $AWS_ECR_REGISTRY_ID/travelandmeal:1.0
+            sudo docker run -d --name travelandmeal -p 3000:3000 $AWS_ECR_REGISTRY_ID/travelandmeal:1.0
