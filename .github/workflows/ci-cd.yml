@@ -17,21 +17,28 @@ env:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
 
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.10.0'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run lint
+        run: npm run lint
+
+      - name: Run format check
+        run: npm run format
+
       - name: Build Docker Image
-        run: docker build -t $AWS_ECR_REGISTRY_ID/travelandmeal:${{ github.sha }} .
-
-      - name: Login to AWS ECR
-        run: aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $AWS_ECR_REGISTRY_ID
-
-      - name: Push Docker Image to AWS ECR
-        run: docker push $AWS_ECR_REGISTRY_ID/travelandmeal:${{ github.sha }}
+        run: docker build -t travelandmeal:1.0 .
 
   deploy:
     name: Deploy to AWS EC2
@@ -40,23 +47,52 @@ jobs:
     if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
 
     steps:
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
+      - name: Checkout
+        uses: actions/checkout@v2
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.AWS_REGION }}
+          persist-credentials: false
 
-      - name: Deploy to EC2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.10.0'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Docker Image
+        run: docker-compose up --build -d
+
+      - name: Login to AWS ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Tag and Push Docker Image to AWS
+        env:
+          REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          REPOSITORY: travelanemeal
+        run: |-
+          docker tag travelandmeal:1.0 $REGISTRY/$REPOSITORY:1.0
+          docker push $REGISTRY/$REPOSITORY
+
+      - name: Release and Deploy docker image to EC2
+        env:
+          REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          REPOSITORY: travelandmeal
+          IMAGE_TAG: ${{ github.sha }}
+          AWS_DEFAULT_REGION: us-east-1
         uses: appleboy/ssh-action@master
         with:
           host: ${{ env.SERVER_PUBLIC_IP }}
           username: ubuntu
           key: ${{ env.PRIVATE_SSH_KEY }}
-          script: |
+          envs: PRIVATE_SSH_KEY,REGISTRY,REPOSITORY,IMAGE_TAG,AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY,AWS_DEFAULT_REGION,AWS_REGION
+          script: |-
             sudo apt update
             sudo apt install docker.io -y
-            sudo docker stop travelandmeal-container || true
-            sudo docker rm travelandmeal-container || true
-            sudo docker pull $AWS_ECR_REGISTRY_ID/travelandmeal:${{ github.sha }}
-            sudo docker run -d --name travelandmeal-container -p 3000:3000 $AWS_ECR_REGISTRY_ID/travelandmeal:${{ github.sha }}
+            sudo apt install awscli -y
+            sudo $(aws ecr get-login --no-include-email --region us-east-1);
+            sudo docker stop travelandmeal || true
+            sudo docker rm travwelandmeal || true
+            sudo docker pull $REGISTRY/$REPOSITORY:$IMAGE_TAG
+            sudo docker run -d --name travelandmeal -p 3000:3000 $REGISTRY/$REPOSITORY:$IMAGE_TAG
