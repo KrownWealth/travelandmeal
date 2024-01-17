@@ -17,6 +17,7 @@ env:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -60,39 +61,22 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build Docker Image
-        run: docker-compose up --build -d
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
 
-      - name: Login to AWS ECR
+      - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-      - name: Tag and Push Docker Image to AWS
+      - name: Build, tag, and push image to Amazon ECR
         env:
-          REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          REPOSITORY: travelandmeal
-        run: |-
-          docker tag travelandmeal:1.0 $REGISTRY/$REPOSITORY:1.0
-          docker push $REGISTRY/$REPOSITORY
-
-      - name: Release and Deploy docker image to EC2
-        env:
-          REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          REPOSITORY: travelandmeal
-          IMAGE_TAG: ${{ github.sha }}
-          AWS_DEFAULT_REGION: us-east-1
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ env.SERVER_PUBLIC_IP }}
-          username: ubuntu
-          key: ${{ env.PRIVATE_SSH_KEY }}
-          envs: PRIVATE_SSH_KEY,REGISTRY,REPOSITORY,IMAGE_TAG,AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY,AWS_DEFAULT_REGION,AWS_REGION
-          script: |-
-            sudo apt update
-            sudo apt install docker.io -y
-            sudo apt install awscli -y
-            sudo $(aws ecr get-login --no-include-email --region us-east-1);
-            sudo docker stop travelandmeal || true
-            sudo docker rm travelandmeal || true
-            sudo docker pull $REGISTRY/$REPOSITORY:$IMAGE_TAG
-            sudo docker run -d --name travelandmeal -p 3000:3000 $REGISTRY/$REPOSITORY:$IMAGE_TAG
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: travelandmeal
+          IMAGE_TAG: 1.0
+        run: |
+          docker build -t $ECR_REGISTRY/travelandmeal:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/travelandmeal:$IMAGE_TAG
