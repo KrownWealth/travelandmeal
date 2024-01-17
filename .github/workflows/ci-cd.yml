@@ -1,12 +1,11 @@
 name: Continuous Integration
-
-# This triggers CI on all kinds of branches and PRs
 on:
   push:
   pull_request:
+  workflow_dispatch:
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,3 +25,6 @@ jobs:
 
       - name: Run format check
         run: npm run format
+
+      - name: Build Docker Image
+        run: docker build -t travelandmeal:1.0 .
