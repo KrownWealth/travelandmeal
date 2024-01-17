@@ -71,9 +71,14 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
 
+      - name: Login to AWS ECR
+        run: |
+          aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $AWS_ECR_REGISTRY_ID
+        env:
+          AWS_ECR_REGISTRY_ID: ${{ secrets.REGISTRY_ID }}
+
       - name: Tag and Push docker image to AWS ECR registry
         run: |
-          aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ECR_REGISTRY_ID
           docker tag travelandmeal:1.0 $AWS_ECR_REGISTRY_ID/travelandmeal:${{ github.sha }}
           docker push $AWS_ECR_REGISTRY_ID/travelandmeal:${{ github.sha }}
 
