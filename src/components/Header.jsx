@@ -21,15 +21,6 @@ const Header = () => {
     <>
       <div className="navigation">
         <div className="logo">
-          {/* <Link href="/">
-            <Image
-              src="/Assets/Images/TM.svg"
-              alt="logo"
-              width={250}
-              height={250}
-              className="block lg:hidden pt-4"
-            />
-          </Link> */}
           <Link href="/">
             <Image
               src="/Assets/Images/TravelandMeal desktoplogo.svg"

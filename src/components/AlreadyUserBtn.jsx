@@ -21,7 +21,6 @@ const AlreadyUserBtn = ({ handleSignInClick }) => {
         </span>
         Sign in
       </button>
-
       <button
         onClick={handleSignInClick}
         className="lg:block hidden w-[220px] relative m-auto top-48 lg:top-8 rounded-full pl-6 p-1
