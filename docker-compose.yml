@@ -1,7 +1,0 @@
-version: "3.8"
-services:
-  web:
-    build: .
-    image: travelandmeal:1.0
-    ports:
-    - "80:80"
