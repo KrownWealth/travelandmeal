@@ -10,8 +10,8 @@ const SocialSignIn = () => {
     try {
       const response = await account.createOAuth2Session(
         'google',
-        'http://localhost:3000/profile',
-        'http://localhost:3000'
+        'https://main.dwzln7wpioog6.amplifyapp.com/profile',
+        'https://main.dwzln7wpioog6.amplifyapp.com/'
       );
 
       if (!response) {

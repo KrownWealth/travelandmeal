@@ -53,7 +53,8 @@ const ExploreMarket = ({ isMobile }) => {
           deli delights, and more.
         </h3>
         <button data-testid="explore-link" className="w-[220px]">
-          <Link href="/explore-village-market">Explore Village Market</Link>
+          {/* Note a page will be developed for explore */}
+          <Link href="/restuarants">Explore Village Market</Link>
         </button>
       </div>
     );
