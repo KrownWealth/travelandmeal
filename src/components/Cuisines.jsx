@@ -102,7 +102,7 @@ const foodItems = [
   },
   {
     id: 5,
-    img: '/Assets/Images/menu/small chops.jpg',
+    img: '/Assets/Images/menu/Small Chops.jpg',
     title: 'Small chops',
   },
   {

@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import ExploreMarket from "@/components/ExploreMarket";
+import ExploreMarket from "../src/components/ExploreMarket";
 
 describe("ExploreMarket Component", () => {
   it("renders carousel slides with images and text", () => {

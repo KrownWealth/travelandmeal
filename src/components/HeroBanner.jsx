@@ -86,7 +86,7 @@ const HeroBanner = ({ showModal, setShowModal }) => {
             </div>
           </div>
         </div>
-        <div className="lg:hidden md:hidden block">
+        <div className="lg:hidden block">
           <Image
             src="/Assets/Images/TravelandMeal mobilehero.svg"
             alt=""

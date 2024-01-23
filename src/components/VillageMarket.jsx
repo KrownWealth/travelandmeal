@@ -11,9 +11,9 @@ const VillageMarket = () => {
       >
         {/* <h1 className="pb-20">Best Seller from Village Markets </h1> */}
         <div className="px-8 lg:px-0 flex flex-col lg:flex-row lg:space-x-8 py-12">
-          <div className="basis-full lg:basis-2/3 block lg:hidden  ">
+          <div className="basis-full lg:basis-2/3 block md:hidden lg:hidden  ">
             <Image
-              src="/Assets/Images/Crave for-1 mobile.png"
+              src="/Assets/Images/crave for-1 mobile.png"
               alt="Food cravings"
               width={350}
               height={50}
@@ -36,7 +36,7 @@ const VillageMarket = () => {
               <Link href="/restaurants/">Find Fast-Food</Link>
             </button>
           </div>
-          <div className="basis-full lg:basis-2/3  hidden lg:block mt-10">
+          <div className="basis-full lg:basis-2/3  hidden md:block lg:block mt-10">
             <Image
               src="/Assets/Images/Crave For-1.png"
               alt="Food cravings"
@@ -51,7 +51,7 @@ const VillageMarket = () => {
         <div className="flex flex-col lg:flex-row lg:space-x-12 px-8 lg:px-0 ">
           <div className="basis-full lg:basis-2/3 block lg:hidden ">
             <Image
-              src="/Assets/Images/gift items mobile.png"
+              src="/Assets/Images/Gift items mobile.png"
               alt="Food cravings"
               width={350}
               height={50}
