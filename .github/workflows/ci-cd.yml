@@ -1,6 +1,5 @@
 name: Continuous Integration and Deployment on AWS Amplify
 
-
 on:
   push:
   pull_request:
@@ -32,5 +31,3 @@ jobs:
 
       - name: Build App
         run: npm run build
-
- 
