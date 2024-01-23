@@ -44,9 +44,14 @@ const ProtectedRoute = ({ children }) => {
         // User is not logged in
         <div className="py-40">
           <div className="text-center">Please log in to access the page.</div>
-          <button onClick={openLoginModal} className="mx-auto text-center">
+          <button
+            onClick={openLoginModal}
+            className="flex mx-auto justify-center items-center"
+            style={{ marginTop: '4rem' }}
+          >
             Login
           </button>
+
           {showModal && <Modal onClose={closeLoginModal} />}
         </div>
       )}
