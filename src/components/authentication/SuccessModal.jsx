@@ -14,7 +14,7 @@ const SuccessModal = ({
         showSuccessModal ? 'block' : 'hidden'
       }`}
     >
-      <div className="px-8 pt-40 py-20 w-[50%] m-auto">
+      <div className="px-8 pt-40 py-20 w-[100%] lg:w-[50%] m-auto">
         <div className="mx-auto rounded shadow-lg bg-white">
           <div className="flex flex-col space-y-8 justify-center items-center text-center py-12">
             <div className="relative rounded-[100%] shadow-lg w-22 p-8 text-white bg-[#003049] text-3xl">
