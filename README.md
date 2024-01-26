@@ -1,6 +1,11 @@
 
 # TraveandMeal
 
+![T M-1](https://github.com/KrownWealth/travelandmeal/assets/100444940/89a1f238-7a96-4a3e-b71c-ec17815cddba)
+
+## Deployment
+Check out the live deployment [here](https://main.dwzln7wpioog6.amplifyapp.com/).
+
 ## Problem Scope
 Dining while travelling often leads to inconveniences for passengers mostly which are fast-food customers, especially during road journeys. Long queues, delayed customer service, and a lack of streamlined food ordering systems can reduce the overall travel experience. TravelandMeal aims to address these challenges by providing a seamless solution that combines road travel with efficient and convenient food ordering for road travellers.
 
@@ -69,5 +74,6 @@ Upon reaching the sales point, present your order confirmation ID to receive imm
 **6. Get Your Meal Served! Enjoy :**
 
 Relish your selected meals without the hassle of waiting in queues.
+
 
 
