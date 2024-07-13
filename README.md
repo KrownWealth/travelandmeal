@@ -4,7 +4,8 @@
 ![T M-1](https://github.com/KrownWealth/travelandmeal/assets/100444940/89a1f238-7a96-4a3e-b71c-ec17815cddba)
 
 ## Deployment
-Check out the live deployment [here](https://main.dwzln7wpioog6.amplifyapp.com/).
+Check out the live deployment [here] (https://travelandmeal.vercel.app/)
+Formerly deplyed on AWS Amplify got disconnected because of billing : (https://main.dwzln7wpioog6.amplifyapp.com/).
 
 ## Problem Scope
 Dining while travelling often leads to inconveniences for passengers mostly which are fast-food customers, especially during road journeys. Long queues, delayed customer service, and a lack of streamlined food ordering systems can reduce the overall travel experience. TravelandMeal aims to address these challenges by providing a seamless solution that combines road travel with efficient and convenient food ordering for road travellers.
