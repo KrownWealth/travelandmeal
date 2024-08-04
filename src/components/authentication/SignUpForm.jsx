@@ -4,7 +4,7 @@ import { AiOutlineMail } from 'react-icons/ai';
 import { IoLockClosedOutline } from 'react-icons/io5';
 import LoadingModal from '../LoadingModal';
 import { FaRegUser } from 'react-icons/fa';
-import SocialSignIn from './SocialLogin';
+//import SocialSignIn from './SocialLogin';
 
 const SignUpForm = () => {
   const {
@@ -128,13 +128,13 @@ const SignUpForm = () => {
           Sign Up
         </button>
 
-        <div className="flex flex-row w-[100%] justify-center items-center mx-auto">
+        {/* <div className="flex flex-row w-[100%] justify-center items-center mx-auto">
           <hr className="w-[37.5%] border-t border-custom-color" />
           <p className="w-[25%] text-center">or</p>
           <hr className="w-[37.5%] border-t border-custom-color" />
         </div>
 
-        <SocialSignIn />
+        <SocialSignIn /> */}
       </form>
 
       <SuccessModal

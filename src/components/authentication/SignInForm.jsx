@@ -1,7 +1,7 @@
 import useAuth from '../../hooks/useAuth';
 import { AiOutlineMail } from 'react-icons/ai';
 import { IoLockClosedOutline } from 'react-icons/io5';
-import SocialSignIn from './SocialLogin';
+//import SocialSignIn from './SocialLogin';
 import LoadingModal from '../LoadingModal';
 import SuccessModal from './SuccessModal';
 
@@ -31,12 +31,12 @@ const SignInForm = ({ onSuccess }) => {
         aria-label="Sign-In"
       >
         {loading && <LoadingModal />}
-        <SocialSignIn />
+        {/* <SocialSignIn />
         <div className="flex flex-row pb-4 w-[100%] pt-4 justify-center items-center mx-auto">
           <hr className="w-[37.5%] border-t border-custom-color" />
           <p className="w-[25%] text-center">or signin with email</p>
           <hr className="w-[37.5%] border-t border-custom-color" />
-        </div>
+        </div> */}
         <div className="pb-4 w-[100%] relative">
           <div className="flex flex-col space-y-2">
             <label>Email</label>

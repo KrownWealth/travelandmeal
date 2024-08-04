@@ -53,8 +53,11 @@ export default function useAuth() {
         : '';
     } else if (name === 'password') {
       newFormData[name] = value;
-      newErrors[name] = value.length < 8 ? 'Password must be 8 characters' : '';
-      newErrors[name] = value.length < 3 ? `${name} is too short` : '';
+      if (value.length < 8) {
+        newErrors[name] = 'Password must be at least 8 characters long';
+      } else {
+        newErrors[name] = '';
+      }
     } else if (name === 'checkbox') {
       newFormData[name] = checked;
       newErrors[name] = !checked
@@ -88,7 +91,24 @@ export default function useAuth() {
         alert('Signup failed');
       }
     } catch (error) {
-      console.log('Error signup', error);
+      console.error('Error signup', error);
+      if (error instanceof AppwriteException) {
+        if (error.message.includes('Invalid `password` param')) {
+          setErrors((prevErrors) => ({
+            ...prevErrors,
+            password: 'Password must be 8 characters long.',
+          }));
+        } else if (error.message.includes('Invalid `email` param')) {
+          setErrors((prevErrors) => ({
+            ...prevErrors,
+            email: 'Invalid email address',
+          }));
+        } else {
+          setLoginError('Signup failed due to an error.');
+        }
+      } else {
+        setLoginError('An error occurred during signup.');
+      }
     } finally {
       setLoading(false);
     }
@@ -118,9 +138,13 @@ export default function useAuth() {
     } catch (error) {
       console.error('Error Signin', error);
       if (error instanceof AppwriteException) {
-        setLoginError(
-          'Invalid credentials. Please check the email and password.'
-        );
+        if (error.message.includes('Invalid `password` param')) {
+          setLoginError('Invalid password.');
+        } else if (error.message.includes('Invalid `email` param')) {
+          setLoginError('Invalid email address.');
+        } else {
+          setLoginError('Invalid Credentials.');
+        }
       } else {
         setLoginError('An error occurred during login.');
       }
