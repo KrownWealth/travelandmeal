@@ -10,8 +10,8 @@ const SocialSignIn = () => {
     try {
       const response = await account.createOAuth2Session(
         'google',
-        'https://main.dwzln7wpioog6.amplifyapp.com/profile',
-        'https://main.dwzln7wpioog6.amplifyapp.com/'
+        'https://travelandmeal.vercel.app/profile',
+        'https://travelandmeal.vercel.app/'
       );
 
       if (!response) {
